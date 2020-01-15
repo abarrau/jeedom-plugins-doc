@@ -1,6 +1,5 @@
-Doc des plugins de la box domotique Jeedom (développé par abarrau/olindote)
+## Doc des plugins de la box domotique Jeedom (développés par abarrau/olindote)
 
-## DOCUMENTATION et DYSFONCTIONNEMENTS : liens utils :
 ### -- Documentation (FR uniquement) : 
 * iCalendar : https://abarrau.github.io/jeedom-plugin-iCalendar-doc/
 * ttsWebServer : 
