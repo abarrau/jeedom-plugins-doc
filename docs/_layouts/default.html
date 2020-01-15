@@ -80,7 +80,7 @@
         $('#oT_otherPlugin').append("<a href='"+_href+"'><img src='"+_href+"images/"+_pluginName+"_icon.png"+"' class='oT_imgPlugin' border='0'/></a>");
       });
     }
-	function getCourrantPlugin() { var aPath = window.location.pathname.split('/'); return (isset(aPath[1]))?aPath[1]:''; }
+	function getCourrantPlugin() { var aPath = window.location.pathname.split('/'); return (isset(aPath[2]))?aPath[2]:''; }
     // Actions //
     var _pluginList = ['class-olindoteTools','iCalendar','DaikinOnlineCtrl','ttsWebServer','drawMaps'];
     setDataPage();
