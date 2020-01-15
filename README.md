@@ -1,9 +1,11 @@
-## Doc des plugins de la box domotique Jeedom (développés par abarrau/olindote)
+## Doc des plugins pour Jeedom abarrau/olindote
 
 ### -- Documentation (FR uniquement) : 
-* iCalendar : https://abarrau.github.io/jeedom-plugin-iCalendar-doc/
-* ttsWebServer : 
-* DaikinOnlineCtrl : 
+* olindoteTools (class) : https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/
+* iCalendar : https://abarrau.github.io/jeedom-plugins-doc/iCalendar/
+* DaikinOnlineCtrl : https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/
+* ttsWebServer : https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/
+* drawMaps : https://abarrau.github.io/jeedom-plugins-doc/drawMaps/
 
 ### -- ChangeLog : 
 Les informations de changelog sont disponibles via la documentation.
