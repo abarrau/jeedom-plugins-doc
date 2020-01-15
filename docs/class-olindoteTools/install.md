@@ -1,6 +1,6 @@
 ## Cas d'ERREUR : Class 'olindoteTools' not found
 
-![unknow class](https://abarrau.github.io/jeedom-class-olindoteTools-doc/assets/images/oT_errorClass.png)
+![unknow class](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/images/oT_errorClass.png)
 
 Lors de l'affichage de la page d'un plugin développé par abarrau, si cette erreur s'affiche, cela signifie que la class "olindoteTools" n'est pas correctement installée. 
 Vous pouvez également vérifier si ce type d'erreur apparait dans la log _"olindoteTools"_.
@@ -16,6 +16,6 @@ Se rendre sur la page de gestion du plugin :
 - Le statut devrait être dans l'état `KO` ;
 - lancer les dépendances : cliquez sur le bouton orange `relancer`.
 
-![dependancy](https://abarrau.github.io/jeedom-class-olindoteTools-doc/assets/images/oT_dependance.png)
+![dependancy](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/images/oT_dependance.png)
 
 

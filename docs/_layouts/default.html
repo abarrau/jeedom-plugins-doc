@@ -33,8 +33,8 @@
     <div id="main_content_wrap" class="outer">
       <div id="main_content" class="inner">
         <div style="width:100%;">
-          <a class="oT_menuLink" href="{{site.github.url}}/">Doc</a>
-          <a class="oT_menuLink" href="{{site.github.url}}/changelog">ChangeLog</a>
+          <a class="oT_menuLink" data-action="doc" href="{{site.github.url}}/">Doc</a>
+          <a class="oT_menuLink" data-action="changelog" href="{{site.github.url}}/changelog">ChangeLog</a>
           <a class="oT_menuLink" id="forkme_banner" href="{{site.github.repository_url}}" target="_blank">View on GitHub</a>
         </div>
         {{content}}
@@ -61,28 +61,29 @@
     #main_content { padding:4px!important; }
   </style>
   <script language="javascript">
-    // Functions //
-    function setTitlePage(project_title) {
-      var aProject_title = project_title.split('-');
-      $('#header_wrap #project_title').html(aProject_title[2]); //+" ("+aProject_title[1]+" "+aProject_title[3]+")");
-    }
-    function setImage(project_title) {
-      var aProject_title = project_title.split('-');
-      var srcPic="{{site.github.url}}/assets/images/"+aProject_title[2]+"_icon.png";
-      $('.oT_picture img').attr('src',srcPic);
+    function setDataPage(project_title) {
+		var _plugin = getCourrantPlugin();
+		if (_plugin=='') {
+			$('#header_wrap #project_title').html("Documentation");
+			$('.oT_picture img').hide();
+			$('.oT_menuLink[data-action="changelog"]').hide();
+		} else {
+			$('#header_wrap #project_title').html(_plugin);
+			var srcPic="{{site.github.url}}/"+_plugin+"/images/"+getCourrantPlugin()+"_icon.png"; $('.oT_picture img').attr('src',srcPic);
+			$('.oT_menuLink[data-action="doc"]').attr('href','{{site.github.url}}/'+_plugin+'/');
+			$('.oT_menuLink[data-action="changelog"]').attr('href','{{site.github.url}}/'+_plugin+'/changelog');
+		}
     }
     function setOtherDoc() {
       $.each(_pluginList, function(k,_pluginName) {
-        var _href = "https://abarrau.github.io/jeedom-plugin-"+_pluginName+"-doc/";
-        var _src = _href+"assets/images/"+_pluginName+"_icon.png";
-        var _html = "<a href='"+_href+"'><img src='"+_src+"' class='oT_imgPlugin' border='0'/></a>";
-        $('#oT_otherPlugin').append(_html);
+        var _href = "https://abarrau.github.io/jeedom-plugins-doc/"+_pluginName+"/";
+        $('#oT_otherPlugin').append("<a href='"+_href+"'><img src='"+_href+"images/"+_pluginName+"_icon.png"+"' class='oT_imgPlugin' border='0'/></a>");
       });
     }
+	function getCourrantPlugin() { var aPath = window.location.pathname.split('/'); return (isset(aPath[1]))?aPath[1]:''; }
     // Actions //
-    var _pluginList = ['iCalendar','DaikinOnlineCtrl','ttsWebServer'];
-    setTitlePage("{{site.github.project_title}}");
-    setImage("{{site.github.project_title}}");
+    var _pluginList = ['class-olindoteTools','iCalendar','DaikinOnlineCtrl','ttsWebServer','drawMaps'];
+    setDataPage();
     setOtherDoc();
   </script>
 </html>

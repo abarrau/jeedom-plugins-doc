@@ -2,14 +2,14 @@ La class "olindoteTools" ajoute 3 zones d'infos sur la page de gestion des plugi
 (Ces informations évolueront au fur et à mesure).
 
 ## ZONE : "(olindoteTools) Information pour ce plugin"
-![info plugin](https://abarrau.github.io/jeedom-class-olindoteTools-doc/assets/images/oT_zoneInfoPlugins.png)
+![info plugin](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/images/oT_zoneInfoPlugins.png)
 
 Cette zone contient toutes les informations liées au plugin : 
 - __Version installée__: n° et date de la version installée ; 
 - __Version archivée__: n° et date de la précédente version ; 
 
 ## ZONE : "(olindoteTools) Information sur la class olindoteTools"
-![info plugin](https://abarrau.github.io/jeedom-class-olindoteTools-doc/assets/images/oT_zoneInfoClass.png)
+![info plugin](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/images/oT_zoneInfoClass.png)
 
 Cette zone contient toutes les informations liées à la class "olindoteTools" : 
 - __Plus d'infos (documentation)__: lien d'accès à cette documentation
@@ -24,6 +24,6 @@ Cette zone contient toutes les informations liées à la class "olindoteTools" :
   - __AUCUNE INFORMATION PERSONNELLE n'est transmise dans cet échange, uniquement des données pertinantes pour le suivi de développement__.
 
 ## ZONE : "(olindoteTools) Dysfonctionnement et assistance"
-![info plugin](https://abarrau.github.io/jeedom-class-olindoteTools-doc/assets/images/oT_zoneAssistance.png)
+![info plugin](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/images/oT_zoneAssistance.png)
 
 Cette zone rappelle les conditions d'acceptation d'une remontée d'anomalie et comment y accéder. 
