@@ -1,7 +1,5 @@
 # Class "olindoteTools", pour Jeedom
 
-Tous savoir sur les évolutions de la class [ChangeLog](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/changelog)
-
 En cas d'erreur et pour suivre [l'installation](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/install)
 
 __Remarque__: cette class est destinée à l'utilisation des plugins développés par abarrau, toute utilisation par un autre développeur ne sera pas sous la responsablité d'abarrau.
