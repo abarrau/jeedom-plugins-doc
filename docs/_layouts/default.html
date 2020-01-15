@@ -1,0 +1,88 @@
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135293349-2"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-135293349-2');</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <title>{{site.github.project_title}} (by Olindote) | {{site.github.project_tagline}}</title>
+    <meta property="og:title" content="{{site.github.project_title}}">
+    <meta name="description" content="{{site.github.project_tagline}}">
+    <meta property="og:description" content="{{site.github.project_tagline}}">
+    <link rel="canonical" href="{{site.github.url}}">
+    <meta property="og:url" content="{{site.github.url}}">
+    <meta property="og:site_name" content="{{site.github.project_title}}">
+    <script type="application/ld+json">{"@type":"WebSite","headline":"{{site.github.project_title}}","url":"{{site.github.url}}","name":"{{site.github.project_title}}","description":"{{site.github.project_tagline}}","@context":"http://schema.org"}</script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{site.github.url}}/assets/style.css">
+  </head>
+
+  <body>
+    <div id="header_wrap" class="outer">
+      <div class="inner">
+        <div style="width:100%;">
+          <span class="oT_picture"><img src="" border="0"/></span>
+          <span class="oT_logo" style="color:#000;">Olin<span style="font-size:75%;position:relative;top:-7px;"><span style="color:#8c0012;">dot</span>e</span><span style="font-size:50%;color:#AAA;position:relative;left:-1em;top:0.3em;">.fr</span></span>
+          
+        </div>
+        <h1 id="project_title">{{site.github.project_title}}</h1>
+        <h2 id="project_tagline">{{site.github.project_tagline}}</h2>
+      </div>      
+    </div>
+    <div id="main_content_wrap" class="outer">
+      <div id="main_content" class="inner">
+        <div style="width:100%;">
+          <a class="oT_menuLink" href="{{site.github.url}}/">Doc</a>
+          <a class="oT_menuLink" href="{{site.github.url}}/changelog">ChangeLog</a>
+          <a class="oT_menuLink" id="forkme_banner" href="{{site.github.repository_url}}" target="_blank">View on GitHub</a>
+        </div>
+        {{content}}
+      </div>
+    </div>
+    <div id="footer_wrap" class="outer ">
+      <div class="inner">
+        <span id="project_tagline">Toute la document des autres plugins :</span> 
+        <div id="oT_otherPlugin"></div>
+      </div>
+    </div>
+  </body>
+  <style>
+    .inner { max-width:850px!important; }
+    .oT_logo { background-color:#FFF;display:block;position:absolute;top:0;right:10px;z-index:100;padding:0px 0px 0px 10px!important;font-weight:bold;font-family:Arial;font-size:1.8em;border-radius:0em 0em 0.2em 0.2em;}
+    .oT_picture { background-color:#FFF;display:block;position:absolute;top:0;left:0px;z-index:100;border-radius:0em 0em 0.4em 0.4em;padding:15px!important }
+    .oT_picture img { padding:0px!important;width:70px;box-shadow:none!important;margin:0px!important;border:none; }
+    .oT_menuLink { background-color:#8c0012;display:inline;z-index:10;padding:10px 12px;margin-right:2px;color:#fff;font-weight:200!important;box-shadow:0 0 10px rgba(0,0,0,0.5);border-radius:0em 0em 0.4em 0.4em;}
+    .oT_imgPlugin { margin:1px 15px 10px 0px!important;padding:0px!important;width:45px;box-shadow:none!important;border:none; }
+    #header_wrap #project_title { padding:0px 0px 0px 110px;border-bottom:1px solid #FFF;position:relative;top:-15px; }
+    #project_tagline { padding-bottom:0px!important; }
+    #footer_wrap { background: linear-gradient(to top, #373737, #212121); }
+    #footer_wrap .inner { padding:10px 10px 50px 10px!important; }
+    #main_content { padding:4px!important; }
+  </style>
+  <script language="javascript">
+    // Functions //
+    function setTitlePage(project_title) {
+      var aProject_title = project_title.split('-');
+      $('#header_wrap #project_title').html(aProject_title[2]); //+" ("+aProject_title[1]+" "+aProject_title[3]+")");
+    }
+    function setImage(project_title) {
+      var aProject_title = project_title.split('-');
+      var srcPic="{{site.github.url}}/assets/images/"+aProject_title[2]+"_icon.png";
+      $('.oT_picture img').attr('src',srcPic);
+    }
+    function setOtherDoc() {
+      $.each(_pluginList, function(k,_pluginName) {
+        var _href = "https://abarrau.github.io/jeedom-plugin-"+_pluginName+"-doc/";
+        var _src = _href+"assets/images/"+_pluginName+"_icon.png";
+        var _html = "<a href='"+_href+"'><img src='"+_src+"' class='oT_imgPlugin' border='0'/></a>";
+        $('#oT_otherPlugin').append(_html);
+      });
+    }
+    // Actions //
+    var _pluginList = ['iCalendar','DaikinOnlineCtrl','ttsWebServer'];
+    setTitlePage("{{site.github.project_title}}");
+    setImage("{{site.github.project_title}}");
+    setOtherDoc();
+  </script>
+</html>

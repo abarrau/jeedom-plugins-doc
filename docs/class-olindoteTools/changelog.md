@@ -1,0 +1,22 @@
+## ChangeLog : 
+
+- **1.10** (2019/08/xx) :
+  - ajout de possibilité de personnaliser les bouttons de la fonction eqlogicHtml_writeMenuAction
+  - centralisation de la page "equipement" via la fonction eqlogicHtml_zoneEquipement (nom, statut, catégorie, ...), avec parametrage de l'affichage
+  - fonction setIcone pour compatibilité Jeedom v4
+- **1.09** (2019/04/xx) :
+  - correction tableau dans la fonction network_setArrayHealthForHealthPage
+  - ajout paramètre "arg" dans fonction olindoteDependancyInstall (fichier .inc)
+  - +++
+- **1.08** (2019/03/xx) :
+  - modification de l'affichage de la page équipement (en mode tableau)
+- **1.05** (2019/02/xx) :
+  - gestion du déploiement avec fichier "olindoteTools.inc.php"; réécrite de la gestion des verssions; mise en place des 3 zones d'info sur la page config
+- **1.04** :
+  - ajout des fonctions html de la page "equipement"
+- **1.03** :
+  - ajout de la gestion de l'archivage; modification de la fonction "version_setValue()"
+- **1.02** :
+  - ajout des fonctions: "getList()",
+- **1.01** : 
+  - ajout des fonctions: "execSQL()", "getWidgetCacheName()"; correction, ajout du paramètre \_plugin à la fonction setHealthNetwork()
