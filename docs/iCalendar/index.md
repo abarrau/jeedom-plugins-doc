@@ -9,36 +9,27 @@ L’utilisateur dispose de 3 modes de fonctionnement :
 * reconnaissance d'une "interaction" sur le contenu du titre ; après, à vous de définir les actions produites par l'interaction.
 
 # Configuration
-Ce plugin permet de retourner les évènements de votre agenda iCalendar, il suffit pour cela de créer un équipement et de lui ajouter autant de "commandes" que vous avez d'agendas à traiter. Même s’il y beaucoups de paramètres, la configuration du plugin est simple : les paramètres par défaut peuvent être conservés, ce qui facilite la création. +
+Ce plugin permet de retourner les évènements de votre agenda iCalendar, il suffit pour cela de créer un équipement et de lui ajouter autant de "commandes" que vous avez d'agendas à traiter. Même s’il y beaucoups de paramètres, la configuration du plugin est simple : les paramètres par défaut peuvent être conservés, ce qui facilite la création. <br/>
 Vous pouvez l’utiliser pour l'affichage d'agendas tout simplement ou pour récupérer des agendas vous permettant de réaliser des actions dans votre installation Jeedom.
 
 ## Installation et configuration du plugin
 
-Après téléchargement du plugin, vous devez l'activer pour profiter de ses fonctionnalités. +
-Des paramètres de configuration vous sont proposés, mais les valeurs par défaut peuvent être conservées. +
+Après téléchargement du plugin, vous devez l'activer pour profiter de ses fonctionnalités. <br/>
+Des paramètres de configuration vous sont proposés, mais les valeurs par défaut peuvent être conservées. <br/>
 
 ![Install](https://abarrau.github.io/jeedom-plugin-iCalendar-doc/assets/images/iCalendar_install.png)
 
-| Paramètre	| Type | Description|
+| Paramètre | Type | Description|
 |--|--|--|
-| TimeOut de syncrho | Zone de liste | Cette option vous permet de définir le temps que vous souhaitez laisser au plugin pour récupérer les données issues du calendrier distant. <br/>
-Théoriquement, cette action est assez rapide, mais ce paramètre est disponible en cas de besoin. <br/>
-Les valeurs possibles sont : 5 sec / 15 sec / 30 sec.|
-| Pannel: vue par défaut | Zone de liste | Lorsque vous allez sur l'écran "Panel", cette option précise la vue qui sera affichée par défaut pour l'utilisateur. <br/>
-Les valeurs possibles sont : <br/>
-- Calendrier: jours <br/>
-- Calendrier: 4 jours <br/>
-- Calendrier: semaine <br/>
-- Calendrier: mois <br/>
-- Actions: planning
+| TimeOut de syncrho | Zone de liste | Cette option vous permet de définir le temps que vous souhaitez laisser au plugin pour récupérer les données issues du calendrier distant. <br/> Théoriquement, cette action est assez rapide, mais ce paramètre est disponible en cas de besoin. <br/> Les valeurs possibles sont : 5 sec / 15 sec / 30 sec.|
+| Pannel: vue par défaut | Zone de liste | Lorsque vous allez sur l'écran "Panel", cette option précise la vue qui sera affichée par défaut pour l'utilisateur. <br/> Les valeurs possibles sont : <br/> - Calendrier: jours <br/>- Calendrier: 4 jours <br/>- Calendrier: semaine <br/>- Calendrier: mois <br/>- Actions: planning |
 | Afficher le panel desktop | Checkbox | Si coché, le panel "calendrier" sera affiché. |
-
 
 Une fois l'activation réalisée depuis la page des "équipements", vous pourrez ajouter de nouveaux calendriers iCalendar. 
 
 ![Page Equipement](https://abarrau.github.io/jeedom-plugin-iCalendar-doc/assets/images/iCalendar_pageequipement.png)
 
-*Remarque:* Le bouton "Aide à la saisie d'actions au sein d'un événement" vous permet d'assister à la création du format à placer dans le champ description de votre événement. +
+**Remarque :** Le bouton "Aide à la saisie d'actions au sein d'un événement" vous permet d'assister à la création du format à placer dans le champ description de votre événement. <br/>
 Pour rappel, le lancement automatique d'actions par le plugin n'est possible que si l'option "Autoriser les actions/scénarios" est validée au niveau de votre commande agenda. (cf. Annexe 1 : "Aide à la saisie d'un évènement dans votre agenda").
 
 ## Description des paramètres de l'équipement
@@ -72,11 +63,9 @@ image:../images/iCalendar_config01.png[]
 |=======================
 | Paramètre	| Type | Description
 3+|=== Paramètres graphiques ===
-| Autre Widget	| Checkbox + 
-_(décoché par défaut)_ | Cette option vous permet de désactiver le widget standard du plugin et donc d'utiliser le widget Jeedom ou de créer son propre widget. + 
+| Autre Widget	| Checkbox <br/>_(décoché par défaut)_ | Cette option vous permet de désactiver le widget standard du plugin et donc d'utiliser le widget Jeedom ou de créer son propre widget. + 
 _(Il est conseillé de laisser cette option décochée, pour disposer de l'ensemble des fonctionnalités du plugin)._
-| Ne pas afficher la date | Checkbox + 
-_(décoché par défaut)_ | Si l'option est cochée, la date est masquée sur le widget; le texte "aujourd'hui : JJ MOIS AAAA (SW)" n'est pas affiché pour le Dashboard et les vues. +
+| Ne pas afficher la date | Checkbox <br/>_(décoché par défaut)_ | Si l'option est cochée, la date est masquée sur le widget; le texte "aujourd'hui : JJ MOIS AAAA (SW)" n'est pas affiché pour le Dashboard et les vues. +
 Au niveau de la version mobile, le logo avec la date du jour n'est pas affiché. 
 | (multi journée) Format d'affichage | Zone de liste | Définit le format d'affichage des calendriers (si plusieurs journées sélectionnées). +
 "1 journée avec jour de navigation": permet d'afficher la journée courante ; pour voir les évènements des autres journées, cliquez sur la date. +
