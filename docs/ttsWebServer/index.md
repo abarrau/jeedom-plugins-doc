@@ -171,7 +171,7 @@ Un bouton "dupliquer", permet de dupliquer l'équipement et les commandes associ
 
 #### -- L'onglet **<u>"Paramètres"</u>** présente les paramètres disponibles au niveau de l'équipement hébergeant l'application TWS : 
 
-![Page Paramètres](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot3.jpg)
+![Page Paramètres](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot3.jpg)
 
 **Paramètres d'utilisation** : 
 
@@ -194,7 +194,7 @@ Il est donc déconseillé de faire le "yoyo" entre les voix (du moins avec la vo
 
 #### -- L'onglet **<u>"Commandes"</u>** présente les commandes disponibles au niveau de l'équipement local hébergeant l'application TWS : 
 
-![Page Paramètres](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_TWS5.jpg)
+![Page Paramètres](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_TWS5.jpg)
 
 Ces commandes sont créées à la création de l'équipement. Vous ne pouvez ni en ajouter, ni en supprimer (elles seront créées lors d'un enregistrement).
 Les actions possibles : modifier le nom, paramétrer si vous les affichez ou non et si vous souhaitez historiser les données ou non.
@@ -208,7 +208,7 @@ Les actions possibles : modifier le nom, paramétrer si vous les affichez ou non
 
 #### -- L'onglet **<u>"Etats / infos"</u>** présente de remonter des informations liée à l'application TWS : 
 
-![Page Etats/Infos](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot4.jpg)
+![Page Etats/Infos](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot4.jpg)
 
 La définition de chaque champ de cette page est décrite directement sur la page, via l'icone "?" à coté du titre.
 
@@ -227,13 +227,13 @@ Après avoir respecté ces pré-requis, cliquez sur l'icone TWS et l'apk est té
 
 L'application peut être installé sur un appareil Android (tablette,...), fonctionnement en Wifi ou sur une VM, fonctionnement en éthernet. 
 
-![Téléchargement APK](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_install_apk.jpg)
+![Téléchargement APK](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_install_apk.jpg)
 
 <span style="color:red;">**REMARQUE :**</span><br/>
 L'application n'étant pas connue du playStore, vous devez autoriser les "sources inconnues" le temps de l'installation. 
 <span style="color:red;">Une fois l'installation terminée, je recommande vivement de revenir à l'état initial en désactivant à nouveau les "sources inconnues", afin d'éviter tout risque à votre équipement Android.</span>
 
-L'APK peut aussi être téléchargé depuis l'adresse suivante (prendre la dernière version systématiquement) : <br/> [https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/tree/master/apk](https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/tree/master/apk)
+L'APK peut aussi être téléchargé depuis l'adresse suivante (prendre la dernière version systématiquement) : <br/> [https://github.com/abarrau/jeedom-plugins-doc/tree/master/ttsWebServer_apk](https://github.com/abarrau/jeedom-plugins-doc/tree/master/ttsWebServer_apk)
 
 
 ###  -- Présentation de l'application
@@ -250,7 +250,7 @@ L'application Android TWS dispose de 3 écrans, ayant des fonctionnalités diff�
 
 #### -- L'écran **<u>"principal"</u>** présente les informations et activation du service. 
 
-![APK Ecran 1](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_APK3.png)
+![APK Ecran 1](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_APK3.png)
 
 | Information | Description |
 |--|--|
@@ -274,7 +274,7 @@ Cette liste est remise à vide à chaque redémarrage de l'application (ou manue
 
 Cet écran permet d'afficher les logs de l'application pour permettre le debug en cas de problème. 
 
-![APK Ecran 1](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_APK2.png)
+![APK Ecran 1](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_APK2.png)
 
 Le rafraichissement se fait automatiquement (par défaut 5sec), ou manuellement en cliquant sur l'icone "flêches inversées".
 
@@ -285,7 +285,7 @@ L'icone "Poubelle" supprime le fichier (remise à blanc).
 
 Cet écran est accessible par le menu de configuration depuis l'écran principal. 
 
-![APK Ecran 1](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_APK1.png)
+![APK Ecran 1](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_APK1.png)
 
 | Paramètre	| Description |
 |--|--|
@@ -300,7 +300,7 @@ Cet écran est accessible par le menu de configuration depuis l'écran principal
 
 Pour pouvoir la visualiser, vous devez activer le "panel desktop" depuis la page de configuration du plugin.
 
-![Liste des messages](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot6.jpg)
+![Liste des messages](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot6.jpg)
 
 Ce tableau présente la liste des messages enregistrés et renseignés dans la bibliothèque du plugin. <br/>
 Par défaut, l'ordre d'affichage correspond au dernier message synthétisé ou utilisé, mais l'ordre peut être modifié pour réaliser vos recherches. 
