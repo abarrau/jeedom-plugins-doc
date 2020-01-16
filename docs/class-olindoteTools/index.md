@@ -31,6 +31,7 @@ __Remarque__: cette class est destinée à l'utilisation des plugins développé
 	- de savoir si le plugin est toujours utilisé (pertinant) ; 
 	- connaitre l'obsolècence du parc (version) ; 
 	- prendre des decisions sur l'intérêt du plugin en fonction des 2 points précédents. 
+- Suivre les versions de la class, par rapport au version des plugins : [tableau de synthèse](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/versionPlugin)
 
 ### Documentation des zones d'information "olindoteTools"
 - 3 zones d'informations sont affichées en bas de page de la page de gestion des plugins développés par abarrau.
