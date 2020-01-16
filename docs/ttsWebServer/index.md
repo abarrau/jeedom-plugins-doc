@@ -28,7 +28,7 @@ Les commandes du Serveur TTS peuvent être utilisées via le Widget (standard je
 
 ## # Représentation des 2 widgets possibles
 
-![widgets](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot7.jpg)
+![widgets](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot7.jpg)
 
 # Configuration
 
@@ -64,11 +64,11 @@ _Pour plus d'information se référer à l'adresse : [https://source.android.com
 Après téléchargement du plugin, vous devez l'activer pour profiter de ces fonctionnalités.
 
 La mise à niveau / installation des "Dépendances" est essentielle pour disposer de toutes les fonctionnalités du plugin. 
-_(pour plus d'informations sur les dépendances : [https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/wiki/TTS-Web-Server-Plugin-:-liste-des-d%C3%A9pendances](https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/wiki/TTS-Web-Server-Plugin-:-liste-des-d%C3%A9pendances))_
+_(pour plus d'informations sur les dépendances : [https://https://github.com/abarrau/jeedom-plugins-doc/wiki/%5BttsWebServer%5D-Plugin-:-liste-des-d%C3%A9pendances](https://https://github.com/abarrau/jeedom-plugins-doc/wiki/%5BttsWebServer%5D-Plugin-:-liste-des-d%C3%A9pendances))_
 
 Des paramètres de configuration vous sont proposés, mais les valeurs par défaut peuvent être conservées.
 
-![Configuration du plugin](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot2.jpg)
+![Configuration du plugin](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot2.jpg)
 
 | Paramètre | Description |
 |--|--|
@@ -83,7 +83,7 @@ Des paramètres de configuration vous sont proposés, mais les valeurs par défa
 
 ## # Page des équipements TWS
 
-![Page Equipement](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot1.jpg)
+![Page Equipement](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot1.jpg)
 
 Cette page se découpe en 3 zones : 
 
@@ -103,7 +103,7 @@ Cette page se découpe en 3 zones :
 * `(*1)`: Pour disposer de ce bouton, les fonctions linux "ARP-SCAN" et "NC" doivent être installées.
 De plus l'application Android doit être lancée et active, ainsi que le device (tablette,...) en service et non en veille, sinon la découverte ne pourra pas se faire.
 * En cliquant sur l'icone tableau à coté de la zone recherche, vous permet de passer d'un affichage "icone" à un affichage sous forme de "tableau".
-![Page Equipement (tableau)](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot1_tableau.jpg)
+![Page Equipement (tableau)](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot1_tableau.jpg)
 
 ## # Description des paramètres du Serveur TWS
 
@@ -118,11 +118,11 @@ Cette page est appelée via l'équipement "Réglages TTS" et permet de configure
 * Objet parent : emplacement d'affichage de l'équipement ; 
 * les statuts : activé et visible ; (_Remarque: si cet équipement était désactivé, le plugin ne pourrait plus fonctionner_). 
 
-![Page Equipement (tableau)](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_TWS1.jpg)
+![Page Equipement (tableau)](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_TWS1.jpg)
 
 #### -- L'onglet **<u>"Paramètres"</u>** présente les paramètres de configuration : 
 
-![Page Paramètres](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_screenshot5.jpg)
+![Page Paramètres](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot5.jpg)
 
 **Paramètres d'utilisation** : 
 
@@ -151,7 +151,7 @@ _(exemple en configuration Apache: `/var/www/dataTTSWebServer/`)_
 
 #### -- L'onglet **<u>"Player TTS"</u>** affiche les différents players disponibles : 
 
-![Page Player TTS](https://abarrau.github.io/jeedom-plugin-ttsWebServer-doc/assets/images/ttsWebServer_TWS3.jpg)
+![Page Player TTS](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_TWS3.jpg)
 
 Depuis cette page, vous pouvez renommer le nom des commandes qui ont été détectées comme des players potentiels pour la diffusion de TTS.
 Ce nom apparait au niveau du widget (bouton de validation d'envoi du texte à synthétiser) sur le widget de l'équipement "Serveur".  
@@ -333,13 +333,13 @@ A savoir :
 
 Une API est mise à disposition pour comprendre et troubleshooter les échanges entre le plugin et l'application. <br/>
 Elle est disponible sur l'espace Github : 
-[https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/wiki/TTS-Web-Server-Android-:-Description-des-m%C3%A9thodes](https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/wiki/TTS-Web-Server-Android-:-Description-des-m%C3%A9thodes).
+[https://github.com/abarrau/jeedom-plugins-doc/wiki/%5BttsWebServer%5D-Android-:-Description-des-m%C3%A9thodes](https://github.com/abarrau/jeedom-plugins-doc/wiki/%5BttsWebServer%5D-Android-:-Description-des-m%C3%A9thodes).
 
 ### -- Intégration des fonctionnalités TWS dans des plugins tiers
 
 Une API est mise à disposition pour permettre aux développeurs de plugins tiers d'utiliser les fonctionnalités de ce plugin TWS, pour récupérer (par exemple) des fichiers audios issus du plugin TWS. <br/>
 La documentation est disponible sur l'espace Github : 
-[https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/wiki/TTS-Web-Server-Plugin-:-fonctions-pour-plugins-tiers](https://github.com/abarrau/jeedom-plugin-ttsWebServer-doc/wiki/TTS-Web-Server-Plugin-:-fonctions-pour-plugins-tiers).
+[https://github.com/abarrau/jeedom-plugins-doc/wiki/%5BttsWebServer%5D-Plugin-:-liste-des-d%C3%A9pendances](https://github.com/abarrau/jeedom-plugins-doc/wiki/%5BttsWebServer%5D-Plugin-:-liste-des-d%C3%A9pendances).
 
 
 ## # Synthèse des intégrations _(juin 2019)_
