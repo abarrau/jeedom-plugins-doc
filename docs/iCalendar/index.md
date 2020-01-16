@@ -12,12 +12,12 @@ L’utilisateur dispose de 3 modes de fonctionnement :
 Ce plugin permet de retourner les évènements de votre agenda iCalendar, il suffit pour cela de créer un équipement et de lui ajouter autant de "commandes" que vous avez d'agendas à traiter. Même s’il y beaucoups de paramètres, la configuration du plugin est simple : les paramètres par défaut peuvent être conservés, ce qui facilite la création. <br/>
 Vous pouvez l’utiliser pour l'affichage d'agendas tout simplement ou pour récupérer des agendas vous permettant de réaliser des actions dans votre installation Jeedom.
 
-## Installation et configuration du plugin
+## # Installation et configuration du plugin
 
 Après téléchargement du plugin, vous devez l'activer pour profiter de ses fonctionnalités. <br/>
 Des paramètres de configuration vous sont proposés, mais les valeurs par défaut peuvent être conservées. <br/>
 
-![Install](https://abarrau.github.io/jeedom-plugin-iCalendar-doc/assets/images/iCalendar_install.png)
+![Install](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_install.png)
 
 | Paramètre | Type | Description|
 |--|--|--|
@@ -27,136 +27,103 @@ Des paramètres de configuration vous sont proposés, mais les valeurs par défa
 
 Une fois l'activation réalisée depuis la page des "équipements", vous pourrez ajouter de nouveaux calendriers iCalendar. 
 
-![Page Equipement](https://abarrau.github.io/jeedom-plugin-iCalendar-doc/assets/images/iCalendar_pageequipement.png)
+![Page Equipement](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_pageequipement.png)
 
 **Remarque :** Le bouton "Aide à la saisie d'actions au sein d'un événement" vous permet d'assister à la création du format à placer dans le champ description de votre événement. <br/>
 Pour rappel, le lancement automatique d'actions par le plugin n'est possible que si l'option "Autoriser les actions/scénarios" est validée au niveau de votre commande agenda. (cf. Annexe 1 : "Aide à la saisie d'un évènement dans votre agenda").
 
-## Description des paramètres de l'équipement
+<span style="color:blue;">NOTES :</span>
+* En cliquant sur l’icone tableau à coté de la zone recherche, vous permet de passer d’un affichage “icone” à un affichage sous forme de “tableau”.
+
+![Page Equipement tableau](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_pageequipementtableau.png)
+
+
+## # Description des paramètres de l'équipement
  
 Un bouton "dupliquer", permet de dupliquer l'équipement et les commandes associées. +
 
-*[lime underline]#L'onglet "Equipement"#* présente les informations standard de Jeedom : 
+#### -- L'onglet "Equipement" présente les informations standard de Jeedom : 
 
-![Config. Equipement](https://abarrau.github.io/jeedom-plugin-iCalendar-doc/assets/images/iCalendar_screenshot2.jpg)
+![Config. Equipement](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot2.jpg)
 
-| Paramètre	| Type | Description |
+| Paramètre | Type | Description |
 |--|--|--|
-| Nom de l’équipement | Zone de texte | Nom donné à votre équipement agenda iCalendar, il s'affiche sur le widget. + 
-*Remarque :* <br/> - il est possible de le masquer si vous cochez l'option "Ne pas afficher le nom" dans la configuration de la commande; <br/> - ce nom contient également un lien depuis le dashboard permettant de revenir directement à la configuration. |
+| Nom de l’équipement | Zone de texte | Nom donné à votre équipement agenda iCalendar, il s'affiche sur le widget. <br> _**Remarque :**_ <br/>- il est possible de le masquer si vous cochez l'option "Ne pas afficher le nom" dans la configuration de la commande; <br/>- ce nom contient également un lien depuis le dashboard permettant de revenir directement à la configuration. |
 | Objet parent 	| Liste de choix | Associe l'équipement agenda iCalendar à un objet (permettant de définir sa position sur le dashboard)
-| Activer	| Checkbox <br/>_(décoché par défaut)_ | Si coché, active l'équipement. <br/> *Remarque :* Si l'option est décochée, l'équipement est désactivé et aucune requête ne sera demandée, échangée avec votre agenda externe ; l'équipement est _"en attente"_. |
+| Activer	| Checkbox <br/>_(décoché par défaut)_ | Si coché, active l'équipement. <br/> _**Remarque :**_ Si l'option est décochée, l'équipement est désactivé et aucune requête ne sera demandée, échangée avec votre agenda externe; l'équipement est _"en attente"_. |
 | Visible	| Checkbox <br/>_(décoché par défaut)_ | Si l'option est cochée, affiche l'équipement. <br/>*Remarque :* Si l'option est décochée, l'équipement fonctionne normalement; les requêtes continuent d'être envoyées vers votre agenda externe, mais il ne s'affiche pas sur votre dashboard. |
 | Catégorie	| Checkbox <br/>_(multichoix)_ | Définit la catégorie à laquelle est rattaché l'agenda. |
 
-=== Options de sauvegarde ===
-| Paramètre	| Type | Description |
+**Options de sauvegarde**
+
+| Paramètre | Type | Description |
 |--|--|--|
 | Forcer  la synchronisation | Checkbox | Permet de réaliser une synchronisation des données de votre agenda, au moment de l'enregistrement de l'équipement. |
 
 
-*[lime underline]#L'onglet "Paramètres complémentaires"#* : 
+#### -- L'onglet "Paramètres complémentaires" : 
 
-image:../images/iCalendar_config01.png[]
+![Config](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_config01.png)
 
-[cols="2,2,8", frame="topbot", options="header"]
-|=======================
-| Paramètre	| Type | Description
-3+|=== Paramètres graphiques ===
-| Autre Widget	| Checkbox <br/>_(décoché par défaut)_ | Cette option vous permet de désactiver le widget standard du plugin et donc d'utiliser le widget Jeedom ou de créer son propre widget. + 
-_(Il est conseillé de laisser cette option décochée, pour disposer de l'ensemble des fonctionnalités du plugin)._
-| Ne pas afficher la date | Checkbox <br/>_(décoché par défaut)_ | Si l'option est cochée, la date est masquée sur le widget; le texte "aujourd'hui : JJ MOIS AAAA (SW)" n'est pas affiché pour le Dashboard et les vues. +
-Au niveau de la version mobile, le logo avec la date du jour n'est pas affiché. 
-| (multi journée) Format d'affichage | Zone de liste | Définit le format d'affichage des calendriers (si plusieurs journées sélectionnées). +
-"1 journée avec jour de navigation": permet d'afficher la journée courante ; pour voir les évènements des autres journées, cliquez sur la date. +
-"tout affiché": permet d'afficher tous les évènements pour l'ensemble des jours sélectionnés. 
-| (multi agenda) Format d'affichage | Zone de liste | Définit le format d'affichage des calendiers, soit en mode vertical (standard) ou en mode horizontal. +
-*Remarque:* Ne s'applique que pour la version Dashboard; la version mobile est toujours verticale.
-| Redessiner la tuille automatiquement | Checkbox | Permet de redimensionner automatiquement la tuile au niveau du dashboard desktop ou mobile, si le nombre d'évènements change. +
-Cela évite que la liste sorte en dehors de la tuile.
-3+|=== Paramètres événements ===
-| Ajouter Message sur "action" | Checkbox +
-_(décoché par défaut)_ | Cette option permet d'ajouter un message à la boîte des messages Jeedom, dans le cas où le plugin a déclenché une action, un scénario ou une interaction. +
-*Remarque :* Pour cela, il faut avoir autorisé les actions/scénarios ou interactions au niveau de votre commande agenda. + 
-Cette option ne fonctionne pas dans le cas d'une utilisation par déclenchement de scénario sur mise à jour de la commande.
-| Autorise "Rattrapage" / Période | Checkbox +
-_(décoché par défaut)_ +
- +
-Liste de choix | L'activation de cette option permet de pouvoir lancer des actions/scénarios/interactions, mmême si l'heure exacte de l'événement est dépassé. +
-Le plugin dispose alors d'une fenêtre de temps pour déclencher ces actions, si elles n'ont pas été faites dans les temps. +
-*Remarque:* Ce paramètre est surtout utile aux petites configurations (RPI1) qui pouvaient par moment se retrouver en dehors de la minute de début ou de fin de l'événement et l'action ne se lançait pas. +
-_(exemple: événement débute à 8h30, hors à 30, il y a beaucoup de crons de lancés. On pouvait constater que le cron minute était en fait traité à 31 ; l'instant T ne correspondant plus à l'heure de début de l'événement, les actions/scénarios associés étaient ignorés)_ +
-Cette option peut aussi être utile en cas de coupure de courant courte, vous pourrez rattraper des actions non exécutées. +
- +
-Les périodes disponibles sont : +
-- les 2 dernières minutes +
-- les 5 dernières minutes +
-- les 15 dernières minutes +
-- l'heure précédente +
-*Remarque:* ces 4 périodes sont glissantes par rapport à l'instant T.
-3+|=== Paramètres traitement ===
-| Log séparée par Agenda | Checkbox | Permet de séparer les fichiers de logs des agendas (pour une meilleure lecture en mode débug).
-|=======================
+**Paramètres graphique**
+| Paramètre | Type | Description |
+| Autre Widget	| Checkbox<br/>_(décoché par défaut)_ | Cette option vous permet de désactiver le widget standard du plugin et donc d'utiliser le widget Jeedom ou de créer son propre widget.<br/>_(Il est conseillé de laisser cette option décochée, pour disposer de l'ensemble des fonctionnalités du plugin)._ |
+| Ne pas afficher la date | Checkbox<br/>_(décoché par défaut)_ | Si l'option est cochée, la date est masquée sur le widget; le texte "aujourd'hui : JJ MOIS AAAA (SW)" n'est pas affiché pour le Dashboard et les vues.<br/>Au niveau de la version mobile, le logo avec la date du jour n'est pas affiché.  |
+| (multi journée) Format d'affichage | Zone de liste | Définit le format d'affichage des calendriers (si plusieurs journées sélectionnées).<br/>- "1 journée avec jour de navigation": permet d'afficher la journée courante ; pour voir les évènements des autres journées, cliquez sur la date.<br/>- "tout affiché": permet d'afficher tous les évènements pour l'ensemble des jours sélectionnés. | 
+| (multi agenda) Format d'affichage | Zone de liste | Définit le format d'affichage des calendiers, soit en mode vertical (standard) ou en mode horizontal.<br/>_**Remarque:**_ Ne s'applique que pour la version Dashboard; la version mobile est toujours verticale. |
+| Redessiner la tuille automatiquement | Checkbox | Permet de redimensionner automatiquement la tuile au niveau du dashboard desktop ou mobile, si le nombre d'évènements change.<br/>Cela évite que la liste sorte en dehors de la tuile. |
+
+**Paramètres événements**
+| Paramètre | Type | Description |
+|--|--|--|
+| Ajouter Message sur "action" | Checkbox<br/>_(décoché par défaut)_ | Cette option permet d'ajouter un message à la boîte des messages Jeedom, dans le cas où le plugin a déclenché une action, un scénario ou une interaction.<br/>_**Remarque:**_ Pour cela, il faut avoir autorisé les actions/scénarios ou interactions au niveau de votre commande agenda.<br/>Cette option ne fonctionne pas dans le cas d'une utilisation par déclenchement de scénario sur mise à jour de la commande. |
+| Autorise "Rattrapage" / Période | Checkbox<br/>_(décoché par défaut)_<br/>Liste de choix | L'activation de cette option permet de pouvoir lancer des actions/scénarios/interactions, mmême si l'heure exacte de l'événement est dépassé.<br/>Le plugin dispose alors d'une fenêtre de temps pour déclencher ces actions, si elles n'ont pas été faites dans les temps.<br/>_**Remarque:**_ Ce paramètre est surtout utile aux petites configurations (RPI1) qui pouvaient par moment se retrouver en dehors de la minute de début ou de fin de l'événement et l'action ne se lançait pas.<br/>_(exemple: événement débute à 8h30, hors à 30, il y a beaucoup de crons de lancés. On pouvait constater que le cron minute était en fait traité à 31 ; l'instant T ne correspondant plus à l'heure de début de l'événement, les actions/scénarios associés étaient ignorés)_ <br/> Cette option peut aussi être utile en cas de coupure de courant courte, vous pourrez rattraper des actions non exécutées. <br/><br/> Les périodes disponibles sont : <br/>- les 2 dernières minutes <br/>- les 5 dernières minutes <br/>- les 15 dernières minutes <br/>- l'heure précédente <br/>_**Remarque:**_ ces 4 périodes sont glissantes par rapport à l'instant T. |
+
+**Paramètres traitement**
+| Paramètre | Type | Description |
+|--|--|--|
+| Log séparée par Agenda | Checkbox | Permet de séparer les fichiers de logs des agendas (pour une meilleure lecture en mode débug). |
 
 
-## Description des paramètres des agendas
+## # Description des paramètres des agendas
 
-Les agendas peuvent être triés par ordre d'affichage, en cliquant sur l'icône "double flêches" en haut à gauche et en déplaçant le tableau de haut en bas. +
+Les agendas peuvent être triés par ordre d'affichage, en cliquant sur l'icône "double flêches" en haut à gauche et en déplaçant le tableau de haut en bas. <br/>
 
-image:../images/iCalendar_screenshot3.jpg[]
+![Param](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot3.jpg)
 
-[cols="2,2,8", frame="topbot", options="header"]
-|=======================
-| Paramètre	| Type | Description
-3+|=== Nom et URL ===
+**Nom et URL**
+| Paramètre | Type | Description |
+|--|--|--|
 | Nom | Zone de texte | Permet de donner un nom au calendrier ; cette valeur s'affiche dans la zone de titre du calendier sur le widget. 
-| Nom ics | Zone de texte | Nom récupéré au niveau du fichier ICS ; valeur non modifiable. 
-| Type d'agenda | Zone de liste | Vous permet de définir le type d'agenda que vous configurez et la méthode de récupération de l'ICS. Les choix possibles sont : +
-- `récupération d'un fichier ics` : correspond au téléchargement d'un fichier issu d'un serveur tiers ; +
-- `lecture d'un agenda CalDav` : permet de récupérer le contenu d'un agenda CalDav et d'avoir un fichier ics local ;
+| Nom ics | Zone de texte | Nom récupéré au niveau du fichier ICS ; valeur non modifiable. |
+| Type d'agenda | Zone de liste | Vous permet de définir le type d'agenda que vous configurez et la méthode de récupération de l'ICS. Les choix possibles sont : <br/>- `récupération d'un fichier ics` : correspond au téléchargement d'un fichier issu d'un serveur tiers ; <br/>- `lecture d'un agenda CalDav` : permet de récupérer le contenu d'un agenda CalDav et d'avoir un fichier ics local ; |
 | URL de l'agenda | Zone de texte | Définit l'URL du fichier ics. Pour retrouver l'URL, voir l'Annexe 3.
-| Utilisateur | Zone de texte | (s'affiche uniquement en "caldav") +
-Permet de définir le nom de l'utilisateur du serveur CalDav.
-| Mot de passe | Zone de texte | (s'affiche uniquement en "caldav") +
-Permet de définir le mot de passe de l'utilisateur du serveur CalDav.
-| Nom agenda | Zone de texte | (s'affiche uniquement en "caldav") +
-Caldav offrant la possibilité d'avoir plusieurs agendas actifs, vous pouvez spécifier ici le nom de l'agenda à récupérer. +
-Ce champ n'est pas obligatoire; s'il est non renseigné, le plugin prendra le 1er agenda retourné par le serveur Caldav ("personnal" généralement). +
-*Remarque:* un bouton d'aide vous permet de visualiser la liste des agendas disponibles et de copier le nom de l'agenda souhaité. 
-3+|=== Données d'utilisation ===
-| Format données | Zone de liste +
-_("événement sur la journée" par défaut)_ | Définit le "format" à afficher au niveau du widget et contenu dans la commande ; 3 valeurs sont disponibles (cf. Annexe 4) : +
-- `événement sur la journée` : affiche et traite tous les évènements de la journée (passés, en cours, à venir) ; +
-- `événement heure à venir` : affiche et traite les événements courants, + ceux de l'heure à venir (même s'ils n'ont pas démarré) ; +
-- `événement courant` : affiche et traite les événements en cours uniquement ;
-| Titre uniquement | Checkbox + 
-_(décoché par défaut)_ | Cette option n'est disponible que si "format de données" = " événement courant". +
-Le contenu de la commande agenda est alors la plus simpliste possible, elle ne présente que les titres ; tous les paramètres annexes (id, état) à l'événement ne sont pas disponibles. +
-*Remarque: Si vous utilisez cette option, l'option "Autoriser les scénarios/actions" sera INVALIDEE techniquement.* +
-| Période à traiter | Zone de liste +
-_("jour courant" par défaut)_ | Définit le nombre de jours à traiter : +
-- `jour courant` : gère les données de la journée courante au niveau de la commande "J0" ; +
-- `+ lendemain` : gère les données de la journée courante et celles du lendemain (J0+J1) ; +
-- `+ 2jours` : gère les données de la journée courante et celles des 2 jours suivants (J0+J1+J2) ; +
-- `1 semaine` : gère les données de la journée courante et celles des 6 jours suivants (J0 à J6) ; +
-*Remarque:* n'est disponible que si "format de données" = "événement sur la journée". +
-Dans le cas où vous êtes dans une configuration supérieure à la journée courante, une icône orange apparait à coté du titre; en cliquant dessus, la liste des commandes associées aux autres journées apparait en dessous du tableau. 
-| Valeur par défaut | Zone de texte | Valeur affichée par défaut, lorsqu'il n'y a aucun évènement dans le planning. +
-*Remarque :* Si rien n'est indiqué, la valeur "Aucun" est retournée. 
-| Indicateurs début/fin | Checkbox + 
-_(décoché par défaut)_ | Permet de définir si les indicateurs de début/de fin d'évènement sont utilisés, aussi bien à l'affichage et aussi pour l'execution d'une action/scénario; +
-- Si coché : les indicateurs "Début" ([yellow-background]#;DA;#) et "Fin" ([yellow-background]#;FA;#) d'activité sont utilisés en complément de l'indicateur "Actif" +
-- Si décoché : seul l'indicateur d'état "Actif" est utilisé ([yellow-background]#;A;#).
-| Autoriser les scénarios/actions | Checkbox +
-_(décoché par défaut)_ | Cette option permet au plugin de lancer automatiquement les scénarios ou actions, si la description de l'événement respecte correctement le format attendu pour cette action (cf. Annexe 1 : "Aide à la saisie d'un évènement").
-| Autoriser les interactions | Checkbox +
-_(décoché par défaut)_ | Cette option permet au plugin de lancer une recherche d'interaction sur la base du titre de l'événement. +
-*Remarque:* cette option ne s'active uniquement que sur les événements qui n'ont pas d'action/scénarios configurés dans leurs descriptions. +
-| Historiser les actions | Checkbox +
-_(décoché par défaut)_ | A chaque action/scénario/interaction lancé par le plugin, l'action produite est tracée (pour ne pas être relancée plus tard). +
-Cette option permet de conserver ces actions traitées au-delà de la journée courante. 
-| Fréquence synchro | Liste de choix +
-_(30 min, par défaut)_ | L'utilisateur peut configurer la période de rafraîchissement du fichier cache (minimum 30 min) ; (cf. tableau Annexe 2).
+| Utilisateur | Zone de texte | (s'affiche uniquement en "caldav") <br/> Permet de définir le nom de l'utilisateur du serveur CalDav. |
+| Mot de passe | Zone de texte | (s'affiche uniquement en "caldav") <br/> Permet de définir le mot de passe de l'utilisateur du serveur CalDav. |
+| Nom agenda | Zone de texte | (s'affiche uniquement en "caldav") <br/>Caldav offrant la possibilité d'avoir plusieurs agendas actifs, vous pouvez spécifier ici le nom de l'agenda à récupérer. <br/>Ce champ n'est pas obligatoire; s'il est non renseigné, le plugin prendra le 1er agenda retourné par le serveur Caldav ("personnal" généralement). <br/>_**Remarque:**_ un bouton d'aide vous permet de visualiser la liste des agendas disponibles et de copier le nom de l'agenda souhaité. |
+
+**Données d'utilisation**
+| Paramètre | Type | Description |
+|--|--|--|
+| Format données | Zone de liste <br/>_("événement sur la journée" par défaut)_ | Définit le "format" à afficher au niveau du widget et contenu dans la commande ; 3 valeurs sont disponibles (cf. Annexe 4) : <br/>- `événement sur la journée` : affiche et traite tous les évènements de la journée (passés, en cours, à venir) ; <br/>- `événement heure à venir` : affiche et traite les événements courants, + ceux de l'heure à venir (même s'ils n'ont pas démarré) ; <br/>- `événement courant` : affiche et traite les événements en cours uniquement ; |
+| Titre uniquement | Checkbox <br/>_(décoché par défaut)_ | Cette option n'est disponible que si "format de données" = " événement courant". <br/> Le contenu de la commande agenda est alors la plus simpliste possible, elle ne présente que les titres ; tous les paramètres annexes (id, état) à l'événement ne sont pas disponibles. <br/> **Remarque: Si vous utilisez cette option, l'option "Autoriser les scénarios/actions" sera INVALIDEE techniquement.** |
+| Période à traiter | Zone de liste <br/>_("jour courant" par défaut)_ | Définit le nombre de jours à traiter : <br/>
+- `jour courant` : gère les données de la journée courante au niveau de la commande "J0" ; <br/>
+- `+ lendemain` : gère les données de la journée courante et celles du lendemain (J0+J1) ; <br/>
+- `+ 2jours` : gère les données de la journée courante et celles des 2 jours suivants (J0+J1+J2) ; <br/>
+- `1 semaine` : gère les données de la journée courante et celles des 6 jours suivants (J0 à J6) ; <br/>
+_**Remarque:**_ n'est disponible que si "format de données" = "événement sur la journée". <br/>
+Dans le cas où vous êtes dans une configuration supérieure à la journée courante, une icône orange apparait à coté du titre; en cliquant dessus, la liste des commandes associées aux autres journées apparait en dessous du tableau. |
+| Valeur par défaut | Zone de texte | Valeur affichée par défaut, lorsqu'il n'y a aucun évènement dans le planning. <br/>**Remarque :** Si rien n'est indiqué, la valeur "Aucun" est retournée. |
+| Indicateurs début/fin | Checkbox <br/>_(décoché par défaut)_ | Permet de définir si les indicateurs de début/de fin d'évènement sont utilisés, aussi bien à l'affichage et aussi pour l'execution d'une action/scénario; <br/>
+- Si coché : les indicateurs "Début" (<span style="background-color:yellow;">#;DA;#</span>) et "Fin" (<span style="background-color:yellow;">#;FA;#</span>) d'activité sont utilisés en complément de l'indicateur "Actif" <br/>
+- Si décoché : seul l'indicateur d'état "Actif" est utilisé (<span style="background-color:yellow;">#;A;#</span>).
+| Autoriser les scénarios/actions | Checkbox <br/>_(décoché par défaut)_ | Cette option permet au plugin de lancer automatiquement les scénarios ou actions, si la description de l'événement respecte correctement le format attendu pour cette action (cf. Annexe 1 : "Aide à la saisie d'un évènement"). |
+| Autoriser les interactions | Checkbox <br/> _(décoché par défaut)_ | Cette option permet au plugin de lancer une recherche d'interaction sur la base du titre de l'événement. <br/> _**Remarque:**_ cette option ne s'active uniquement que sur les événements qui n'ont pas d'action/scénarios configurés dans leurs descriptions. |
+| Historiser les actions | Checkbox <br/>_(décoché par défaut)_ | A chaque action/scénario/interaction lancé par le plugin, l'action produite est tracée (pour ne pas être relancée plus tard). <br/> Cette option permet de conserver ces actions traitées au-delà de la journée courante. |
+| Fréquence synchro | Liste de choix <br/> _(30 min, par défaut)_ | L'utilisateur peut configurer la période de rafraîchissement du fichier cache (minimum 30 min) ; (cf. tableau Annexe 2). |
+
+
 3+|=== Option graphique ===
 | Afficher calendrier | Checkbox + 
 _(coché par défaut)_ | Paramètre graphique ; permet de définir si le calendrier doit être affiché dans le widget. + 
@@ -572,41 +539,36 @@ Mais pour les utilisateurs qui veulent aller plus loin dans la configuration, vo
 # FAQ
 
 ### --- _Peut-on visualiser les futurs évènements ?_
-Avec les valeurs "événement heure à venir" et "événement sur la journée" du paramètre "format donnée" : oui d'un point de vue affichage sur le widget. +
-Par contre, le traitement de futurs évènements n'est pas possible (ils ne sont présents qu'en terme d'affichage), sauf si vous parsez les informations. 
+Avec les valeurs "événement heure à venir" et "événement sur la journée" du paramètre "format donnée" : oui d'un point de vue affichage sur le widget. <br/> Par contre, le traitement de futurs évènements n'est pas possible (ils ne sont présents qu'en terme d'affichage), sauf si vous parsez les informations. 
 
 ### --- _J'ai modifié mon agenda et l'évènement n'apparaît pas..._
-Le rafraîchissement du cache est réalisé en fonction du paramétrage que vous avez configuré (minimum 30 min). +
-Toutes modifications sur l'agenda n'apparaîtront sur le plugin iCalendar qu'aux heures fixes liées à la configuration définie (cf. doc). +
-Mais il est possible de forcer cette synchronisation au moment de l'enregistrement de l'agenda (équipement).
+Le rafraîchissement du cache est réalisé en fonction du paramétrage que vous avez configuré (minimum 30 min). <br/> Toutes modifications sur l'agenda n'apparaîtront sur le plugin iCalendar qu'aux heures fixes liées à la configuration définie (cf. doc). <br/> Mais il est possible de forcer cette synchronisation au moment de l'enregistrement de l'agenda (équipement).
 
 ### --- _Quelle période de l'agenda est affichée dans le widget ?_
-La récupération des données et l'affichage dans le widget ne traitent que des données de la journée courante. +
-Si l'évènement fait plus d'une journée, les heures de début et de fin sont présentées uniquement pour la journée en cours. +
-_(exemple si l'évènement est configurée sur jour1 10h - jour2 10h; le jour 1, il sera affiché: 10h-23h59 et jour2: 0h-10h)_ +
+La récupération des données et l'affichage dans le widget ne traitent que des données de la journée courante. <br/> 
+Si l'évènement fait plus d'une journée, les heures de début et de fin sont présentées uniquement pour la journée en cours. <br/>
+_(exemple si l'évènement est configurée sur jour1 10h - jour2 10h; le jour 1, il sera affiché: 10h-23h59 et jour2: 0h-10h)_ <br/>
 Même pour une configuration en "heure suivante", les informations seront affichées uniquement jusqu'à 23h59.
 
 ### --- _Les bornes sont-elles incluses ?_
-L'heure de début est incluse : la 1ère minute est "active" et remonte l'information [yellow-background]#;DA;# (exemple: 10h-18h: 10h00 contient [yellow-background]#;DA;#) +
-L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information [yellow-background]#;FA;# ; sauf pour 23h59. +
-_(exemple 1: 10h-18h: 17h59 contient [yellow-background]#;FA;#, à 18h00 l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)_. +
+L'heure de début est incluse : la 1ère minute est "active" et remonte l'information [yellow-background]#;DA;# (exemple: 10h-18h: 10h00 contient <span >#;DA;#) <br/>
+L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information [yellow-background]#;FA;# ; sauf pour 23h59. <br/>
+_(exemple 1: 10h-18h: 17h59 contient [yellow-background]#;FA;#, à 18h00 l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)_. <br/>
 _(exemple 2: 19h-0h: l'heure de fin est convertie en 23h59 et contient [yellow-background]#;FA;#, à 0h l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)._
 
 ### --- _Sur la version mobile, je ne vois pas les évènements passés en affichage journée..._
 Sur la version mobile, seuls les évènements en cours et à venir sont affichés. Même en mode journée, les évènements passés ne sont plus affichés (contrairement à l'affichage dashboard).
 
 ### --- _J'ai des messages d'erreur du type "La commande action : [objet][equipement][cmd], est inconnue pour l événement suivant : mon titre événement. Revoir la configuration de votre événement" qui s'affiche au niveau de la messagerie Jeedom ?_
-L'id ou le nom de la commande, ou l'id du scénario que vous déclaré en tant qu'action dans votre événement n'existe pas (ou plus) dans Jeedom.
-Vous devez vérifier si vous n'avez pas modifié cette commande/scénario et faire la modification dans votre événement au niveau de votre agenda.
+L'id ou le nom de la commande, ou l'id du scénario que vous déclaré en tant qu'action dans votre événement n'existe pas (ou plus) dans Jeedom. <br/> Vous devez vérifier si vous n'avez pas modifié cette commande/scénario et faire la modification dans votre événement au niveau de votre agenda.
 
 ### --- _Existe-il un agenda des jours fériés ?_
-Oui il existe un agenda google qui liste les jours fériés, l'URL est la suivante (ici pour la France) : +
+Oui il existe un agenda google qui liste les jours fériés, l'URL est la suivante (ici pour la France) : <br/>
 https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics
 *Remarque :* par contre, ce calendrier présente aussi des évènements (comme la fête des mères) qui ne sont pas des jours fériés ... :(
 
 
-# Troubleshoting
-### (?) _Mes scénarios réagissent à des évènements passés ou futurs (mode prochaine heure ou journée)_
+### --- (?) _Mes scénarios réagissent à des évènements passés ou futurs (mode prochaine heure ou journée)_
 Dans l'analyse de la trame, il faut vérifier que vous êtes sur un évènement actif; en vérifiant que [yellow-background]#;A;# est présent. _(exemple : "..." matches "/;A;mon event/")_.
 Voir la documentation pour plus d'explications.
 
@@ -615,4 +577,5 @@ Voir la documentation pour plus d'explications.
 
 A l'origine, Google permettait d'échanger les données au format csv, et je participais au développement du plugin officiel gCalendar. <br/>
 Lorsque Google a arrêté cette fonction au profit du format iCal (ics), Jeedom a arrêté le plugin gCalendar. J'ai donc créé le plugin iCalendar en remplacement. <br/>
-Son objectif était d'automatiser des actions en les configurants dans un calendrier accessibles à tous au sein d'une famille (via google). 
+Son objectif était d'automatiser des actions en les configurants dans un calendrier accessibles à tous au sein d'une famille (via google). <br/>
+Bonne utilisation ....
