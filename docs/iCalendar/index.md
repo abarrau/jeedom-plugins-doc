@@ -66,7 +66,9 @@ Un bouton "dupliquer", permet de dupliquer l'équipement et les commandes associ
 ![Config](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_config01.png)
 
 **Paramètres graphique**
+
 | Paramètre | Type | Description |
+|--|--|--|
 | Autre Widget	| Checkbox<br/>_(décoché par défaut)_ | Cette option vous permet de désactiver le widget standard du plugin et donc d'utiliser le widget Jeedom ou de créer son propre widget.<br/>_(Il est conseillé de laisser cette option décochée, pour disposer de l'ensemble des fonctionnalités du plugin)._ |
 | Ne pas afficher la date | Checkbox<br/>_(décoché par défaut)_ | Si l'option est cochée, la date est masquée sur le widget; le texte "aujourd'hui : JJ MOIS AAAA (SW)" n'est pas affiché pour le Dashboard et les vues.<br/>Au niveau de la version mobile, le logo avec la date du jour n'est pas affiché.  |
 | (multi journée) Format d'affichage | Zone de liste | Définit le format d'affichage des calendriers (si plusieurs journées sélectionnées).<br/>- "1 journée avec jour de navigation": permet d'afficher la journée courante ; pour voir les évènements des autres journées, cliquez sur la date.<br/>- "tout affiché": permet d'afficher tous les évènements pour l'ensemble des jours sélectionnés. | 
@@ -74,12 +76,14 @@ Un bouton "dupliquer", permet de dupliquer l'équipement et les commandes associ
 | Redessiner la tuille automatiquement | Checkbox | Permet de redimensionner automatiquement la tuile au niveau du dashboard desktop ou mobile, si le nombre d'évènements change.<br/>Cela évite que la liste sorte en dehors de la tuile. |
 
 **Paramètres événements**
+
 | Paramètre | Type | Description |
 |--|--|--|
 | Ajouter Message sur "action" | Checkbox<br/>_(décoché par défaut)_ | Cette option permet d'ajouter un message à la boîte des messages Jeedom, dans le cas où le plugin a déclenché une action, un scénario ou une interaction.<br/>_**Remarque:**_ Pour cela, il faut avoir autorisé les actions/scénarios ou interactions au niveau de votre commande agenda.<br/>Cette option ne fonctionne pas dans le cas d'une utilisation par déclenchement de scénario sur mise à jour de la commande. |
 | Autorise "Rattrapage" / Période | Checkbox<br/>_(décoché par défaut)_<br/>Liste de choix | L'activation de cette option permet de pouvoir lancer des actions/scénarios/interactions, mmême si l'heure exacte de l'événement est dépassé.<br/>Le plugin dispose alors d'une fenêtre de temps pour déclencher ces actions, si elles n'ont pas été faites dans les temps.<br/>_**Remarque:**_ Ce paramètre est surtout utile aux petites configurations (RPI1) qui pouvaient par moment se retrouver en dehors de la minute de début ou de fin de l'événement et l'action ne se lançait pas.<br/>_(exemple: événement débute à 8h30, hors à 30, il y a beaucoup de crons de lancés. On pouvait constater que le cron minute était en fait traité à 31 ; l'instant T ne correspondant plus à l'heure de début de l'événement, les actions/scénarios associés étaient ignorés)_ <br/> Cette option peut aussi être utile en cas de coupure de courant courte, vous pourrez rattraper des actions non exécutées. <br/><br/> Les périodes disponibles sont : <br/>- les 2 dernières minutes <br/>- les 5 dernières minutes <br/>- les 15 dernières minutes <br/>- l'heure précédente <br/>_**Remarque:**_ ces 4 périodes sont glissantes par rapport à l'instant T. |
 
 **Paramètres traitement**
+
 | Paramètre | Type | Description |
 |--|--|--|
 | Log séparée par Agenda | Checkbox | Permet de séparer les fichiers de logs des agendas (pour une meilleure lecture en mode débug). |
@@ -92,6 +96,7 @@ Les agendas peuvent être triés par ordre d'affichage, en cliquant sur l'icône
 ![Param](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot3.jpg)
 
 **Nom et URL**
+
 | Paramètre | Type | Description |
 |--|--|--|
 | Nom | Zone de texte | Permet de donner un nom au calendrier ; cette valeur s'affiche dans la zone de titre du calendier sur le widget. 
@@ -103,6 +108,7 @@ Les agendas peuvent être triés par ordre d'affichage, en cliquant sur l'icône
 | Nom agenda | Zone de texte | (s'affiche uniquement en "caldav") <br/>Caldav offrant la possibilité d'avoir plusieurs agendas actifs, vous pouvez spécifier ici le nom de l'agenda à récupérer. <br/>Ce champ n'est pas obligatoire; s'il est non renseigné, le plugin prendra le 1er agenda retourné par le serveur Caldav ("personnal" généralement). <br/>_**Remarque:**_ un bouton d'aide vous permet de visualiser la liste des agendas disponibles et de copier le nom de l'agenda souhaité. |
 
 **Données d'utilisation**
+
 | Paramètre | Type | Description |
 |--|--|--|
 | Format données | Zone de liste <br/>_("événement sur la journée" par défaut)_ | Définit le "format" à afficher au niveau du widget et contenu dans la commande ; 3 valeurs sont disponibles (cf. Annexe 4) : <br/>- `événement sur la journée` : affiche et traite tous les évènements de la journée (passés, en cours, à venir) ; <br/>- `événement heure à venir` : affiche et traite les événements courants, + ceux de l'heure à venir (même s'ils n'ont pas démarré) ; <br/>- `événement courant` : affiche et traite les événements en cours uniquement ; |
