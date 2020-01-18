@@ -232,7 +232,6 @@ Les scénarios et les actions/commandes (si leur id est valide et actif) sont la
 Dans une condition IF, il faut rechercher la présence du nom de l'évènement ; on peut aussi le faire précéder de l'état. 
 La recherche se fait en utilisant l'argument de comparaison "contient" ("matches", cf. documentation scénario).
 
-
 | Nom uniquement | recherche de la présence d'un nom : cmd_iCal matches "/mon event/" <br/> _exemple : \#[MA_CMD]# matches "/déjeuner/"_ |
 | Etat actif  | recherche d'un état actif pour un événement précis : cmd_iCal matches "/A;mon event/" <br/> _exemple : \#[MA_CMD]# matches "/A;Volet RDC/"_ <br/> _**Remarque :**_ ce test contient aussi les états des 1ères et dernière minutes ; pour ne pas en tenir compte, il faut écrire : <br/> _\#[MA_CMD]# matches "/;A;Volet RDC/"_ |
 | Etat actif : 1ère minute | recherche de la 1ère minute d'un état actif pour un événement précis : cmd_iCal matches "/;DA;mon event/" <br/> _exemple : \#[MA_CMD]# matches "/;DA;Volet RDC/"_ |
@@ -296,6 +295,7 @@ _**Remarque:**_ ces 2 actions ne permettent pas de lancer le scénario, mais jus
 ![aide](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot4.jpg) 
 
 | Champs | Description |
+|--|--|
 | Type d'action | Définit le type d'action à produire (commande action ou scénario), ici "Scénario" |
 | 1ère minute : nom du scénario | Sélectionner le scénario à exécuter depuis l'évènement à la 1ère minute. |
 | 1ère minute : nom de la variable | Sélectionner le nom de la variable à utiliser pour un traitement au niveau du scénario ; cette variable sera utilisée pour faire transiter les informations définies au moment de la 1ère minute. <br/> _Valeur non obligatoire, si vous n'avez pas besoin de passer de paramètre_  <br/> _**Remarque :**_ la variable doit être créée avant l'utilisation de l'aide (pour apparaître dans la liste des variables). |
@@ -315,6 +315,7 @@ _**Remarque :**_ les options de commande sont dépendantes de la commande utilis
 ![aide](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot5.jpg) 
 
 | Champs | Description |
+|--|--|
 | Type d'action | Définit le type d'action à produire (commande action ou scénario), ici "Action" |
 | Format de la commande | Définit si la valeur de l'ID est positionnée ou le format de commande Jeedom (soit [obj][equip][cmd]). _**Remarque:**_ avec l'id, vous n'êtes pas dépendant du nom de la commande ou de l'équipement. Toute modification sur ce dernier n'aura pas d'impact sur le traitement/l'action de la commande. |
 | 1ère minute : commande action | Sélectionner le nom de la commande à utiliser à la 1ère minute. <br/> Si cette commande utilise des options (slider, titre/message), vous pourrez alors les compléter. |
@@ -331,6 +332,7 @@ _**Remarque :**_ les options de commande sont dépendantes de la commande utilis
 	
 
 | Valeur | Heure du rafraîchissement |
+|--|--|
 | 30 min. | Aux minutes : 00, 30, de chaque heure. |
 | 1 h. | A la minute : 00, de chaque heure. |
 | 3 h. | A : minuit (00h), 3h, 6h, 9h, 12h, 15h, 18h, 21h. |
@@ -349,18 +351,18 @@ Une fois connecté à l'agenda Google, vous pouvez récupérer l'*URL PRIVEE* de
 * La popup s'ouvre et présente l'URL à copier dans Jeedom ;
 
 
-## --- _Annexe 4 : Format des données (widget et structure des commandes)_
+### --- _Annexe 4 : Format des données (widget et structure des commandes)_
 
 Lorsque la synchronisation est réalisée, le plugin va positionner au niveau de la commande agenda les informations des événements de votre calendrier pour la journée courante.
 
 Il existe 2 formats : 
 
 * version "simple" (diponible pour "événement courant", avec titre uniquement à OUI) : 
-	* chaque évènement est séparé par des "||" ; 
+	* chaque évènement est séparé par des "\|\|" ; 
 	* la donnée ne contient que les titres des événements, aucune autre information "technique" n'est présente dans la commande ; 
 
 * version standard/complète (pour tout autre paramétrage) : 
-	* chaque évènement est séparé par des "||" ; 
+	* chaque évènement est séparé par des "\|\|" ; 
 	* les données au sein d'un évènement sont séparés par des ";" (point-virgule) ;
 	* les données disponibles sont : 
 		* `heure_début;heure_fin;statut;titre de l'événement;uid;doAct/doInter;date_update;location`
@@ -440,73 +442,70 @@ Dès lors que cette variable passe à une autre valeur, cela signifie que la fon
  +
 Si la fonction n'a rien trouvé ou a rencontré une erreur, la valeur de retour de non traitement est "-1". +
  +
-*Remarque pour les fonction "getDay...":* +
+**Remarque pour les fonction "getDay...":** 
 1/ pour l'utilisation de ces fonctions, il est conseillé d'être dans un format de données différent de "événement courant". 
-En effet, ce format étant déjà très limité, ces fonctions spécifiques de formatage de la trame pourraient ne pas s'appliquer. +
-Si ce cas s'applique, le retour prendra la valeur "-1" et un message d'erreur sera précisé dans le log. +
-2/ le séparateur entre les événements est un double pipe "||". + 
-Si vous souhaitez utiliser un autre séparateur pour de l'affichage dans  un mail par exemple, vous pouvez faire un changement de caractère comme suite (ici retour à la ligne) : +
-`str_replace("||", "\n", variable(getDaySimple_123))` +
+En effet, ce format étant déjà très limité, ces fonctions spécifiques de formatage de la trame pourraient ne pas s'appliquer.
+Si ce cas s'applique, le retour prendra la valeur "-1" et un message d'erreur sera précisé dans le log.
+2/ le séparateur entre les événements est un double pipe "&#124;&#124;". 
+Si vous souhaitez utiliser un autre séparateur pour de l'affichage dans  un mail par exemple, vous pouvez faire un changement de caractère comme suite (ici retour à la ligne) :
+`str_replace("&#124;&#124;", "\n", variable(getDaySimple_123))`
  +
  
-===== Processus d'utilisation dans un scénario : 
+**Processus d'utilisation dans un scénario :**
 
 * 1/ Sélectionner votre commande agenda permettant d'exécuter des fonctions au niveau d'une zone "action".
 * 2/ Dans la zone "fonction", taper "get" et sélectionner dans la liste la fonction souhaitée (cf. ci-dessus).
-* 3/ Ajouter une commande action avec la fonction "wait" ; +
-*Remarque:* les temps de réponse des fonctions sont relativement rapides, mais il est préférable d'avoir une tempo pour s'assurer que la valeur retournée est bien celle attendue, pour la suite du scénario. +
-La saisie doit être du type : `variable(getTimeEnd_12345) != -99` , (avec un timeout de 5sec par exemple). +
+* 3/ Ajouter une commande action avec la fonction "wait" ;
+**Remarque:** les temps de réponse des fonctions sont relativement rapides, mais il est préférable d'avoir une tempo pour s'assurer que la valeur retournée est bien celle attendue, pour la suite du scénario. 
+La saisie doit être du type : `variable(getTimeEnd_12345) != -99` , (avec un timeout de 5sec par exemple).
 * 4/ une fois cette condition passée, vous pouvez utiliser votre variable dans la suite du scénario. +
 *Remarque:* Il est conseillé de faire d'abord un test sur la pertinence de votre variable : autre que "-1".
 
 
+![scenario](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_scenarioFonction.jpg) 
 
-image:../images/iCalendar_scenarioFonction.png[]
 
-
-''''
-==== _Annexe 6 : Les classes CSS disponibles_
+### --- _Annexe 6 : Les classes CSS disponibles_
 
 Vous pouvez utiliser 3 paramètres au niveau des options de la tuile de l'agenda pour gérer les couleurs : 
-[cols="1,2", width="70%"]
-|=======================
-| bgTitleColor | Couleur de fond de la zone de titre (nom de l'agenda, et zone actions)
-| bgItemColor | Couleur de fond de la zone de liste (événements et actions)
-|=======================
+
+| bgTitleColor | Couleur de fond de la zone de titre (nom de l'agenda, et zone actions) |
+| bgItemColor | Couleur de fond de la zone de liste (événements et actions) |
 
 Mais pour les utilisateurs qui veulent aller plus loin dans la configuration, voici les classes CSS disponibles pour personnaliser le widget du plugin : 
 
-[cols="1,2", width="70%"]
-|=======================
-| iCalendar_title | Zone de titre de la tuile
-| iCalendar_date | Zone de date de la tuile
-| iCalendar_calTitle | Zone de titre de l'agenda
-| iCalendar_items | Zone d'information principale
-| iCalendar_itemActif | évènement "Actif" (en cours) 
-| iCalendar_itemInactif | évènement "Inactif" (passé ou à venir)
-| iCalendar_zoneListAct | Sur fenêtre affichant la liste des actions / scénarios
-| iCalendar_titleListAct | Zone de titre de la liste des actions / scénarios
-|=======================
+| iCalendar_title | Zone de titre de la tuile |
+| iCalendar_date | Zone de date de la tuile |
+| iCalendar_calTitle | Zone de titre de l'agenda |
+| iCalendar_items | Zone d'information principale |
+| iCalendar_itemActif | évènement "Actif" (en cours) |
+| iCalendar_itemInactif | évènement "Inactif" (passé ou à venir) |
+| iCalendar_zoneListAct | Sur fenêtre affichant la liste des actions / scénarios |
+| iCalendar_titleListAct | Zone de titre de la liste des actions / scénarios |
 
+**Remarque :** avec tous les changements d'ergonomie apportée avec la V4, ces class peuvent ne plus fonctionner correctement. Il est donc préférable d'utiliser les fonctions proposées par Jeedom. 
 
 # FAQ
 
 ### --- _Peut-on visualiser les futurs évènements ?_
-Avec les valeurs "événement heure à venir" et "événement sur la journée" du paramètre "format donnée" : oui d'un point de vue affichage sur le widget. <br/> Par contre, le traitement de futurs évènements n'est pas possible (ils ne sont présents qu'en terme d'affichage), sauf si vous parsez les informations. 
+Avec les valeurs "événement heure à venir" et "événement sur la journée" du paramètre "format donnée" : oui d'un point de vue affichage sur le widget. 
+Par contre, le traitement de futurs évènements n'est pas possible (ils ne sont présents qu'en terme d'affichage), sauf si vous parsez les informations. 
 
 ### --- _J'ai modifié mon agenda et l'évènement n'apparaît pas..._
-Le rafraîchissement du cache est réalisé en fonction du paramétrage que vous avez configuré (minimum 30 min). <br/> Toutes modifications sur l'agenda n'apparaîtront sur le plugin iCalendar qu'aux heures fixes liées à la configuration définie (cf. doc). <br/> Mais il est possible de forcer cette synchronisation au moment de l'enregistrement de l'agenda (équipement).
+Le rafraîchissement du cache est réalisé en fonction du paramétrage que vous avez configuré (minimum 30 min). 
+Toutes modifications sur l'agenda n'apparaîtront sur le plugin iCalendar qu'aux heures fixes liées à la configuration définie (cf. doc). 
+Mais il est possible de forcer cette synchronisation au moment de l'enregistrement de l'agenda (équipement).
 
 ### --- _Quelle période de l'agenda est affichée dans le widget ?_
-La récupération des données et l'affichage dans le widget ne traitent que des données de la journée courante. <br/> 
-Si l'évènement fait plus d'une journée, les heures de début et de fin sont présentées uniquement pour la journée en cours. <br/>
-_(exemple si l'évènement est configurée sur jour1 10h - jour2 10h; le jour 1, il sera affiché: 10h-23h59 et jour2: 0h-10h)_ <br/>
+La récupération des données et l'affichage dans le widget ne traitent que des données de la journée courante.
+Si l'évènement fait plus d'une journée, les heures de début et de fin sont présentées uniquement pour la journée en cours. 
+_(exemple si l'évènement est configurée sur jour1 10h - jour2 10h; le jour 1, il sera affiché: 10h-23h59 et jour2: 0h-10h)_ 
 Même pour une configuration en "heure suivante", les informations seront affichées uniquement jusqu'à 23h59.
 
 ### --- _Les bornes sont-elles incluses ?_
-L'heure de début est incluse : la 1ère minute est "active" et remonte l'information [yellow-background]#;DA;# (exemple: 10h-18h: 10h00 contient <span >#;DA;#) <br/>
-L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information [yellow-background]#;FA;# ; sauf pour 23h59. <br/>
-_(exemple 1: 10h-18h: 17h59 contient [yellow-background]#;FA;#, à 18h00 l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)_. <br/>
+L'heure de début est incluse : la 1ère minute est "active" et remonte l'information [yellow-background]#;DA;# (exemple: 10h-18h: 10h00 contient <span >#;DA;#)
+L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information [yellow-background]#;FA;# ; sauf pour 23h59.
+_(exemple 1: 10h-18h: 17h59 contient [yellow-background]#;FA;#, à 18h00 l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)_.
 _(exemple 2: 19h-0h: l'heure de fin est convertie en 23h59 et contient [yellow-background]#;FA;#, à 0h l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)._
 
 ### --- _Sur la version mobile, je ne vois pas les évènements passés en affichage journée..._
@@ -516,9 +515,9 @@ Sur la version mobile, seuls les évènements en cours et à venir sont affiché
 L'id ou le nom de la commande, ou l'id du scénario que vous déclaré en tant qu'action dans votre événement n'existe pas (ou plus) dans Jeedom. <br/> Vous devez vérifier si vous n'avez pas modifié cette commande/scénario et faire la modification dans votre événement au niveau de votre agenda.
 
 ### --- _Existe-il un agenda des jours fériés ?_
-Oui il existe un agenda google qui liste les jours fériés, l'URL est la suivante (ici pour la France) : <br/>
+Oui il existe un agenda google qui liste les jours fériés, l'URL est la suivante (ici pour la France) : 
 https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics
-*Remarque :* par contre, ce calendrier présente aussi des évènements (comme la fête des mères) qui ne sont pas des jours fériés ... :(
+**Remarque :** par contre, ce calendrier présente aussi des évènements (comme la fête des mères) qui ne sont pas des jours fériés ... :(
 
 
 ### --- (?) _Mes scénarios réagissent à des évènements passés ou futurs (mode prochaine heure ou journée)_
@@ -528,7 +527,7 @@ Voir la documentation pour plus d'explications.
 
 ## ?? Pourquoi ce plugin ??
 
-A l'origine, Google permettait d'échanger les données au format csv, et je participais au développement du plugin officiel gCalendar. <br/>
-Lorsque Google a arrêté cette fonction au profit du format iCal (ics), Jeedom a arrêté le plugin gCalendar. J'ai donc créé le plugin iCalendar en remplacement. <br/>
-Son objectif était d'automatiser des actions en les configurants dans un calendrier accessibles à tous au sein d'une famille (via google). <br/>
+A l'origine, Google permettait d'échanger les données au format csv ; je participais au développement du plugin officiel gCalendar.
+Lorsque Google a arrêté cette fonction au profit du format iCal (ics), Jeedom a arrêté le plugin gCalendar. J'ai donc créé le plugin iCalendar en remplacement. 
+Son objectif était d'automatiser des actions en les configurants dans un calendrier accessibles à tous au sein d'une famille (via google). 
 Bonne utilisation ....
