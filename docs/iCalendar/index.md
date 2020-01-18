@@ -8,6 +8,10 @@ L’utilisateur dispose de 3 modes de fonctionnement :
 * définir au niveau de l'événement des "scénarios" ou "actions" qui pourront être automatiquement lancés par Jeedom, en début ou en fin d'événement.
 * reconnaissance d'une "interaction" sur le contenu du titre ; après, à vous de définir les actions produites par l'interaction.
 
+<span style='color:red;'>Point d'attention (Suivi de ce plugin au 18/01/20) :</span>
+* iCalendar ne subira plus d'évolution fonctionnelle majeure ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
+* cette version est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
+
 # Configuration
 Ce plugin permet de retourner les évènements de votre agenda iCalendar, il suffit pour cela de créer un équipement et de lui ajouter autant de "commandes" que vous avez d'agendas à traiter. Même s’il y beaucoups de paramètres, la configuration du plugin est simple : les paramètres par défaut peuvent être conservés, ce qui facilite la création. <br/>
 Vous pouvez l’utiliser pour l'affichage d'agendas tout simplement ou pour récupérer des agendas vous permettant de réaliser des actions dans votre installation Jeedom.
@@ -209,64 +213,56 @@ En cliquant sur un événement, une fenêtre apparaît, permettant d'avoir des d
 ![action](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot9.jpg) 
 
 Si vous avez activé "Historiser les actions", vous pourrez retrouver dans cet écran les actions/scénarios/interactions pour lesquel(le)s une tentative d'exécution a été traitée. 
-En haut à droite, vous pouvez définir la période de visualisation ; par défaut, les derniers jours. +
- +
-La liste présente par jour, le nom du scénario ou de l'action traitée, avec son heure de traitement. +
-La dernière colonne permet d'avoir des informations sur l'événement associé / ayant demandé le lancement de cette action ou ce scénario. +
-Dans le cas d'une interaction, l'information affichée correspond à la "réponse" retournée par l'interaction (mais en aucun cas son nom) ; si aucune réponse n'a été faite, il est indiqué "Non reconnu". +
- +
+En haut à droite, vous pouvez définir la période de visualisation ; par défaut, les derniers jours. 
+<br/>
+La liste présente par jour, le nom du scénario ou de l'action traitée, avec son heure de traitement.
+La dernière colonne permet d'avoir des informations sur l'événement associé / ayant demandé le lancement de cette action ou ce scénario.
+Dans le cas d'une interaction, l'information affichée correspond à la "réponse" retournée par l'interaction (mais en aucun cas son nom) ; si aucune réponse n'a été faite, il est indiqué "Non reconnu".
+<br/>
 En dessous de la date, vous pouvez supprimer les données historisées pour cette journée. 
 
 
 
-## Utilisation des données
+## # Utilisation des données
 
-* Par configuration d'un événement avec valeur des "scénario/action" dans la description de l'événement : +
+* Par configuration d'un événement avec valeur des "scénario/action" dans la description de l'événement :
 Les scénarios et les actions/commandes (si leur id est valide et actif) sont lancés automatiquement à l'heure souhaitée. 
 
-* Par déclencheur dans un scénario : +
+* Par déclencheur dans un scénario :
 Dans une condition IF, il faut rechercher la présence du nom de l'évènement ; on peut aussi le faire précéder de l'état. 
 La recherche se fait en utilisant l'argument de comparaison "contient" ("matches", cf. documentation scénario).
 
-[cols="1,5", width="90%"]
-|=======================
-| Nom uniquement | recherche de la présence d'un nom : cmd_iCal matches "/mon event/" +
-_exemple : \#[MA_CMD]# matches "/déjeuner/"_ 
-| Etat actif  | recherche d'un état actif pour un événement précis : cmd_iCal matches "/A;mon event/" +
-_exemple : \#[MA_CMD]# matches "/A;Volet RDC/"_ +
-*Remarque :* ce test contient aussi les états des 1ères et dernière minutes ; pour ne pas en tenir compte, il faut écrire : +
-_\#[MA_CMD]# matches "/;A;Volet RDC/"_
-| Etat actif : 1ère minute | recherche de la 1ère minute d'un état actif pour un événement précis : cmd_iCal matches "/;DA;mon event/" +
-_exemple : \#[MA_CMD]# matches "/;DA;Volet RDC/"_
-| Etat actif : dernière minute | recherche de la dernière minute d'un état actif pour un événement précis : cmd_iCal matches "/;FA;mon event/" +
-_exemple : \#[MA_CMD]# matches "/;FA;Volet RDC/"_ +
-*Remarque :* La borne de fin sera configurée 1 minute avant l'heure configurée (exemple pour 18h, l'indicateur sera affiché à 17h59); sauf pour 23h59.
-|=======================
 
-En fonction de la version de Jeedom, l'utilisation des doubles côtes `"`, autour du nom de la commande peut être nécessaire ; à partir de la V2, le test doit être fait sans ces doubles côtes.  +
+| Nom uniquement | recherche de la présence d'un nom : cmd_iCal matches "/mon event/" <br/> _exemple : \#[MA_CMD]# matches "/déjeuner/"_ |
+| Etat actif  | recherche d'un état actif pour un événement précis : cmd_iCal matches "/A;mon event/" <br/> _exemple : \#[MA_CMD]# matches "/A;Volet RDC/"_ <br/> _**Remarque :**_ ce test contient aussi les états des 1ères et dernière minutes ; pour ne pas en tenir compte, il faut écrire : <br/> _\#[MA_CMD]# matches "/;A;Volet RDC/"_ |
+| Etat actif : 1ère minute | recherche de la 1ère minute d'un état actif pour un événement précis : cmd_iCal matches "/;DA;mon event/" <br/> _exemple : \#[MA_CMD]# matches "/;DA;Volet RDC/"_ |
+| Etat actif : dernière minute | recherche de la dernière minute d'un état actif pour un événement précis : cmd_iCal matches "/;FA;mon event/" <br/> _exemple : \#[MA_CMD]# matches "/;FA;Volet RDC/"_ <br/> _**Remarque :**_ La borne de fin sera configurée 1 minute avant l'heure configurée (exemple pour 18h, l'indicateur sera affiché à 17h59); sauf pour 23h59. |
+
+En fonction de la version de Jeedom, l'utilisation des doubles côtes `"`, autour du nom de la commande peut être nécessaire.
 
 L'utilisation de l'état n'a un intérêt que si le paramètre "Format donnée" utilisé est : "événement heure à venir" ou "événement sur la journée".
 
-*REMARQUE:* Lorsque l'agenda ne traite qu'un seul événément, l'utilisation du format "événement courant" avec "titre uniquement" n'est pas la seule solution. 
+_**REMARQUE:**_ Lorsque l'agenda ne traite qu'un seul événément, l'utilisation du format "événement courant" avec "titre uniquement" n'est pas la seule solution. 
 Vous pouvez très bien utiliser également les formats "heure à venir" et "journée", en précisant le contenu exact de l'événement. 
 Soit un `\#[MA_CMD]#="Congé"` en "événement courant", équivaut à `\#[MA_CMD]# matches "/;A;Congé;/"` dans un autre format (respectez bien l'utilisation des `;`).
 
 
 
-## Cron et Rafraîchissement de données
+## # Cron et Rafraîchissement de données
 
-*Récupération des données :* +
-Les données récupérées correspondent à une journée complète, mais sont récupérées en fonction du paramétrage défini (minimum 30 minutes); elles sont enregistrées par le cache utilisé par le plugin. +
-Si vous faites des modifications dans votre agenda ics, celles-ci ne seront visibles qu'au moment d'une période de rafraîchissement. +
+**-- Récupération des données :** 
+Les données récupérées correspondent à une journée complète, mais sont récupérées en fonction du paramétrage défini (minimum 30 minutes); elles sont enregistrées par le cache utilisé par le plugin.
+Si vous faites des modifications dans votre agenda ics, celles-ci ne seront visibles qu'au moment d'une période de rafraîchissement.
+<br/>
 
-*Cron :* +
-Le système vérifie toutes les minutes en cache s'il y a des évènements, et précise l'état de l'évènement (en fonction du format choisi). +
-Il est donc possible de configurer/programmer des évènements à la minute près. +
+**-- Cron :** 
+Le système vérifie toutes les minutes en cache s'il y a des évènements, et précise l'état de l'évènement (en fonction du format choisi).
+Il est donc possible de configurer/programmer des évènements à la minute près.
 
-En l'absence d'accès internet, le cache disponible est sur l'ensemble de l'agenda configuré (et non uniquement sur la journée courante). +
+En l'absence d'accès internet, le cache disponible est sur l'ensemble de l'agenda configuré (et non uniquement sur la journée courante).
 
 
-## "Santé" des échanges réseaux
+## # "Santé" des échanges réseaux
 
 Afin de vous permettre d'avoir une vision sur la validité des synchronisations, une information est remontée au niveau de la page "Santé". <br/>
 Dans la session "iCalendar", vous pouvez voir pour chacun de vos agendas, l'état des 15 dernières synchronisations réalisées :
