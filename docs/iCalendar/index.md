@@ -384,64 +384,38 @@ Le plugin sait gérer différents formats d'évènements :
 
 ### --- _Annexe 5 : Données des évènements au niveau des scénarios via "fonctions"_
 
-Pour rappel, une commande agenda retourne des données brutes respectant les formats de données décrits au niveau de l'annexe précédente. +
-Toutefois, une commande complémentaire est disponible au niveau de chaque "agenda", nommé `_nom de la commande agenda_ (ExecuteFunction-_idCommande_)` +
-Cette commande disponible au niveau des scénarios est de type "message" et est composé d'un nom de fonction (titre) et d'argements (message). +
-Après avoir sélectionné cette commande dans une action de scénario, tapez la lettre "g" dans la zone "fonction", les fonctions disponibles apparaitront (avec en mémo, un rappel de l'utilisation au niveau des arguments). +
- +
-*L'événement recherché ne peut être que sur la journée courante et doit être en cours ou à venir.* Les événements passés ne peuvent plus être analysés. +
+Pour rappel, une commande agenda retourne des données brutes respectant les formats de données décrits au niveau de l'annexe précédente.
+Toutefois, une commande complémentaire est disponible au niveau de chaque "agenda", nommé `_nom de la commande agenda_ (ExecuteFunction-_idCommande_)`.
+Cette commande disponible au niveau des scénarios est de type "message" et est composé d'un nom de fonction (titre) et d'argements (message).
+Après avoir sélectionné cette commande dans une action de scénario, tapez la lettre "g" dans la zone "fonction", les fonctions disponibles apparaitront (avec en mémo, un rappel de l'utilisation au niveau des arguments).
 
-*Le titre passé en argument doit être exact* également (exemple : absence) ; la fonction "contient" n'est pas encore mise en place. +
-Si plusieurs titres correspondent, le 1er est retourné. +
+_L'événement recherché ne peut être que sur la journée courante et doit être en cours ou à venir._ Les événements passés ne peuvent plus être analysés.
 
-[cols="1,2,3", width="99%"]
-|=======================
-| fonction | description | arguments
-| getTimeStart | donne l'heure de début de l'événement choisi | 1/ [yellow-background]#title=xxx# : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ +
-2/ [yellow-background]#date=xxx# : format de retour pour la date (conforme à la configuration au niveau de Jeedom) les possibilités de format sont équivalentes à celles de php). ; _exemple : date=H:i:s ou date=d/m H:i_ ; par défaut, valeur retournée est au format timestamp. + 
-3/ [yellow-background]#jour=xxx# : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0
-
-| getTimeEnd | donne l'heure de fin de l'événement choisi | 1/ [yellow-background]#title=xxx# : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ +
-2/ [yellow-background]#date=xxx# : format de retour pour la date (conforme à la configuration au niveau de Jeedom) les possibilités de format sont équivalentes à celles de php). ; _exemple : date=H:i:s ou date=d/m H:i_ ; par défaut, valeur retournée est au format timestamp. + 
-3/ [yellow-background]#jour=xxx# : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0
-
-| getUid | donne l'id technique de l'événement choisi | 1/ [yellow-background]#title=xxx# : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ +
-2/ [yellow-background]#jour=xxx# : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0
+_Le titre passé en argument doit être exact_ également (exemple : absence) ; la fonction "contient" n'est pas encore mise en place.
+Si plusieurs titres correspondent, le 1er est retourné.
 
 
-| getTitle | donne le titre de l'événement choisi en fonction d'un id | 1/ [yellow-background]#uid=xxx# : l'id (uid) de l'événenement à rechercher, le texte doit être exact ; _exemple : uid=23424houi877sdf@google.com_ +
-2/ [yellow-background]#jour=xxx# : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0
+| Fonction | Description | Arguments |
+| getTimeStart | donne l'heure de début de l'événement choisi | 1/ `#title=xxx#` : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ <br/> 2/ `#date=xxx#` : format de retour pour la date (conforme à la configuration au niveau de Jeedom) les possibilités de format sont équivalentes à celles de php). ; _exemple : date=H:i:s ou date=d/m H:i_ ; par défaut, valeur retournée est au format timestamp. <br/>  3/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
+| getTimeEnd | donne l'heure de fin de l'événement choisi | 1/ `#title=xxx#` : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ <br/> 2/ `#date=xxx#` : format de retour pour la date (conforme à la configuration au niveau de Jeedom) les possibilités de format sont équivalentes à celles de php). ; _exemple : date=H:i:s ou date=d/m H:i_ ; par défaut, valeur retournée est au format timestamp. <br/> 3/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
+| getUid | donne l'id technique de l'événement choisi | 1/ `#title=xxx#` : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ <br/> 2/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
+| getTitle | donne le titre de l'événement choisi en fonction d'un id | 1/ `#uid=xxx#` : l'id (uid) de l'événenement à rechercher, le texte doit être exact ; _exemple : uid=23424houi877sdf@google.com_ <br/> 2/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
+| getLocation | donne le lieu de l'événement choisi en fonction d'un id ou d'un titre | 1/ `#title=xxx#` : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ <br/> 2/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0; <br/> (un id peut aussi être passé en paramètre; exemple: uid=23424houi877sdf@google.com) |
+| getDaySimple | retourne une trame simplifiée de tous les événements de la journée courante (quelque soit le statut de l'événement). <br/> Le contenu est : l'heure de début, l'heure de fin et le titre. | 1/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
+| getDayTitleOnly | retourne une trame simplifiée avec tous les événéments de la journée courante (quelque soit le statut de l'événement). <br/> Le contenu est : uniquement le titre. <br/> _**Remarque:**_ cette fonction correspond à la même chose que l'option "titre uniquement", mais ici valable sur toute la journée. | 1/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
+| getDayActifOnly | retourne une trame simplifiée avec uniquement les événéments actifs de la journée courante. <br/> Le contenu est : l'heure de début, l'heure de fin et le titre. <br/> _**Remarque:**_ cette fonction correspond à la même chose que l'option format donnée = "événement courant". | aucun (zone laissée vide) |
+| getDayActifAndTitleOnly | retourne une trame simplifiée avec uniquement les événements actifs de la journée courante. <br/> Le contenu est : uniquement le titre. <br/> _**Remarque:**_ cette fonction correspond à la même chose que l'option format donnée = "événement courant" et "titre uniquement". | aucun (zone laissée vide); |
 
-| getLocation | donne le lieu de l'événement choisi en fonction d'un id ou d'un titre | 1/ [yellow-background]#title=xxx# : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ +
-2/ [yellow-background]#jour=xxx# : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0; +
-(un id peut aussi être passé en paramètre; exemple: uid=23424houi877sdf@google.com) 
+_**Remarque:**_ L'ordre des arguments n'a pas d'importance; par contre, chaque argument doit être disposé sur une ligne différente et respecter le format défini. 
 
-| getDaySimple | retourne une trame simplifiée de tous les événements de la journée courante (quelque soit le statut de l'événement). +
-Le contenu est : l'heure de début, l'heure de fin et le titre. | 1/ [yellow-background]#jour=xxx# : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0
+Les commandes actions ne retournent pas de valeur, le résultat de la fonction sera donc placé dans une variable de scénario, prenant la forme : `nomDeLaFonction_IdCommandeAgenda` (exemple: getTimeStart_13456).
+Pour éviter toute erreur, cet id est rappelé dans le nom de la commande fonction.
 
-| getDayTitleOnly | retourne une trame simplifiée avec tous les événéments de la journée courante (quelque soit le statut de l'événement). +
-Le contenu est : uniquement le titre. +
-Remarque: cette fonction correspond à la même chose que l'option "titre uniquement", mais ici valable sur toute la journée. | 1/ [yellow-background]#jour=xxx# : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0
+Par ailleurs, le traitement étant asynchrone, tout au long du traitement de la commande/fonction la variable de retour est positionnée à "-99".
+Dès lors que cette variable passe à une autre valeur, cela signifie que la fonction a terminé son traitement.
 
-| getDayActifOnly | retourne une trame simplifiée avec uniquement les événéments actifs de la journée courante. +
-Le contenu est : l'heure de début, l'heure de fin et le titre. +
-Remarque: cette fonction correspond à la même chose que l'option format donnée = "événement courant". | aucun (zone laissée vide)
+Si la fonction n'a rien trouvé ou a rencontré une erreur, la valeur de retour de non traitement est "-1".
 
-| getDayActifAndTitleOnly | retourne une trame simplifiée avec uniquement les événements actifs de la journée courante. +
-Le contenu est : uniquement le titre. +
-Remarque: cette fonction correspond à la même chose que l'option format donnée = "événement courant" et "titre uniquement". | aucun (zone laissée vide);
-|=======================
-
-*Remarque:* L'ordre des arguments n'a pas d'importance; par contre, chaque argument doit être disposé sur une ligne différente et respecter le format défini. +
-
-Les commandes actions ne retournent pas de valeur, le résultat de la fonction sera donc placé dans une variable de scénario, prenant la forme : `nomDeLaFonction_IdCommandeAgenda` (exemple: getTimeStart_13456). +
-Pour éviter toute erreur, cet id est rappelé dans le nom de la commande fonction. +
- + 
-Par ailleurs, le traitement étant asynchrone, tout au long du traitement de la commande/fonction la variable de retour est positionnée à "-99". +
-Dès lors que cette variable passe à une autre valeur, cela signifie que la fonction a terminé son traitement. +
- +
-Si la fonction n'a rien trouvé ou a rencontré une erreur, la valeur de retour de non traitement est "-1". +
- +
 **Remarque pour les fonction "getDay...":** 
 1/ pour l'utilisation de ces fonctions, il est conseillé d'être dans un format de données différent de "événement courant". 
 En effet, ce format étant déjà très limité, ces fonctions spécifiques de formatage de la trame pourraient ne pas s'appliquer.
@@ -462,7 +436,7 @@ La saisie doit être du type : `variable(getTimeEnd_12345) != -99` , (avec un ti
 *Remarque:* Il est conseillé de faire d'abord un test sur la pertinence de votre variable : autre que "-1".
 
 
-![scenario](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_scenarioFonction.jpg) 
+![scenario](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_scenarioFonction.png) 
 
 
 ### --- _Annexe 6 : Les classes CSS disponibles_
