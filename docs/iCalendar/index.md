@@ -113,55 +113,38 @@ Les agendas peuvent être triés par ordre d'affichage, en cliquant sur l'icône
 |--|--|--|
 | Format données | Zone de liste <br/>_("événement sur la journée" par défaut)_ | Définit le "format" à afficher au niveau du widget et contenu dans la commande ; 3 valeurs sont disponibles (cf. Annexe 4) : <br/>- `événement sur la journée` : affiche et traite tous les évènements de la journée (passés, en cours, à venir) ; <br/>- `événement heure à venir` : affiche et traite les événements courants, + ceux de l'heure à venir (même s'ils n'ont pas démarré) ; <br/>- `événement courant` : affiche et traite les événements en cours uniquement ; |
 | Titre uniquement | Checkbox <br/>_(décoché par défaut)_ | Cette option n'est disponible que si "format de données" = " événement courant". <br/> Le contenu de la commande agenda est alors la plus simpliste possible, elle ne présente que les titres ; tous les paramètres annexes (id, état) à l'événement ne sont pas disponibles. <br/> **Remarque: Si vous utilisez cette option, l'option "Autoriser les scénarios/actions" sera INVALIDEE techniquement.** |
-| Période à traiter | Zone de liste <br/>_("jour courant" par défaut)_ | Définit le nombre de jours à traiter : <br/> - `jour courant` : gère les données de la journée courante au niveau de la commande "J0" ; <br/> - `+ lendemain` : gère les données de la journée courante et celles du lendemain (J0+J1) ; <br/> - `+ 2jours` : gère les données de la journée courante et celles des 2 jours suivants (J0+J1+J2) ; <br/> - `1 semaine` : gère les données de la journée courante et celles des 6 jours suivants (J0 à J6) ; <br/>
-_**Remarque:**_ n'est disponible que si "format de données" = "événement sur la journée". <br/>
-Dans le cas où vous êtes dans une configuration supérieure à la journée courante, une icône orange apparait à coté du titre; en cliquant dessus, la liste des commandes associées aux autres journées apparait en dessous du tableau. |
+| Période à traiter | Zone de liste <br/>_("jour courant" par défaut)_ | Définit le nombre de jours à traiter : <br/> - `jour courant` : gère les données de la journée courante au niveau de la commande "J0" ; <br/> - `+ lendemain` : gère les données de la journée courante et celles du lendemain (J0+J1) ; <br/> - `+ 2jours` : gère les données de la journée courante et celles des 2 jours suivants (J0+J1+J2) ; <br/> - `1 semaine` : gère les données de la journée courante et celles des 6 jours suivants (J0 à J6) ; <br/> _**Remarque:**_ n'est disponible que si "format de données" = "événement sur la journée". <br/> Dans le cas où vous êtes dans une configuration supérieure à la journée courante, une icône orange apparait à coté du titre; en cliquant dessus, la liste des commandes associées aux autres journées apparait en dessous du tableau. |
 | Valeur par défaut | Zone de texte | Valeur affichée par défaut, lorsqu'il n'y a aucun évènement dans le planning. <br/>_**Remarque:**_ Si rien n'est indiqué, la valeur "Aucun" est retournée. |
-| Indicateurs début/fin | Checkbox <br/>_(décoché par défaut)_ | Permet de définir si les indicateurs de début/de fin d'évènement sont utilisés, aussi bien à l'affichage et aussi pour l'execution d'une action/scénario; <br/>
-- Si coché : les indicateurs "Début" (<span style="background-color:yellow;">#;DA;#</span>) et "Fin" (<span style="background-color:yellow;">#;FA;#</span>) d'activité sont utilisés en complément de l'indicateur "Actif" <br/>
-- Si décoché : seul l'indicateur d'état "Actif" est utilisé (<span style="background-color:yellow;">#;A;#</span>).
+| Indicateurs début/fin | Checkbox <br/>_(décoché par défaut)_ | Permet de définir si les indicateurs de début/de fin d'évènement sont utilisés, aussi bien à l'affichage et aussi pour l'execution d'une action/scénario; <br/> - Si coché : les indicateurs "Début" (<span style="background-color:yellow;">#;DA;#</span>) et "Fin" (<span style="background-color:yellow;">#;FA;#</span>) d'activité sont utilisés en complément de l'indicateur "Actif" <br/> - Si décoché : seul l'indicateur d'état "Actif" est utilisé (<span style="background-color:yellow;">#;A;#</span>). |
 | Autoriser les scénarios/actions | Checkbox <br/>_(décoché par défaut)_ | Cette option permet au plugin de lancer automatiquement les scénarios ou actions, si la description de l'événement respecte correctement le format attendu pour cette action (cf. Annexe 1 : "Aide à la saisie d'un évènement"). |
 | Autoriser les interactions | Checkbox <br/> _(décoché par défaut)_ | Cette option permet au plugin de lancer une recherche d'interaction sur la base du titre de l'événement. <br/> _**Remarque:**_ cette option ne s'active uniquement que sur les événements qui n'ont pas d'action/scénarios configurés dans leurs descriptions. |
 | Historiser les actions | Checkbox <br/>_(décoché par défaut)_ | A chaque action/scénario/interaction lancé par le plugin, l'action produite est tracée (pour ne pas être relancée plus tard). <br/> Cette option permet de conserver ces actions traitées au-delà de la journée courante. |
 | Fréquence synchro | Liste de choix <br/> _(30 min, par défaut)_ | L'utilisateur peut configurer la période de rafraîchissement du fichier cache (minimum 30 min) ; (cf. tableau Annexe 2). |
 
+**Option graphique**
 
-3+|=== Option graphique ===
-| Afficher calendrier | Checkbox + 
-_(coché par défaut)_ | Paramètre graphique ; permet de définir si le calendrier doit être affiché dans le widget. + 
-*Remarque :* ce paramètre n'est que graphique, il n'impacte pas les données (celles-ci continuent d'être traitées, même si l'option est désactivée). 
-| Afficher heure | Checkbox + 
-_(coché par défaut)_ | Paramètre graphique ; permet de définir si les heures de début et de fin sont affichées dans le widget. + 
-*Remarque :* ce paramètre n'est que graphique, il n'impacte pas les données (l'heure continue d'être présente dans la donnée, même si l'option est désactivée). 
-| Afficher heure event de 24h | Checkbox + 
-_(coché par défaut)_ | Paramètre graphique ; permet de définir si les heures de début et de fin sont affichées pour les évènements durant toute la journée (24 h) dans le widget. +
-Le paramètre n'est pas affiché si l'option "Afficher heure" est décochée. +
-*Remarque :* ce paramètre n'est que graphique, il n'impacte pas les données (celles-ci continuent d'être traitées, même si l'option est désactivée). 
-| Afficher l'emplacement | Checkbox + 
-_(coché par défaut)_ | Paramètre graphique ; permet d'afficher l'information de lieu disponible au niveau de l'événement. +
-*Remarque:* Cette information n'est disponible qu'à l'affichage pour l'instant; vous pouvez aussi la récupérer au niveau d'un scénario via la fonction "getLocation".
-| Période à afficher | Zone de liste | Définit le nombre de jours à afficher sur le widget : +
-- `jour courant` : affiche les données de la journée courante; +
-- `+ lendemain` : affiche les données de la journée courante et celles du lendemain; +
-- `+ 2jours` : affiche les données de la journée courante et celles des 2 jours suivants; +
-- `1 semaine` : affiche les données de la journée courante et celles des 6 jours suivants; +
-*Remarque:* le nombre de jours proposés dépend de la valeur sélectionnée au niveau de l'option "Période à traiter".
-| Ne pas afficher le nombre d'évènements | Checkbox | Permet de masquer le nombre d'évènements affichés à côté du nom du calendrier.
-3+|=== Actions ===
-| Paramètre (roue crantée) | | Permet de définir les options "Jeedom" de la commande.
-| Tester | | Permet de tester la commande (affiche le contenu de la commande). +
-*Remarque :* la donnée s'affiche uniquement après un 1er rafraîchissement. 
+| Paramètre | Type | Description |
+|--|--|--|
+| Afficher calendrier | Checkbox <br/> _(coché par défaut)_ | Paramètre graphique ; permet de définir si le calendrier doit être affiché dans le widget. <br/> _**Remarque :**_ ce paramètre n'est que graphique, il n'impacte pas les données (celles-ci continuent d'être traitées, même si l'option est désactivée). |
+| Afficher heure | Checkbox <br/>_(coché par défaut)_ | Paramètre graphique ; permet de définir si les heures de début et de fin sont affichées dans le widget. <br/> _**Remarque :**_ ce paramètre n'est que graphique, il n'impacte pas les données (l'heure continue d'être présente dans la donnée, même si l'option est désactivée). |
+| Afficher heure event de 24h | Checkbox <br/> _(coché par défaut)_ | Paramètre graphique ; permet de définir si les heures de début et de fin sont affichées pour les évènements durant toute la journée (24 h) dans le widget. <br/>Le paramètre n'est pas affiché si l'option "Afficher heure" est décochée. <br/>_**Remarque :**_ ce paramètre n'est que graphique, il n'impacte pas les données (celles-ci continuent d'être traitées, même si l'option est désactivée). |
+| Afficher l'emplacement | Checkbox <br/> _(coché par défaut)_ | Paramètre graphique ; permet d'afficher l'information de lieu disponible au niveau de l'événement. <br/>_**Remarque:**_ Cette information n'est disponible qu'à l'affichage pour l'instant; vous pouvez aussi la récupérer au niveau d'un scénario via la fonction "getLocation". |
+| Période à afficher | Zone de liste | Définit le nombre de jours à afficher sur le widget : <br/> - `jour courant` : affiche les données de la journée courante; <br/> - `+ lendemain` : affiche les données de la journée courante et celles du lendemain; <br/> - `+ 2jours` : affiche les données de la journée courante et celles des 2 jours suivants; <br/> - `1 semaine` : affiche les données de la journée courante et celles des 6 jours suivants; <br/>_**Remarque:**_ le nombre de jours proposés dépend de la valeur sélectionnée au niveau de l'option "Période à traiter". |
+| Ne pas afficher le nombre d'évènements | Checkbox | Permet de masquer le nombre d'évènements affichés à côté du nom du calendrier. |
+
+**Actions et Informations de synchro**
+
+| Paramètre | Type | Description |
+|--|--|--|
+| Paramètre (roue crantée) | | Permet de définir les options "Jeedom" de la commande. |
+| Tester | | Permet de tester la commande (affiche le contenu de la commande). <br/> _**Remarque :**_ la donnée s'affiche uniquement après un 1er rafraîchissement. |
 | Supprimer | | Permet de supprimer la commande et les commandes rattachées (si agenda sur plusieurs jours).
-| Id | | Valeur de l'id de la commande ; cet id est créé après l'enregistrement de l'équipement. +
-*Remarque :* Cette valeur est utilisée dans les logs, pour identifier les actions réalisées au niveau du plugin. 
-3+|=== Informations de synchro ===
-| Date du fichier 2+| indique la date du dernier téléchargement et sauvegarde en cache du fichier ics. +
-*Remarque:* lors d'une synchronisation, le fichier peut ne pas être sauvegardé en cache, si les 2 fichiers sont identiques. +
-Un bouton "télécharger", vous permet de récupérer le fichier actuellement en cache pour une lecture locale sur votre poste de travail.
-| Date synchro précédente 2+| indique la date de la dernière synchronisation entre Jeedom et votre agenda ics.
-| Date synchro suivante 2+| indique la date de la prochaine synchronisation entre Jeedom et votre agenda ics. +
-*Remarque:* si la valeur est "STOP", cela signifie que votre équipement est désactivé.
-|=======================
+| Date du fichier | | indique la date du dernier téléchargement et sauvegarde en cache du fichier ics. <br/> _**Remarque:**_ lors d'une synchronisation, le fichier peut ne pas être sauvegardé en cache, si les 2 fichiers sont identiques. <br/>
+Un bouton "télécharger", vous permet de récupérer le fichier actuellement en cache pour une lecture locale sur votre poste de travail. |
+| Date synchro précédente | | indique la date de la dernière synchronisation entre Jeedom et votre agenda ics. |
+| Date synchro suivante | | indique la date de la prochaine synchronisation entre Jeedom et votre agenda ics. <br/>
+*Remarque:* si la valeur est "STOP", cela signifie que votre équipement est désactivé. |
+
 
 ### Exemple d'un écran listant les noms des agendas CalDav 
 
