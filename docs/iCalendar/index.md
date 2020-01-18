@@ -493,7 +493,7 @@ Vous devez vérifier si vous n'avez pas modifié cette commande/scénario et fai
 
 #### --- _Existe-il un agenda des jours fériés ?_
 Oui il existe un agenda google qui liste les jours fériés, l'URL est la suivante (ici pour la France) : 
-(https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics)https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics <br/>
+[https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics](https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics) <br/>
 **Remarque :** par contre, ce calendrier présente aussi des évènements (comme la fête des mères) qui ne sont pas des jours fériés ... :(
 
 
