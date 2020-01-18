@@ -137,10 +137,9 @@ Les agendas peuvent être triés par ordre d'affichage, en cliquant sur l'icône
 | Paramètre | Description |
 |--|--|
 | Paramètre (roue crantée) | Permet de définir les options "Jeedom" de la commande. |
-| Tester | | Permet de tester la commande (affiche le contenu de la commande). <br/> _**Remarque :**_ la donnée s'affiche uniquement après un 1er rafraîchissement. |
+| Tester | Permet de tester la commande (affiche le contenu de la commande). <br/> _**Remarque :**_ la donnée s'affiche uniquement après un 1er rafraîchissement. |
 | Supprimer | Permet de supprimer la commande et les commandes rattachées (si agenda sur plusieurs jours).
-| Date du fichier | indique la date du dernier téléchargement et sauvegarde en cache du fichier ics. <br/> _**Remarque:**_ lors d'une synchronisation, le fichier peut ne pas être sauvegardé en cache, si les 2 fichiers sont identiques. <br/>
-Un bouton "télécharger", vous permet de récupérer le fichier actuellement en cache pour une lecture locale sur votre poste de travail. |
+| Date du fichier | indique la date du dernier téléchargement et sauvegarde en cache du fichier ics. <br/> _**Remarque:**_ lors d'une synchronisation, le fichier peut ne pas être sauvegardé en cache, si les 2 fichiers sont identiques. <br/> Un bouton "télécharger", vous permet de récupérer le fichier actuellement en cache pour une lecture locale sur votre poste de travail. |
 | Date synchro précédente | indique la date de la dernière synchronisation entre Jeedom et votre agenda ics. |
 | Date synchro suivante | indique la date de la prochaine synchronisation entre Jeedom et votre agenda ics. <br/> _**Remarque:**_ si la valeur est "STOP", cela signifie que votre équipement est désactivé. |
 
@@ -157,11 +156,11 @@ Le widget se présente sous la forme suivante, si aucun style n'est appliqué :
 
 ![widget1](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot1.jpg) 
 <br/><br/>
-![widget2](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot6.jpg)
+![widget2](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot6.jpg) &nbsp;&nbsp;
 ![widget3](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_affichagetoutesjournees.png)
 
 
-Au niveau d'un calendrier :
+**Au niveau d'un calendrier :**
 * Le nombre d'événements est affiché à côté du titre du calendrier ;
 	* En passant la souris sur le titre de l'agenda : affiche le type d'affichage, ainsi que les dates de collecte et de valeur ;
 * Les évènements passés sont grisés ; 
@@ -193,23 +192,23 @@ Vous pouvez atteindre ce menu en sélectionnant le menu "Accueil", puis "iCalend
 
 ![agenda](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot8.jpg) 
 
-Après avoir sélectionné un agenda, vous pouvez cliquer sur le type d'affichage souhaité "Calendrier" (bouton en haut à gauche). +
-Vous pouvez alors parcourir votre agenda comme si vous étiez sur la version "distante" (Google, etc...). +
-La période d'affichage est toutefois restreinte ; elle respecte la plage suivante : les 3 mois précédant la date du jour et les 6 mois suivants. +
+Après avoir sélectionné un agenda, vous pouvez cliquer sur le type d'affichage souhaité "Calendrier" (bouton en haut à gauche).
+Vous pouvez alors parcourir votre agenda comme si vous étiez sur la version "distante" (Google, etc...).
+La période d'affichage est toutefois restreinte ; elle respecte la plage suivante : les 3 mois précédant la date du jour et les 6 mois suivants.
 
-*Remarque:* Cette période n'est pas paramétrable pour l'instant; elle est juste rappelée en haut à droite de l'écran. +
-Dans le cas de petites configurations, le temps d'affichage de cet écran peut être long la 1ère fois de la journée, un cache est ensuite utilisé tout au long de la journée. +
- +
-En cliquant sur un événement, une fenêtre apparaît, permettant d'avoir des détails complémentaires. +
+_**Remarque:**_ Cette période n'est pas paramétrable pour l'instant; elle est juste rappelée en haut à droite de l'écran.
+Dans le cas de petites configurations, le temps d'affichage de cet écran peut être long la 1ère fois de la journée, un cache est ensuite utilisé tout au long de la journée.
 
-image:../images/iCalendar_screenshot10.jpg[]
- +
- +
-*Actions historisées :* +
+En cliquant sur un événement, une fenêtre apparaît, permettant d'avoir des détails complémentaires.
 
-image:../images/iCalendar_screenshot9.jpg[]
+![agenda](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot10.jpg) 
 
-Si vous avez activé "Historiser les actions", vous pourrez retrouver dans cet écran les actions/scénarios/interactions pour lesquel(le)s une tentative d'exécution a été traitée. + 
+
+**Actions historisées :**
+
+![action](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot9.jpg) 
+
+Si vous avez activé "Historiser les actions", vous pourrez retrouver dans cet écran les actions/scénarios/interactions pour lesquel(le)s une tentative d'exécution a été traitée. 
 En haut à droite, vous pouvez définir la période de visualisation ; par défaut, les derniers jours. +
  +
 La liste présente par jour, le nom du scénario ou de l'action traitée, avec son heure de traitement. +
