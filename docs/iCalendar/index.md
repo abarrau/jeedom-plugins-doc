@@ -8,9 +8,9 @@ L’utilisateur dispose de 3 modes de fonctionnement :
 * définir au niveau de l'événement des "scénarios" ou "actions" qui pourront être automatiquement lancés par Jeedom, en début ou en fin d'événement.
 * reconnaissance d'une "interaction" sur le contenu du titre ; après, à vous de définir les actions produites par l'interaction.
 
-<span style='color:red;'>Point d'attention (Suivi de ce plugin au 18/01/20) :</span>
-* iCalendar ne subira plus d'évolution fonctionnelle majeure ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
-* cette version est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
+<span style='color:red;'>**Point d'attention (Suivi de ce plugin au 18/01/20) :**</span>
+* iCalendar n'offrira plus d'évolution fonctionnelle majeure ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
+* la version courante (1.5.1) est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
 
 # Configuration
 Ce plugin permet de retourner les évènements de votre agenda iCalendar, il suffit pour cela de créer un équipement et de lui ajouter autant de "commandes" que vous avez d'agendas à traiter. Même s’il y beaucoups de paramètres, la configuration du plugin est simple : les paramètres par défaut peuvent être conservés, ce qui facilite la création. <br/>
@@ -214,11 +214,11 @@ En cliquant sur un événement, une fenêtre apparaît, permettant d'avoir des d
 
 Si vous avez activé "Historiser les actions", vous pourrez retrouver dans cet écran les actions/scénarios/interactions pour lesquel(le)s une tentative d'exécution a été traitée. 
 En haut à droite, vous pouvez définir la période de visualisation ; par défaut, les derniers jours. 
-<br/>
+
 La liste présente par jour, le nom du scénario ou de l'action traitée, avec son heure de traitement.
 La dernière colonne permet d'avoir des informations sur l'événement associé / ayant demandé le lancement de cette action ou ce scénario.
 Dans le cas d'une interaction, l'information affichée correspond à la "réponse" retournée par l'interaction (mais en aucun cas son nom) ; si aucune réponse n'a été faite, il est indiqué "Non reconnu".
-<br/>
+
 En dessous de la date, vous pouvez supprimer les données historisées pour cette journée. 
 
 
@@ -264,147 +264,123 @@ En l'absence d'accès internet, le cache disponible est sur l'ensemble de l'agen
 
 ## # "Santé" des échanges réseaux
 
-Afin de vous permettre d'avoir une vision sur la validité des synchronisations, une information est remontée au niveau de la page "Santé". <br/>
+Afin de vous permettre d'avoir une vision sur la validité des synchronisations, une information est remontée au niveau de la page "Santé".
 Dans la session "iCalendar", vous pouvez voir pour chacun de vos agendas, l'état des 15 dernières synchronisations réalisées :
 * Si la synchronisation s'est correctement déroulée, un `o` est affiché.
 * Si la synchronisation a rencontré un problème réseau (non accès à l'URL), une `X` est affichée.
 
-image:../images/iCalendar_screenshot7.jpg[]
+![sante](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot7.jpg) 
 
-L'ordre de lecture de ces états est le suivant : le 1er de la liste correspond au test de synchronisation, le dernier en date ; la dernière information de la liste correspond à l'état le plus ancien connu. +
+L'ordre de lecture de ces états est le suivant : le 1er de la liste correspond au test de synchronisation, le dernier en date ; la dernière information de la liste correspond à l'état le plus ancien connu.
 Ces états sont renseignés à chaque synchronisation (soit à chaque période définie dans votre configuration de l'équipement, ou au moment de l'enregistrement de l'équipement si vous avez forcé la synchronisation).
 
 
 ## # Annexes
 
+#### --- _Annexe 1 : Aide à la saisie d'un évènement "Action" (scénario ou commande action) dans votre agenda_
 
-### -- _Annexe 1 : Aide à la saisie d'un évènement "Action" (scénario ou commande action) dans votre agenda_
+Ce paragraphe vous explique comment configurer un évènement agenda pour permettre de lancer automatiquement les scénarios ou des commandes actions. 
+Pour que le plugin reconnaisse que l'évènement est de type "Action", il doit se présenter sous une forme particulière au niveau du champ "description" de l'événement.
 
-Ce paragraphe vous explique comment configurer un évènement agenda pour permettre de lancer automatiquement les scénarios ou des commandes actions. + 
-Pour que le plugin reconnaisse que l'évènement est de type "Action", il doit se présenter sous une forme particulière au niveau du champ "description" de l'événement. +
+**-- Cas du format "Scénario" :** 
 
-*-- Cas du format "Scénario"* : +
-Le format attendu doit être du type : `période (DA ou FA)|sc=id du sénario|nom de la variable=valeur de la variable` +
-__exemple : `DA|sc=3|varVolet=ON` __ , pour action à la 1ère minute (DA), lancement du scénario id="3", et passage de variable au scénario (variable "varVolet", avec la valeur "ON").
+Le format attendu doit être du type : `période (DA ou FA)|sc=id du sénario|nom de la variable=valeur de la variable`.
+_exemple : `DA|sc=3|varVolet=ON`_ , pour action à la 1ère minute (DA), lancement du scénario id="3", et passage de variable au scénario (variable "varVolet", avec la valeur "ON").
 
-Il est aussi possible d'activer ou désactiver un scénario par ce procédé ; ces valeurs sont présentes en fin de liste des choix "nom de la variable". +
-En saisie manuelle, mettre : "#active" pour activer le scénario ou "#desactive" pour désactiver le scénario. +
-Par contre, ne pas mettre de valeur de variable pour que cette action soit prise en compte. +
-__exemple : `DA|sc=3|#active` __ +
-*Remarque:* ces 2 actions ne permettent pas de lancer le scénario, mais juste d'agir dessus. +
- +
+Il est aussi possible d'activer ou désactiver un scénario par ce procédé ; ces valeurs sont présentes en fin de liste des choix "nom de la variable".
+En saisie manuelle, mettre : "#active" pour activer le scénario ou "#desactive" pour désactiver le scénario.
+Par contre, ne pas mettre de valeur de variable pour que cette action soit prise en compte.
+_exemple : `DA|sc=3|#active`_
+_**Remarque:**_ ces 2 actions ne permettent pas de lancer le scénario, mais juste d'agir dessus.
 
-image:../images/iCalendar_screenshot4.jpg[]
+![aide](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot4.jpg) 
 
-[cols="1,3", options="header", width="90%"]
-|=======================
-| Champs | Description
-| Type d'action | Définit le type d'action à produire (commande action ou scénario), ici "Scénario"
-| 1ère minute : nom du scénario | Sélectionner le scénario à exécuter depuis l'évènement à la 1ère minute.
-| 1ère minute : nom de la variable | Sélectionner le nom de la variable à utiliser pour un traitement au niveau du scénario ; cette variable sera utilisée pour faire transiter les informations définies au moment de la 1ère minute. +
-_Valeur non obligatoire, si vous n'avez pas besoin de passer de paramètre_  +
-*Remarque :* la variable doit être créée avant l'utilisation de l'aide (pour apparaître dans la liste des variables).
-| 1ère minute : valeur de la variable | Valeur à passer à la variable lors du démarrage de l'événement (1ère minute), lors de l'état [yellow-background]#;DA;#. +
-_Valeur non obligatoire. Exemple : ON_
-| dernière minute : nom du scénario | Sélectionner le scénario à exécuter depuis l'évènement à la dernière minute.
-| dernière minute : nom de la variable | Sélectionner le nom de la variable à utiliser pour un traitement au niveau du scénario ; cette variable sera utilisée pour faire transiter les informations définies au moment de la dernière minute. +
-_Valeur non obligatoire, si vous n'avez pas besoin de passer de paramètre_  +
-*Remarque :* la variable doit être créée avant l'utilisation de l'aide (pour apparaître dans la liste des variables).
-| dernière minute : valeur de la variable | Valeur à passer à la variable à la fin de l'événement (dernière minute), lors de l'état [yellow-background]#;FA;#. +
-_Valeur non obligatoire. Exemple : ON_
-| _valeur générée_ | Après avoir cliqué sur le bouton "Générer", cette zone représente la syntaxe générée en fonction des valeurs définies ci-dessus. +
-Il est possible de lancer plusieurs sénarios à la 1ère minute ou dernière minute. +
-Un bouton RAZ permet de remettre à vide la zone. 
-|=======================
+| Champs | Description |
+| Type d'action | Définit le type d'action à produire (commande action ou scénario), ici "Scénario" |
+| 1ère minute : nom du scénario | Sélectionner le scénario à exécuter depuis l'évènement à la 1ère minute. |
+| 1ère minute : nom de la variable | Sélectionner le nom de la variable à utiliser pour un traitement au niveau du scénario ; cette variable sera utilisée pour faire transiter les informations définies au moment de la 1ère minute. <br/> _Valeur non obligatoire, si vous n'avez pas besoin de passer de paramètre_  <br/> _**Remarque :**_ la variable doit être créée avant l'utilisation de l'aide (pour apparaître dans la liste des variables). |
+| 1ère minute : valeur de la variable | Valeur à passer à la variable lors du démarrage de l'événement (1ère minute), lors de l'état <span style="background-color:yellow;">#;DA;#</span>. <br/> _Valeur non obligatoire. Exemple : ON_ |
+| dernière minute : nom du scénario | Sélectionner le scénario à exécuter depuis l'évènement à la dernière minute. |
+| dernière minute : nom de la variable | Sélectionner le nom de la variable à utiliser pour un traitement au niveau du scénario ; cette variable sera utilisée pour faire transiter les informations définies au moment de la dernière minute. <br/> _Valeur non obligatoire, si vous n'avez pas besoin de passer de paramètre_  <br/> _**Remarque :**_ la variable doit être créée avant l'utilisation de l'aide (pour apparaître dans la liste des variables). |
+| dernière minute : valeur de la variable | Valeur à passer à la variable à la fin de l'événement (dernière minute), lors de l'état <span style="background-color:yellow;">#;FA;#</span>. <br/> _Valeur non obligatoire. Exemple : ON_ |
+| _valeur générée_ | Après avoir cliqué sur le bouton "Générer", cette zone représente la syntaxe générée en fonction des valeurs définies ci-dessus. <br/> Il est possible de lancer plusieurs sénarios à la 1ère minute ou dernière minute. <br/> Un bouton RAZ permet de remettre à vide la zone. |
 
-*-- Cas du format "Action"* : +
-Le format attendu doit être du type : `période (DA ou FA)|act=commande(id ou nom)|option de commande=valeur` +
-__exemple : `FA|act=[obj][equipment][cmd]|slider=4` __ , pour action à la dernière minute (FA), lancement d'une commande action "cmd" de l'équipement "equipement", et passage de la valeur 4 (commande de type "slider"). +
- +
-Remarque : les options de commande sont dépendantes de la commande utilisée et donc ne sont pas obligatoires. 
+**-- Cas du format "Action" :** 
 
-image:../images/iCalendar_screenshot5.jpg[]
+Le format attendu doit être du type : `période (DA ou FA)|act=commande(id ou nom)|option de commande=valeur`.
+_exemple : `FA|act=[obj][equipment][cmd]|slider=4`_ , pour action à la dernière minute (FA), lancement d'une commande action "cmd" de l'équipement "equipement", et passage de la valeur 4 (commande de type "slider"). 
 
-[cols="1,3", options="header", width="90%"]
-|=======================
-| Champs | Description
-| Type d'action | Définit le type d'action à produire (commande action ou scénario), ici "Action"
-| Format de la commande | Définit si la valeur de l'ID est positionnée ou le format de commande Jeedom (soit [obj][equip][cmd]). +
-*Remarque:* avec l'id, vous n'êtes pas dépendant du nom de la commande ou de l'équipement. Toute modification sur ce dernier n'aura pas d'impact sur le traitement/l'action de la commande. 
-| 1ère minute : commande action | Sélectionner le nom de la commande à utiliser à la 1ère minute. +
-Si cette commande utilise des options (slider, titre/message), vous pourrez alors les compléter. 
-| dernière minute : commande action | Sélectionner le nom de la commande à utiliser à la dernière minute. +
-Si cette commande utilise des options (slider, titre/message), vous pourrez alors les compléter. 
-|=======================
+_**Remarque :**_ les options de commande sont dépendantes de la commande utilisée et donc ne sont pas obligatoires. 
 
-*-- Opération à réaliser :* +
+![aide](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot5.jpg) 
+
+| Champs | Description |
+| Type d'action | Définit le type d'action à produire (commande action ou scénario), ici "Action" |
+| Format de la commande | Définit si la valeur de l'ID est positionnée ou le format de commande Jeedom (soit [obj][equip][cmd]). _**Remarque:**_ avec l'id, vous n'êtes pas dépendant du nom de la commande ou de l'équipement. Toute modification sur ce dernier n'aura pas d'impact sur le traitement/l'action de la commande. |
+| 1ère minute : commande action | Sélectionner le nom de la commande à utiliser à la 1ère minute. <br/> Si cette commande utilise des options (slider, titre/message), vous pourrez alors les compléter. |
+| dernière minute : commande action | Sélectionner le nom de la commande à utiliser à la dernière minute. <br/> Si cette commande utilise des options (slider, titre/message), vous pourrez alors les compléter. |
+
+**-- Opération à réaliser :**
 
 * Une fois les informations renseignées, cliquez sur le bouton "Générer". 
 * La zone grise est complétée, copiez là (ctrl + C).
 * Collez (ctlr + V) l'information dans le champs DESCRIPTION d'un évènement de votre agenda.
 
 
-*REMARQUE:* les anciens formats de trames au niveau du titre sont encore supportés par le plugin, mais seront bientôt supprimés du plugin au profit de cette nouvelle gestion. +
-Pensez à modifier vos configurations pour un traitement avancé du plugin et sa maintenance future. 
-
-
-## --- _Annexe 2 : Fréquence de rafraîchissement_
+### --- _Annexe 2 : Fréquence de rafraîchissement_
 	
-[cols="1,2", options="header", width="50%"]
-|=======================
-| Valeur | Heure du rafraîchissement
-| 30 min. | Aux minutes : 00, 30, de chaque heure.
-| 1 h. | A la minute : 00, de chaque heure. 
-| 3 h. | A : minuit (00h), 3h, 6h, 9h, 12h, 15h, 18h, 21h.
-| 6 h. | A : minuit (00h), 6h, 12h, 18h.
-| 12 h. | A : minuit (00h) et midi (12h)
-| 24 h. | Unique à minuit (00h)
-|=======================
-*Remarque :* _en dehors de ces horaires, aucun rafraîchissement n'est réalisé._
+
+| Valeur | Heure du rafraîchissement |
+| 30 min. | Aux minutes : 00, 30, de chaque heure. |
+| 1 h. | A la minute : 00, de chaque heure. |
+| 3 h. | A : minuit (00h), 3h, 6h, 9h, 12h, 15h, 18h, 21h. |
+| 6 h. | A : minuit (00h), 6h, 12h, 18h. |
+| 12 h. | A : minuit (00h) et midi (12h) |
+| 24 h. | Unique à minuit (00h) |
+
+_**Remarque :** en dehors de ces horaires, aucun rafraîchissement n'est réalisé._
 
 
-## --- _Annexe 3 : URL privée des agendas Google_
+### --- _Annexe 3 : URL privée des agendas Google_
 
-Une fois connecté à l'agenda Google, vous pouvez récupérer l'*URL PRIVEE* de votre agenda comme ceci. <br/>
-* Cliquez sur le nom de l'agenda que vous souhaitez récupérer sous Jeedom et choisir le menu "Paramètres de l'agenda" ; +
-* Allez à la session "Adresse URL Privée" et cliquer sur "ICS" ; +
+Une fois connecté à l'agenda Google, vous pouvez récupérer l'*URL PRIVEE* de votre agenda comme ceci.
+* Cliquez sur le nom de l'agenda que vous souhaitez récupérer sous Jeedom et choisir le menu "Paramètres de l'agenda" ;
+* Allez à la session "Adresse URL Privée" et cliquer sur "ICS" ;
 * La popup s'ouvre et présente l'URL à copier dans Jeedom ;
 
 
 ## --- _Annexe 4 : Format des données (widget et structure des commandes)_
 
-Lorsque la synchronisation est réalisée, le plugin va positionner au niveau de la commande agenda les informations des événements de votre calendrier pour la journée courante. +
+Lorsque la synchronisation est réalisée, le plugin va positionner au niveau de la commande agenda les informations des événements de votre calendrier pour la journée courante.
 
 Il existe 2 formats : 
 
 * version "simple" (diponible pour "événement courant", avec titre uniquement à OUI) : 
-** chaque évènement est séparé par des "||" ; 
-** la donnée ne contient que les titres des événements, aucune autre information "technique" n'est présente dans la commande ; 
+	* chaque évènement est séparé par des "||" ; 
+	* la donnée ne contient que les titres des événements, aucune autre information "technique" n'est présente dans la commande ; 
 
 * version standard/complète (pour tout autre paramétrage) : 
+	* chaque évènement est séparé par des "||" ; 
+	* les données au sein d'un évènement sont séparés par des ";" (point-virgule) ;
+	* les données disponibles sont : 
+		* `heure_début;heure_fin;statut;titre de l'événement;uid;doAct/doInter;date_update;location`
+		* où heure_début, et heure_fin sont des bornes de l'événement pour la journée courante ; 
+		* statut : définit l'état de l'événement à l'instant T; pouvant prendre les valeurs : vide (à venir), DA (1ère minute), A (actif) ,FA (dernière minute), P (passé) ; 
+		* uid : est l'idée technique de l'événement (utilisée pour la liaison avec des données techniques en cache) ; 
+		* doAct/doInter : définit si cet événement présente des commandes actions ou scénarios à exécuter en début ou fin d'événement ; ou une interaction en début d'événement.
+		* date_update : correspond au timestamp update de l'événement ;
+		* location : correspond au lieu de l'événement s'il est défini dans votre agenda.
 
-** chaque évènement est séparé par des "||" ; 
-** les données au sein d'un évènement sont séparés par des ";" (point-virgule) ;
-** les données disponibles sont : 
-*** `heure_début;heure_fin;statut;titre de l'événement;uid;doAct/doInter;date_update;location`
-*** où heure_début, et heure_fin sont des bornes de l'événement pour la journée courante ; 
-*** statut : définit l'état de l'événement à l'instant T; pouvant prendre les valeurs : vide (à venir), DA (1ère minute), A (actif) ,FA (dernière minute), P (passé) ; 
-*** uid : est l'idée technique de l'événement (utilisée pour la liaison avec des données techniques en cache) ; 
-*** doAct/doInter : définit si cet événement présente des commandes actions ou scénarios à exécuter en début ou fin d'événement ; ou une interaction en début d'événement.
-*** date_update : correspond au timestamp update de l'événement ;
-*** location : correspond au lieu de l'événement s'il est défini dans votre agenda.
+**Remarque :**
 
-*Remarque :*
-
-* le plugin sait gérer différents formats d'évènements : 
-** heure au sein d'une journée (ex : 23/02 de 10h à 11h) ;
-** journée complète (ex : 23/02, généralement décrit 23/02 0h à 24/02 0h) : sera transformé en 23/02 0h-23h59 au niveau de la commande et du widget
-** plusieurs journées (ex : 23-25/02) : sera transformé en fonction du jour : 23/02 0h-23h59 , 24/02 0h-23h59, 25/02 0h-23h59
-** plusieurs journées avec horaire (ex : 23/02 à 10h et 25/02 à 14h) : sera transformé en fonction du jour : 23/02 10h-23h59, 24/02 0h-23h59, 25/02 0h-14h
+Le plugin sait gérer différents formats d'évènements : 
+* heure au sein d'une journée (ex : 23/02 de 10h à 11h) ;
+* journée complète (ex : 23/02, généralement décrit 23/02 0h à 24/02 0h) : sera transformé en 23/02 0h-23h59 au niveau de la commande et du widget
+* plusieurs journées (ex : 23-25/02) : sera transformé en fonction du jour : 23/02 0h-23h59 , 24/02 0h-23h59, 25/02 0h-23h59
+* plusieurs journées avec horaire (ex : 23/02 à 10h et 25/02 à 14h) : sera transformé en fonction du jour : 23/02 10h-23h59, 24/02 0h-23h59, 25/02 0h-14h
 
 
-''''
-==== _Annexe 5 : Données des évènements au niveau des scénarios via "fonctions"_
+### --- _Annexe 5 : Données des évènements au niveau des scénarios via "fonctions"_
 
 Pour rappel, une commande agenda retourne des données brutes respectant les formats de données décrits au niveau de l'annexe précédente. +
 Toutefois, une commande complémentaire est disponible au niveau de chaque "agenda", nommé `_nom de la commande agenda_ (ExecuteFunction-_idCommande_)` +
