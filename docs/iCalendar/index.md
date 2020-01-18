@@ -421,7 +421,7 @@ Si la fonction n'a rien trouvé ou a rencontré une erreur, la valeur de retour 
 
 1/ pour l'utilisation de ces fonctions, il est conseillé d'être dans un format de données différent de "événement courant". 
 En effet, ce format étant déjà très limité, ces fonctions spécifiques de formatage de la trame pourraient ne pas s'appliquer.<br/>
-Si ce cas s'applique, le retour prendra la valeur "-1" et un message d'erreur sera précisé dans le log.
+Si ce cas s'applique, le retour prendra la valeur "-1" et un message d'erreur sera précisé dans le log.<br/>
 2/ le séparateur entre les événements est un double pipe "&#124;&#124;". <br/>
 Si vous souhaitez utiliser un autre séparateur pour de l'affichage dans  un mail par exemple, vous pouvez faire un changement de caractère comme suite (ici retour à la ligne) : <br/>
 `str_replace("&#124;&#124;", "\n", variable(getDaySimple_123))`
