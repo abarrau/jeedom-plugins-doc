@@ -4,6 +4,7 @@
 - adaptation: compatibilité jeedom 4.x et php 7 (correction #21,#20)
 - correction/adaptation: diverses corrections (page panel: affichage du détail des évènements, liste des actions)
 - class olindoteTools: 1.11
+(- remise en forme de la doc au template olindote)
 
 #### v1.4.0 (07/03/2019 - STABLE=11/03/2019) :
 - correction: anomalie du "fonction add() on null" (lié à jeedom 3.3.x)
