@@ -479,10 +479,10 @@ _(exemple si l'évènement est configurée sur jour1 10h - jour2 10h; le jour 1,
 Même pour une configuration en "heure suivante", les informations seront affichées uniquement jusqu'à 23h59.
 
 ### --- _Les bornes sont-elles incluses ?_
-L'heure de début est incluse : la 1ère minute est "active" et remonte l'information [yellow-background]#;DA;# (exemple: 10h-18h: 10h00 contient <span >#;DA;#) <br/>
-L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information [yellow-background]#;FA;# ; sauf pour 23h59. <br/>
-_(exemple 1: 10h-18h: 17h59 contient [yellow-background]#;FA;#, à 18h00 l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)_. <br/>
-_(exemple 2: 19h-0h: l'heure de fin est convertie en 23h59 et contient [yellow-background]#;FA;#, à 0h l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)._
+L'heure de début est incluse : la 1ère minute est "active" et remonte l'information <span style="background-color:yellow;">#;DA;#</span> (exemple: 10h-18h: 10h00 contient <span style="background-color:yellow;">#;DA;#</span>) <br/>
+L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information <span style="background-color:yellow;">#;FA;#</span> ; sauf pour 23h59. <br/>
+* _exemple 1:_ 10h-18h: 17h59 contient <span style="background-color:yellow;">#;FA;#</span>, à 18h00 l'évènement est terminé et non actif, <span style="background-color:yellow;">#;A;#</span> n'est plus présent. <br/>
+* _exemple 2:_ 19h-0h: l'heure de fin est convertie en 23h59 et contient [yellow-background]#;FA;#</span>, à 0h l'évènement est terminé et non actif, [yellow-background]#;A;#</span>n'est plus présent.
 
 ### --- _Sur la version mobile, je ne vois pas les évènements passés en affichage journée..._
 Sur la version mobile, seuls les évènements en cours et à venir sont affichés. Même en mode journée, les évènements passés ne sont plus affichés (contrairement à l'affichage dashboard).
@@ -498,7 +498,7 @@ https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar
 
 
 ### --- (?) _Mes scénarios réagissent à des évènements passés ou futurs (mode prochaine heure ou journée)_
-Dans l'analyse de la trame, il faut vérifier que vous êtes sur un évènement actif; en vérifiant que [yellow-background]#;A;# est présent. _(exemple : "..." matches "/;A;mon event/")_.
+Dans l'analyse de la trame, il faut vérifier que vous êtes sur un évènement actif; en vérifiant que <span style="background-color:yellow;">#;A;#</span> est présent. _(exemple : "..." matches "/;A;mon event/")_.
 Voir la documentation pour plus d'explications.
 
 
