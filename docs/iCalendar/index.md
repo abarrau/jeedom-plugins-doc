@@ -396,6 +396,7 @@ Si plusieurs titres correspondent, le 1er est retourné.
 
 
 | Fonction | Description | Arguments |
+|--|--|--|
 | getTimeStart | donne l'heure de début de l'événement choisi | 1/ `#title=xxx#` : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ <br/> 2/ `#date=xxx#` : format de retour pour la date (conforme à la configuration au niveau de Jeedom) les possibilités de format sont équivalentes à celles de php). ; _exemple : date=H:i:s ou date=d/m H:i_ ; par défaut, valeur retournée est au format timestamp. <br/>  3/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
 | getTimeEnd | donne l'heure de fin de l'événement choisi | 1/ `#title=xxx#` : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ <br/> 2/ `#date=xxx#` : format de retour pour la date (conforme à la configuration au niveau de Jeedom) les possibilités de format sont équivalentes à celles de php). ; _exemple : date=H:i:s ou date=d/m H:i_ ; par défaut, valeur retournée est au format timestamp. <br/> 3/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
 | getUid | donne l'id technique de l'événement choisi | 1/ `#title=xxx#` : le titre de l'événenement à rechercher, le texte doit être exact ; _exemple : title=Volet RDC_ <br/> 2/ `#jour=xxx#` : jour à analyser (J1,J2, ...); par défaut, valeur retournée pour J0 |
