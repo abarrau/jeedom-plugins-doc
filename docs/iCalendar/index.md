@@ -417,23 +417,24 @@ Dès lors que cette variable passe à une autre valeur, cela signifie que la fon
 Si la fonction n'a rien trouvé ou a rencontré une erreur, la valeur de retour de non traitement est "-1".
 
 **Remarque pour les fonction "getDay...":** 
+
 1/ pour l'utilisation de ces fonctions, il est conseillé d'être dans un format de données différent de "événement courant". 
-En effet, ce format étant déjà très limité, ces fonctions spécifiques de formatage de la trame pourraient ne pas s'appliquer.
+En effet, ce format étant déjà très limité, ces fonctions spécifiques de formatage de la trame pourraient ne pas s'appliquer.<br/>
 Si ce cas s'applique, le retour prendra la valeur "-1" et un message d'erreur sera précisé dans le log.
-2/ le séparateur entre les événements est un double pipe "&#124;&#124;". 
-Si vous souhaitez utiliser un autre séparateur pour de l'affichage dans  un mail par exemple, vous pouvez faire un changement de caractère comme suite (ici retour à la ligne) :
+2/ le séparateur entre les événements est un double pipe "&#124;&#124;". <br/>
+Si vous souhaitez utiliser un autre séparateur pour de l'affichage dans  un mail par exemple, vous pouvez faire un changement de caractère comme suite (ici retour à la ligne) : <br/>
 `str_replace("&#124;&#124;", "\n", variable(getDaySimple_123))`
- +
+
  
 **Processus d'utilisation dans un scénario :**
 
 * 1/ Sélectionner votre commande agenda permettant d'exécuter des fonctions au niveau d'une zone "action".
 * 2/ Dans la zone "fonction", taper "get" et sélectionner dans la liste la fonction souhaitée (cf. ci-dessus).
-* 3/ Ajouter une commande action avec la fonction "wait" ;
+* 3/ Ajouter une commande action avec la fonction "wait" ; <br/>
 **Remarque:** les temps de réponse des fonctions sont relativement rapides, mais il est préférable d'avoir une tempo pour s'assurer que la valeur retournée est bien celle attendue, pour la suite du scénario. 
 La saisie doit être du type : `variable(getTimeEnd_12345) != -99` , (avec un timeout de 5sec par exemple).
-* 4/ une fois cette condition passée, vous pouvez utiliser votre variable dans la suite du scénario. +
-*Remarque:* Il est conseillé de faire d'abord un test sur la pertinence de votre variable : autre que "-1".
+* 4/ une fois cette condition passée, vous pouvez utiliser votre variable dans la suite du scénario. <br/>
+**Remarque:** Il est conseillé de faire d'abord un test sur la pertinence de votre variable : autre que "-1".
 
 
 ![scenario](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_scenarioFonction.png) 
@@ -462,12 +463,12 @@ Mais pour les utilisateurs qui veulent aller plus loin dans la configuration, vo
 # FAQ
 
 ### --- _Peut-on visualiser les futurs évènements ?_
-Avec les valeurs "événement heure à venir" et "événement sur la journée" du paramètre "format donnée" : oui d'un point de vue affichage sur le widget. 
+Avec les valeurs "événement heure à venir" et "événement sur la journée" du paramètre "format donnée" : oui d'un point de vue affichage sur le widget. <br/>
 Par contre, le traitement de futurs évènements n'est pas possible (ils ne sont présents qu'en terme d'affichage), sauf si vous parsez les informations. 
 
 ### --- _J'ai modifié mon agenda et l'évènement n'apparaît pas..._
 Le rafraîchissement du cache est réalisé en fonction du paramétrage que vous avez configuré (minimum 30 min). 
-Toutes modifications sur l'agenda n'apparaîtront sur le plugin iCalendar qu'aux heures fixes liées à la configuration définie (cf. doc). 
+Toutes modifications sur l'agenda n'apparaîtront sur le plugin iCalendar qu'aux heures fixes liées à la configuration définie (cf. doc). <br/>
 Mais il est possible de forcer cette synchronisation au moment de l'enregistrement de l'agenda (équipement).
 
 ### --- _Quelle période de l'agenda est affichée dans le widget ?_
@@ -477,20 +478,21 @@ _(exemple si l'évènement est configurée sur jour1 10h - jour2 10h; le jour 1,
 Même pour une configuration en "heure suivante", les informations seront affichées uniquement jusqu'à 23h59.
 
 ### --- _Les bornes sont-elles incluses ?_
-L'heure de début est incluse : la 1ère minute est "active" et remonte l'information [yellow-background]#;DA;# (exemple: 10h-18h: 10h00 contient <span >#;DA;#)
-L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information [yellow-background]#;FA;# ; sauf pour 23h59.
-_(exemple 1: 10h-18h: 17h59 contient [yellow-background]#;FA;#, à 18h00 l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)_.
+L'heure de début est incluse : la 1ère minute est "active" et remonte l'information [yellow-background]#;DA;# (exemple: 10h-18h: 10h00 contient <span >#;DA;#) <br/>
+L'heure de fin n'est pas incluse dans la période d'activité, c'est la dernière minute précédente qui présente l'information [yellow-background]#;FA;# ; sauf pour 23h59. <br/>
+_(exemple 1: 10h-18h: 17h59 contient [yellow-background]#;FA;#, à 18h00 l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)_. <br/>
 _(exemple 2: 19h-0h: l'heure de fin est convertie en 23h59 et contient [yellow-background]#;FA;#, à 0h l'évènement est terminé et non actif, [yellow-background]#;A;# n'est plus présent)._
 
 ### --- _Sur la version mobile, je ne vois pas les évènements passés en affichage journée..._
 Sur la version mobile, seuls les évènements en cours et à venir sont affichés. Même en mode journée, les évènements passés ne sont plus affichés (contrairement à l'affichage dashboard).
 
 ### --- _J'ai des messages d'erreur du type "La commande action : [objet][equipement][cmd], est inconnue pour l événement suivant : mon titre événement. Revoir la configuration de votre événement" qui s'affiche au niveau de la messagerie Jeedom ?_
-L'id ou le nom de la commande, ou l'id du scénario que vous déclaré en tant qu'action dans votre événement n'existe pas (ou plus) dans Jeedom. <br/> Vous devez vérifier si vous n'avez pas modifié cette commande/scénario et faire la modification dans votre événement au niveau de votre agenda.
+L'id ou le nom de la commande, ou l'id du scénario que vous déclaré en tant qu'action dans votre événement n'existe pas (ou plus) dans Jeedom. <br/> 
+Vous devez vérifier si vous n'avez pas modifié cette commande/scénario et faire la modification dans votre événement au niveau de votre agenda.
 
 ### --- _Existe-il un agenda des jours fériés ?_
 Oui il existe un agenda google qui liste les jours fériés, l'URL est la suivante (ici pour la France) : 
-https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics
+https://calendar.google.com/calendar/ical/fr.french%23holiday%40group.v.calendar.google.com/public/basic.ics <br/>
 **Remarque :** par contre, ce calendrier présente aussi des évènements (comme la fête des mères) qui ne sont pas des jours fériés ... :(
 
 
@@ -501,7 +503,9 @@ Voir la documentation pour plus d'explications.
 
 ## ?? Pourquoi ce plugin ??
 
-A l'origine, Google permettait d'échanger les données au format csv ; je participais au développement du plugin officiel gCalendar.
+A l'origine, Google permettait d'échanger les données au format csv ; je participais au développement du plugin officiel gCalendar. <br/>
 Lorsque Google a arrêté cette fonction au profit du format iCal (ics), Jeedom a arrêté le plugin gCalendar. J'ai donc créé le plugin iCalendar en remplacement. 
+
 Son objectif était d'automatiser des actions en les configurants dans un calendrier accessibles à tous au sein d'une famille (via google). 
+
 Bonne utilisation ....
