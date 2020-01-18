@@ -134,52 +134,49 @@ Les agendas peuvent être triés par ordre d'affichage, en cliquant sur l'icône
 
 **Actions et Informations de synchro**
 
-| Paramètre | Type | Description |
-|--|--|--|
-| Paramètre (roue crantée) | | Permet de définir les options "Jeedom" de la commande. |
+| Paramètre | Description |
+|--|--|
+| Paramètre (roue crantée) | Permet de définir les options "Jeedom" de la commande. |
 | Tester | | Permet de tester la commande (affiche le contenu de la commande). <br/> _**Remarque :**_ la donnée s'affiche uniquement après un 1er rafraîchissement. |
-| Supprimer | | Permet de supprimer la commande et les commandes rattachées (si agenda sur plusieurs jours).
-| Date du fichier | | indique la date du dernier téléchargement et sauvegarde en cache du fichier ics. <br/> _**Remarque:**_ lors d'une synchronisation, le fichier peut ne pas être sauvegardé en cache, si les 2 fichiers sont identiques. <br/>
+| Supprimer | Permet de supprimer la commande et les commandes rattachées (si agenda sur plusieurs jours).
+| Date du fichier | indique la date du dernier téléchargement et sauvegarde en cache du fichier ics. <br/> _**Remarque:**_ lors d'une synchronisation, le fichier peut ne pas être sauvegardé en cache, si les 2 fichiers sont identiques. <br/>
 Un bouton "télécharger", vous permet de récupérer le fichier actuellement en cache pour une lecture locale sur votre poste de travail. |
-| Date synchro précédente | | indique la date de la dernière synchronisation entre Jeedom et votre agenda ics. |
-| Date synchro suivante | | indique la date de la prochaine synchronisation entre Jeedom et votre agenda ics. <br/>
-*Remarque:* si la valeur est "STOP", cela signifie que votre équipement est désactivé. |
+| Date synchro précédente | indique la date de la dernière synchronisation entre Jeedom et votre agenda ics. |
+| Date synchro suivante | indique la date de la prochaine synchronisation entre Jeedom et votre agenda ics. <br/> _**Remarque:**_ si la valeur est "STOP", cela signifie que votre équipement est désactivé. |
 
 
-### Exemple d'un écran listant les noms des agendas CalDav 
+### -- Exemple d'un écran listant les noms des agendas CalDav 
 
-image:../images/iCalendar_caldav1.png[]
- +
- +
+![CalDav](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_caldav1.png)
+<br/>
 
-## Présentation du Widget
+
+## # Présentation du Widget
 
 Le widget se présente sous la forme suivante, si aucun style n'est appliqué :
 
-image:../images/iCalendar_screenshot1.jpg[] + 
+![widget1](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot1.jpg) 
+<br/><br/>
+![widget2](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot6.jpg)
+![widget3](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_affichagetoutesjournees.png)
 
-image:../images/iCalendar_screenshot6.jpg[]  
-image:../images/iCalendar_affichagetoutesjournees.png[]
 
 Au niveau d'un calendrier :
-
 * Le nombre d'événements est affiché à côté du titre du calendrier ;
-** En passant la souris sur le titre de l'agenda : affiche le type d'affichage, ainsi que les dates de collecte et de valeur ; 
+	* En passant la souris sur le titre de l'agenda : affiche le type d'affichage, ainsi que les dates de collecte et de valeur ;
 * Les évènements passés sont grisés ; 
 * Les évènements en cours sont repérés par une icône "Actif" (mais aussi 1ère minute et dernière minute, si l'option est active) ; 
 * Les évènements à venir sont représentés sans indicateur ; 
 * Les évènements identifiés avec des actions de type (Scénarios ou Actions) sont représentés par : (seulement si l'option "Autoriser les scénarios/actions" est activée) : 
-** Une icône "roues crantées" indique que l'événement déclenche des scénarios ou des actions ; 
-*** en cliquant dessus, la liste des scénarios ou des actions configurés en début ou fin d'événement est affichée ; + 
-En cliquant une seconde fois, ou sur une autre roue la fenêtre d'information actuelle se masque ;
-*** en cliquant sur le nom du scénario ou de l'action, la page de configuration s'ouvre ; 
-*** une icône verte apparait à côté de l'action/scénario pour indiquer qu'il/elle a bien été exécuté(e) ; +
-En passant la souris sur l'icône, il est possible de voir la date de traitement.
-** Une icône "bulle de BD" indique que l'événement peut déclencher une interaction ; 
+	* Une icône "roues crantées" indique que l'événement déclenche des scénarios ou des actions ; 
+		* en cliquant dessus, la liste des scénarios ou des actions configurés en début ou fin d'événement est affichée ; <br/> En cliquant une seconde fois, ou sur une autre roue la fenêtre d'information actuelle se masque ;
+		* en cliquant sur le nom du scénario ou de l'action, la page de configuration s'ouvre ; 
+		* une icône verte apparait à côté de l'action/scénario pour indiquer qu'il/elle a bien été exécuté(e) ; <br/> En passant la souris sur l'icône, il est possible de voir la date de traitement.
+	* Une icône "bulle de BD" indique que l'événement peut déclencher une interaction ; 
 
 La seconde image montre comment il est possible de personnaliser le widget en utilisant les class (cf. Annexe 6).
 
-### Autres fonctionnalités :
+### -- Autres fonctionnalités :
 
 * Le widget peut être redimensionné en largeur et hauteur, du moment que les tailles souhaitées soient supérieures à l'espace minimum prévu pour l'affichage des données. 
 En cas de dimensionnement inférieur, un message d'erreur est affiché. 
@@ -188,13 +185,13 @@ En cas de dimensionnement inférieur, un message d'erreur est affiché.
 
 
 
-## Présentation du panel : avec liste des actions historisées et visualisation de l'agenda
+## # Présentation du panel : avec liste des actions historisées et visualisation de l'agenda
 
-Vous pouvez atteindre ce menu en sélectionnant le menu "Accueil", puis "iCalendar". +
+Vous pouvez atteindre ce menu en sélectionnant le menu "Accueil", puis "iCalendar".
 
-*Visualisation de l'agenda :* +
+**Visualisation de l'agenda :**
 
-image:../images/iCalendar_screenshot8.jpg[]
+![agenda](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_screenshot8.jpg) 
 
 Après avoir sélectionné un agenda, vous pouvez cliquer sur le type d'affichage souhaité "Calendrier" (bouton en haut à gauche). +
 Vous pouvez alors parcourir votre agenda comme si vous étiez sur la version "distante" (Google, etc...). +
