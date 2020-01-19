@@ -1,7 +1,7 @@
 # Changelog
 
-#### v1.5.2 (18/01/2020=BETA - STABLE=?) :
-- adaptation: compatibilité jeedom 4.x et php 7 (correction #21,#20)
+#### v1.5.2 (15-17-18/01/2020=BETA - STABLE=18/01/2020) :
+- adaptation: compatibilité jeedom 4.x et php 7 (correction #32,#33)
 - correction/adaptation: diverses corrections (page panel: affichage du détail des évènements, liste des actions)
 - class olindoteTools: 1.12
 - _remise en forme de la doc au template olindote_
