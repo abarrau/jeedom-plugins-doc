@@ -1,6 +1,6 @@
 # Changelog
 
-#### v1.2.3 (12/04/2019 - STABLE=16/04) :
+#### v1.2.3 (12/04/2019=BETA - STABLE=16/04) :
 - correction: affichage du plugin sur panel l'appli web mobile (issue#5)
 
 #### v1.2.2 (11/04/2019) :

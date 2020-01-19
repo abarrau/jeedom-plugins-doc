@@ -328,7 +328,7 @@ _**Remarque :**_ les options de commande sont dépendantes de la commande utilis
 * Collez (ctlr + V) l'information dans le champs DESCRIPTION d'un évènement de votre agenda.
 
 
-### --- _Annexe 2 : Fréquence de rafraîchissement_
+#### --- _Annexe 2 : Fréquence de rafraîchissement_
 	
 
 | Valeur | Heure du rafraîchissement |
@@ -343,7 +343,7 @@ _**Remarque :**_ les options de commande sont dépendantes de la commande utilis
 _**Remarque :** en dehors de ces horaires, aucun rafraîchissement n'est réalisé._
 
 
-### --- _Annexe 3 : URL privée des agendas Google_
+#### --- _Annexe 3 : URL privée des agendas Google_
 
 Une fois connecté à l'agenda Google, vous pouvez récupérer l'*URL PRIVEE* de votre agenda comme ceci.
 * Cliquez sur le nom de l'agenda que vous souhaitez récupérer sous Jeedom et choisir le menu "Paramètres de l'agenda" ;
@@ -351,7 +351,7 @@ Une fois connecté à l'agenda Google, vous pouvez récupérer l'*URL PRIVEE* de
 * La popup s'ouvre et présente l'URL à copier dans Jeedom ;
 
 
-### --- _Annexe 4 : Format des données (widget et structure des commandes)_
+#### --- _Annexe 4 : Format des données (widget et structure des commandes)_
 
 Lorsque la synchronisation est réalisée, le plugin va positionner au niveau de la commande agenda les informations des événements de votre calendrier pour la journée courante.
 
@@ -382,7 +382,7 @@ Le plugin sait gérer différents formats d'évènements :
 * plusieurs journées avec horaire (ex : 23/02 à 10h et 25/02 à 14h) : sera transformé en fonction du jour : 23/02 10h-23h59, 24/02 0h-23h59, 25/02 0h-14h
 
 
-### --- _Annexe 5 : Données des évènements au niveau des scénarios via "fonctions"_
+#### --- _Annexe 5 : Données des évènements au niveau des scénarios via "fonctions"_
 
 Pour rappel, une commande agenda retourne des données brutes respectant les formats de données décrits au niveau de l'annexe précédente.
 Toutefois, une commande complémentaire est disponible au niveau de chaque "agenda", nommé `_nom de la commande agenda_ (ExecuteFunction-_idCommande_)`.
@@ -441,7 +441,7 @@ La saisie doit être du type : `variable(getTimeEnd_12345) != -99` , (avec un ti
 ![scenario](https://abarrau.github.io/jeedom-plugins-doc/iCalendar/images/iCalendar_scenarioFonction.png) 
 
 
-### --- _Annexe 6 : Les classes CSS disponibles_
+#### --- _Annexe 6 : Les classes CSS disponibles_
 
 Vous pouvez utiliser 3 paramètres au niveau des options de la tuile de l'agenda pour gérer les couleurs : 
 
