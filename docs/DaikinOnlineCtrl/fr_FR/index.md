@@ -26,7 +26,7 @@ Il peut arriver qu’un module wifi ne soit plus exploitable (retour d’erreur 
 **Powerful**
 
 | Paramètre	| Type | Description |
-|--|--|––|
+|--|--|--|
 | Durée | Liste de choix | Permet de définir la durée de cette action. Au bout de ce temps, l'équipement revient aux valeurs initiales. <br/> Choix possibles : 5, 10, 15 ou 20 minutes. |
 | Degrés supplémentaires | Liste de choix | Définit le nombre de degrés à ajouter à la consigne ou la sonde durant ce temps de powerful. <br/> Choix possibles : 3, 4, 5 ou 6 degrés. |
 | Température de référence | Liste de choix | Définit à partir de quelle valeur les degrés supplémentaires sont ajoutées pour définir la nouvelle valeur de consigne. <br/> Choix possibles : sonde ou consigne. |
@@ -50,7 +50,7 @@ Le plugin propose également l'accès à une "réplique" de l'application mobile
 
 La page du plugin Daikin regroupe l’ensemble des modules configurés :
 
-![Equipement](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_equipement.jpg)	
+![Equipement](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_equipement.png)	
 
 <span style="color:blue;">NOTES :</span>
 * En cliquant sur l’icone tableau à coté de la zone recherche, vous permet de passer d’un affichage “icone” à un affichage sous forme de “tableau”.
@@ -77,6 +77,8 @@ Cliquez sur “Ajouter” pour ajouter un module. Renseignez ensuite les _param�
 | Ne pas remonter les erreurs dans la console des messages Jeedom | Checkbox | permet de désaciriver la remonté d'informaton dans la console des messages Jeedom. Les "erreurs/warning" seront visibles uniquement dans les logs ou santé du plugin. <br> _**Remarque:**_ Ce cas est interressant si vous rencontrez régulièrement des "pertes réseaux" du module. |
 
 #### -- Onglet "Paramètre"
+
+![Paramètres](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_parametre.png)	
 
 | Paramètre	| Type | Description |
 |--|--|--|
@@ -151,12 +153,12 @@ _en rédaction_
 
 #### --- _Annexe 1 : Installation et configuration du module wifi_
 
-| **a) Connecter le module Daikin à la climatisation :** <br/> - couper l'arrivée électrique de la climatisation <br/> - ouvrir l'unité intérieure Daikin (vous pouvez vous aider de la vidéo pour FTXS / ATXS / CTXS) <br/> - connecter le module au port S21 de la carte électronique <br/> - refermer l'unité intérieure et remettre le courant |
-| **b) Configurer le module Daikin en mode AP (Access Point) :** <br/> Le mode AP permet au module Daikin de créer un réseau Wifi privé sur lequel se connecter depuis un smartphone ou tablette pour configurer les paramètres de son réseau Wifi personnel. Maintenir le bouton (<span style="background-color:yellow;">#MODE#</span>) environ 2s pour passer du mode (<span style="background-color:yellow;">#RUN#</span>) au mode (<span style="background-color:yellow;">#AP#</span>). | ![Module1](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img1.png) &nbsp; ![Module2](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img2.png) |
-| **c) Se connecter au module Daikin depuis son smartphone (ou tablette) :** <br/> Les identifiants nécessaires pour se connecter au module Daikin en mode AP sont fournis sur une petite étiquette autocollante mais aussi sur la tranche du module (identifiants = SSID / Key). <br/> - ouvrir les paramètres Wifi et se connecter au réseau SSID “DaikinAPxxxxx” (mot de passe = Key) <br/><br/>**NB:** si le réseau “DaikinAPxxxxx” est invisible, essayer avec un autre smartphone / tablette. | ![Module3](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img3.png) &nbsp; ![Module4](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img4.png) |
-| **d) Connecter le module Daikin à votre réseau Wifi :** <br/> - installer l’application Daikin Online Controller, ouvrir l'application puis accepter le contrat de licence <br/> - attendre la découverte du module Daikin <br/><br/> **NB:** si une pastille de couleur apparaît sur l'icône de l'unité découverte, le firmware doit être mis à jour. | ![Module5](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img5.png) &nbsp; ![Module6](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img6.png) |
-| - sélectionner l’unité découverte (Unité 1 dans l’exemple) et aller dans le menu (<span style="background-color:yellow;">#Plus#</span>) <br/>- entrer dans la section (<span style="background-color:yellow;">#Connexion WLAN#</span>) et sélectionner le réseau à rejoindre | ![Module7](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img7.png) &nbsp; ![Module8](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img8.png) |
-| - saisir le mot de passe du réseau Wifi à rejoindre et appuyer sur Enregistrer (en haut à droite) | ![Module9](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img9.png) &nbsp; ![Module10](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img10.png) |
+| **a) Connecter le module Daikin à la climatisation :** <br/> - couper l'arrivée électrique de la climatisation <br/> - ouvrir l'unité intérieure Daikin (vous pouvez vous aider de la vidéo pour FTXS / ATXS / CTXS) <br/> - connecter le module au port S21 de la carte électronique <br/> - refermer l'unité intérieure et remettre le courant | | |
+| **b) Configurer le module Daikin en mode AP (Access Point) :** <br/> Le mode AP permet au module Daikin de créer un réseau Wifi privé sur lequel se connecter depuis un smartphone ou tablette pour configurer les paramètres de son réseau Wifi personnel. Maintenir le bouton (<span style="background-color:yellow;">#MODE#</span>) environ 2s pour passer du mode (<span style="background-color:yellow;">#RUN#</span>) au mode (<span style="background-color:yellow;">#AP#</span>). | ![Module1](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img1.png) | ![Module2](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img2.png) |
+| **c) Se connecter au module Daikin depuis son smartphone (ou tablette) :** <br/> Les identifiants nécessaires pour se connecter au module Daikin en mode AP sont fournis sur une petite étiquette autocollante mais aussi sur la tranche du module (identifiants = SSID / Key). <br/> - ouvrir les paramètres Wifi et se connecter au réseau SSID “DaikinAPxxxxx” (mot de passe = Key) <br/><br/>**NB:** si le réseau “DaikinAPxxxxx” est invisible, essayer avec un autre smartphone / tablette. | ![Module3](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img3.png) | ![Module4](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img4.png) |
+| **d) Connecter le module Daikin à votre réseau Wifi :** <br/> - installer l’application Daikin Online Controller, ouvrir l'application puis accepter le contrat de licence <br/> - attendre la découverte du module Daikin <br/><br/> **NB:** si une pastille de couleur apparaît sur l'icône de l'unité découverte, le firmware doit être mis à jour. | ![Module5](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img5.png) | ![Module6](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img6.png) |
+| - sélectionner l’unité découverte (Unité 1 dans l’exemple) et aller dans le menu (<span style="background-color:yellow;">#Plus#</span>) <br/>- entrer dans la section (<span style="background-color:yellow;">#Connexion WLAN#</span>) et sélectionner le réseau à rejoindre | ![Module7](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img7.png) | ![Module8](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img8.png) |
+| - saisir le mot de passe du réseau Wifi à rejoindre et appuyer sur Enregistrer (en haut à droite) | ![Module9](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img9.png) | ![Module10](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_InstallModule_img10.png) |
 | Le module Daikin va se connecter au réseau Wifi et comme l’indique le popup, si la connexion est réussie le voyant RUN va clignoter puis rester fixe. Appuyer alors sur Succès pour que le smartphone / tablette se déconnecte du réseau “DaikinAPxxxxx”. <br/> Si le voyant RUN clignote encore après un délais de 30s, le module Daikin ne réussi pas à se connecter à votre réseau. Dans quel cas, appuyer sur Échec et contrôler les paramètres Wifi indiqués à l’étape précédente. |
 
 #### --- _Annexe 2 : Valeurs par défaut_
@@ -183,6 +185,7 @@ Cette liste n'est pas exaustive, n'hésitez pas à remonter vos remarques [ici](
 
 | Modèle | Version logicielle | Commentaire |
 | BRP069A42 | App Daikin 2.4.1 | direction horizontale non dispo |
+| BRP069A43 | | |
 | BRP069B41 | 1.2.48 | directions verticale et horizontale inopérantes |
 
 
@@ -200,9 +203,9 @@ Les paramètres optionnels disponibles applicable sur le widget du plugin sont :
 
 
 
-# FAQ
+## ?? Pourquoi ce plugin ??
 
-#### --- _Le module *BRP069A43* est-il pris en charge par le plugin ?_
-Oui, d'après les retours le module *BRP069A43* fonctionne bien avec le plugin Daikin Online Ctrl. 
+C'est le 1er défit lancé par Masterfion qui venait de s'équiper de clim Daikin, et j'allais de mon coté m'en équiper également .... alors je me suis lancé à l'aveugle dans mon 1er plugin en 2015.<br/>
+Beaucoup d'heure de travail, mais le plugin est toujours là, c'est ce qui compte :) 
 
-
+Bonne utilisation ....
