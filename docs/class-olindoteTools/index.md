@@ -4,6 +4,8 @@ En cas d'erreur et pour suivre [l'installation](https://abarrau.github.io/jeedom
 
 __Remarque__: cette class est destinée à l'utilisation des plugins développés par abarrau, toute utilisation par un autre développeur ne sera pas sous la responsablité d'abarrau.
 
+Les plugins utilisant cette class sont : iCalendar, DaikinOnlineCtr, ttsWebServer, drawMaps.
+
 ### Pourquoi la class "olindoteTools" ?
 - La class olindoteTools existe depuis le début des plugins développés par abarrau, mais était liée à chaque plugin.   
 - En multipliant la réalisation des plugins et avec les modifications permanentes coté coeur/noyau Jeedom, la centralisation de certaines fonctionnalitées facilites les mises à jour. 
