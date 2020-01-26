@@ -1,6 +1,30 @@
 <html>
   <head>
-    <script language="javascript">if (window.location.search=='?changelog') window.location.href = 'fr_FR/changelog'; </script>
+    <script language="javascript">
+		function setDataPage(project_title) {
+			var _plugin = getCourrantPlugin();
+			if (_plugin=='') {
+				$('#header_wrap #project_title').html("Documentation");
+				$('.oT_picture img').hide();
+				$('.oT_menuLink[data-action="changelog"]').hide();
+			} else {
+				$('#header_wrap #project_title').html(_plugin);
+				var srcPic="{{site.github.url}}/"+_plugin+"/images/"+getCourrantPlugin()+"_icon.png"; $('.oT_picture img').attr('src',srcPic);
+				$('.oT_menuLink[data-action="doc"]').attr('href','{{site.github.url}}/'+_plugin+'/');
+				$('.oT_menuLink[data-action="changelog"]').attr('href','{{site.github.url}}/'+_plugin+'/fr_FR/changelog');
+			}
+		}
+		function setOtherDoc() {
+		  $.each(_pluginList, function(k,_pluginName) {
+			var _href = "https://abarrau.github.io/jeedom-plugins-doc/"+_pluginName+"/";
+			$('#oT_otherPlugin').append("<a href='"+_href+"'><img src='"+_href+"images/"+_pluginName+"_icon.png"+"' class='oT_imgPlugin' border='0'/></a>");
+		  });
+		}
+		function getCourrantPlugin() { var aPath = window.location.pathname.split('/'); return (typeof aPath[2]!=='undefined')?aPath[2]:''; }
+		// gestion de la page //		
+		if (window.location.search=='?changelog') { window.location.href = getCourrantPlugin()+'/fr_FR/changelog'; }
+			else { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-135293349-2'); }
+	</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135293349-2"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -61,31 +85,9 @@
     #main_content { padding:4px!important; }
   </style>
   <script language="javascript">
-    function setDataPage(project_title) {
-		var _plugin = getCourrantPlugin();
-		if (_plugin=='') {
-			$('#header_wrap #project_title').html("Documentation");
-			$('.oT_picture img').hide();
-			$('.oT_menuLink[data-action="changelog"]').hide();
-		} else {
-			$('#header_wrap #project_title').html(_plugin);
-			var srcPic="{{site.github.url}}/"+_plugin+"/images/"+getCourrantPlugin()+"_icon.png"; $('.oT_picture img').attr('src',srcPic);
-			$('.oT_menuLink[data-action="doc"]').attr('href','{{site.github.url}}/'+_plugin+'/');
-			$('.oT_menuLink[data-action="changelog"]').attr('href','{{site.github.url}}/'+_plugin+'/fr_FR/changelog');
-		}
-    }
-    function setOtherDoc() {
-      $.each(_pluginList, function(k,_pluginName) {
-        var _href = "https://abarrau.github.io/jeedom-plugins-doc/"+_pluginName+"/";
-        $('#oT_otherPlugin').append("<a href='"+_href+"'><img src='"+_href+"images/"+_pluginName+"_icon.png"+"' class='oT_imgPlugin' border='0'/></a>");
-      });
-    }
-	function getCourrantPlugin() { var aPath = window.location.pathname.split('/'); return (typeof aPath[2]!=='undefined')?aPath[2]:''; }
     // Actions //
     var _pluginList = ['class-olindoteTools','iCalendar','DaikinOnlineCtrl','ttsWebServer','drawMaps'];
     setDataPage();
     setOtherDoc();
-	// Google stat //
-    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-135293349-2');
   </script>
 </html>
