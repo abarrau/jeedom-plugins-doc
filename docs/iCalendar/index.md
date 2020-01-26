@@ -10,7 +10,7 @@ L’utilisateur dispose de 3 modes de fonctionnement :
 
 <span style='color:red;'>**Point d'attention (Suivi de ce plugin au 18/01/20) :**</span>
 * iCalendar n'offrira plus d'évolution fonctionnelle majeure ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
-* la version courante (1.5.1) est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
+* la version courante (1.5.2) est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
 
 # Configuration
 Ce plugin permet de retourner les évènements de votre agenda iCalendar, il suffit pour cela de créer un équipement et de lui ajouter autant de "commandes" que vous avez d'agendas à traiter. Même s’il y beaucoups de paramètres, la configuration du plugin est simple : les paramètres par défaut peuvent être conservés, ce qui facilite la création. <br/>
