@@ -23,7 +23,7 @@
 		}
 		function getCourrantPlugin() { var aPath = window.location.pathname.split('/'); return (typeof aPath[2]!=='undefined')?aPath[2]:''; }
 		// gestion de la page //		
-		if (window.location.search=='?changelog') { console.log('a) '+window.location.href); window.location.href = getCourrantPlugin()+'/fr_FR/changelog'; console.log('b) '+window.location.href); }
+		if (window.location.search=='?changelog') { console.log('a) '+window.location.href); window.location.href = '{{site.github.url}}/'+getCourrantPlugin()+'/fr_FR/changelog'; console.log('b) '+window.location.href); }
 			else { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-135293349-2'); }
 	</script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
