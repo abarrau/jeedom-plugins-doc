@@ -1,33 +1,19 @@
 <html>
   <head>
     <script language="javascript">
-	    
 		function setDataPage(project_title) {
 			var _plugin = getCourrantPlugin();
-			if (_plugin=='') {
-				$('#header_wrap #project_title').html("Documentation");
-				$('.oT_picture img').hide();
-				$('.oT_menuLink[data-action="changelog"]').hide();
-			} else {
-				$('#header_wrap #project_title').html(_plugin);
-				var srcPic="{{site.github.url}}/"+_plugin+"/images/"+getCourrantPlugin()+"_icon.png"; $('.oT_picture img').attr('src',srcPic);
-				$('.oT_menuLink[data-action="doc"]').attr('href','{{site.github.url}}/'+_plugin+'/');
-				$('.oT_menuLink[data-action="changelog"]').attr('href','{{site.github.url}}/'+_plugin+'/fr_FR/changelog');
+			if (_plugin=='') { $('#header_wrap #project_title').html("Documentation"); $('.oT_picture img').hide(); $('.oT_menuLink[data-action="changelog"]').hide(); } else {
+				var srcPic="{{site.github.url}}/"+_plugin+"/images/"+_plugin+"_icon.png"; $('.oT_picture img').attr('src',srcPic);
+				$('#header_wrap #project_title').html(_plugin); $('.oT_menuLink[data-action="doc"]').attr('href','{{site.github.url}}/'+_plugin+'/'); $('.oT_menuLink[data-action="changelog"]').attr('href','{{site.github.url}}/'+_plugin+'/fr_FR/changelog');
 			}
 		}
-		function setOtherDoc() {
-		  $.each(_pluginList, function(k,_pluginName) {
-			var _href = "{{site.github.url}}/"+_pluginName+"/";
-			$('#oT_otherPlugin').append("<a href='"+_href+"'><img src='"+_href+"images/"+_pluginName+"_icon.png"+"' class='oT_imgPlugin' border='0'/></a>");
-		  });
-		}
+		function setOtherDoc() { $.each(_pluginList, function(k,_pluginName) { var _href = "{{site.github.url}}/"+_pluginName+"/"; $('#oT_otherPlugin').append("<a href='"+_href+"'><img src='"+_href+"images/"+_pluginName+"_icon.png"+"' class='oT_imgPlugin' border='0'/></a>"); }); }
 		function getCourrantPlugin() { var aPath = window.location.pathname.split('/'); return (typeof aPath[2]!=='undefined')?aPath[2]:''; }
-		// gestion de la page //		
 		if (window.location.search=='?changelog') { console.log('a) '+window.location.href); window.location.href = '{{site.github.url}}/'+getCourrantPlugin()+'/fr_FR/changelog'; console.log('b) '+window.location.href); }
 			else { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-135293349-2'); }
 	</script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135293349-2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135293349-2"></script> <!-- Global site tag (gtag.js) - Google Analytics -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -49,7 +35,6 @@
         <div style="width:100%;">
           <span class="oT_picture"><img src="" border="0"/></span>
           <span class="oT_logo" style="color:#000;">Olin<span style="font-size:75%;position:relative;top:-7px;"><span style="color:#8c0012;">dot</span>e</span><span style="font-size:50%;color:#AAA;position:relative;left:-1em;top:0.3em;">.fr</span></span>
-          
         </div>
         <h1 id="project_title">{{site.github.project_title}}</h1>
         <h2 id="project_tagline">{{site.github.project_tagline}}</h2>
@@ -67,7 +52,7 @@
     </div>
     <div id="footer_wrap" class="outer ">
       <div class="inner">
-        <span id="project_tagline">Toute la document des autres plugins :</span> 
+        <span id="project_tagline">Toute la documentation des autres plugins :</span> 
         <div id="oT_otherPlugin"></div>
       </div>
     </div>
