@@ -80,6 +80,7 @@ Des paramètres de configuration vous sont proposés, mais les valeurs par défa
 | (Distant) TimeOut des requêtes | Définit la durée de timeout de la requête émise entre le plugin et l'application Android TTS Web Server. <br/> Valeurs possibles: 10, 15, 30 et 60 secondes. |
 | (Distant) Fréquence de récupération des logs | Définit la fréquence à laquelle, le plugin TWS ira récupérer les logs disponibles sur l'application Android TWS, pour les enregistrer localement sur jeedom. <br/> Valeurs possibles: Désactivé, 5, 15, 30 mins, 1h, 3h. |
 | Modes autorisés pour l'ajout d'équipement distant "TTS Web Server" | Propose 2 choix : le bouton "Ajouter" (avec saisie manuelle), et le bouton "Découverte". <br/>_**Remarque :**<br/> - le bouton "Découverte" n'est disponible que si la dépendance "ARP-SCAN" est installée. <br/>- le bouton "Ajouter" n'est pas proposé par défaut (il a été rajouté suite à la rencontre des difficultés pour certains utilisateurs)._ | 
+| (Système) Application encodage | Permet de définir l'application utilisée pour l'encodage des fichiers audio (ffmpeg ou avconv). <br/> Par défaut, "avconv". <br/> _**Remarque:**_ un passage sous debian 10, nécéssite de passer en "ffmpeg". |
 
 ## # Page des équipements TWS
 
