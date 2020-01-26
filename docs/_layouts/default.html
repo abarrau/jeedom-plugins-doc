@@ -1,6 +1,7 @@
 <html>
   <head>
     <script language="javascript">
+	    
 		function setDataPage(project_title) {
 			var _plugin = getCourrantPlugin();
 			if (_plugin=='') {
@@ -16,7 +17,7 @@
 		}
 		function setOtherDoc() {
 		  $.each(_pluginList, function(k,_pluginName) {
-			var _href = "https://abarrau.github.io/jeedom-plugins-doc/"+_pluginName+"/";
+			var _href = "{{site.github.url}}/"+_pluginName+"/";
 			$('#oT_otherPlugin').append("<a href='"+_href+"'><img src='"+_href+"images/"+_pluginName+"_icon.png"+"' class='oT_imgPlugin' border='0'/></a>");
 		  });
 		}
