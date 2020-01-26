@@ -1,6 +1,6 @@
 # Class "olindoteTools", pour Jeedom
 
-En cas d'erreur et pour suivre [l'installation](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/install)
+En cas d'erreur et pour suivre [l'installation](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/fr_FR/install)
 
 __Remarque__: cette class est destinée à l'utilisation des plugins développés par abarrau, toute utilisation par un autre développeur ne sera pas sous la responsablité d'abarrau.
 
@@ -33,8 +33,8 @@ Les plugins utilisant cette class sont : iCalendar, DaikinOnlineCtr, ttsWebServe
 	- de savoir si le plugin est toujours utilisé (pertinant) ; 
 	- connaitre l'obsolècence du parc (version) ; 
 	- prendre des decisions sur l'intérêt du plugin en fonction des 2 points précédents. 
-- Suivre les versions de la class, par rapport au version des plugins : [tableau de synthèse](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/versionPlugin)
+- Suivre les versions de la class, par rapport au version des plugins : [tableau de synthèse](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/fr_FR/versionPlugin)
 
 ### Documentation des zones d'information "olindoteTools"
 - 3 zones d'informations sont affichées en bas de page de la page de gestion des plugins développés par abarrau.
-- découvrez la [documentation sur ces zones d'informations](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/zonesinfo). 
+- découvrez la [documentation sur ces zones d'informations](https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/fr_FR/zonesinfo). 

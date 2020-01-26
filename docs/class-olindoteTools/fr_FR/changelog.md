@@ -1,6 +1,6 @@
 ## ChangeLog : 
 
-- **1.11** (2020/01/xx) :
+- **1.11 & 1.12** (2020/01/xx) :
   - diverses corrections et petites adaptations
 - **1.10** (2019/08/xx) :
   - ajout de possibilité de personnaliser les bouttons de la fonction eqlogicHtml_writeMenuAction
