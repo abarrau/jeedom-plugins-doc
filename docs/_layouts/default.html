@@ -1,8 +1,8 @@
 <html>
   <head>
+	<script language="javascript">if (window.location.search=='?changelog') window.location.href = 'fr_FR/changelog'; </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135293349-2"></script>
-    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-135293349-2');</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,9 +17,7 @@
     <script type="application/ld+json">{"@type":"WebSite","headline":"{{site.github.project_title}}","url":"{{site.github.url}}","name":"{{site.github.project_title}}","description":"{{site.github.project_tagline}}","@context":"http://schema.org"}</script>
     <link rel="stylesheet" type="text/css" media="screen" href="{{site.github.url}}/assets/style.css">
   </head>
-
-  <script language="javascript">if (window.location.search=='?changelog') window.location.href = '{{site.github.url}}/fr_FR/changelog'; </script>
-  
+ 
   <body>
     <div id="header_wrap" class="outer">
       <div class="inner">
@@ -87,5 +85,7 @@
     var _pluginList = ['class-olindoteTools','iCalendar','DaikinOnlineCtrl','ttsWebServer','drawMaps'];
     setDataPage();
     setOtherDoc();
+	// Google stat //
+    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-135293349-2');
   </script>
 </html>
