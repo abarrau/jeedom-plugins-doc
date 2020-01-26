@@ -26,6 +26,9 @@ Les commandes du Serveur TTS peuvent être utilisées via le Widget (standard je
 * _dans la suite du document, "TTS Web Server" est abrégé en "TWS"._
 * _sur les différentes interfaces (configuration, équipement, ...) pour chaque paramètre, une icone avec un "?" permet d'obtenir des informations sur le paramètre et permet déjà d'apporter un niveau de compréhension._
 
+<span style='color:red;'>**Point d'attention (Suivi de ce plugin au 26/01/20) :**</span>
+* la version courante (1.3.0) est optimisée pour être compatible v4 et Debian 10, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
+
 ## # Représentation des 2 widgets possibles
 
 ![widgets](https://abarrau.github.io/jeedom-plugins-doc/ttsWebServer/images/ttsWebServer_screenshot7.jpg)
