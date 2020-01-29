@@ -1,6 +1,8 @@
 # Changelog
 
 #### v1.3.1 (26-29/01/2020-BETA & STABLE-?) :
+- <span style="color:red;">Arrêt des commandes Squeezebox du plugin ttsWebServer; PREVOIR la migration vers les commandes Squeezebox directement intégrée au plugin Squeezebox.</span>
+- correction: limitation des noms de commandes à 120 caractères
 - correction: compatibilité debian 10 (avconv <> ffmpeg)
 - _class olindoteTools: 1.12_
 
