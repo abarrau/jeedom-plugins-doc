@@ -1,6 +1,6 @@
 # Changelog
 
-#### v1.3.0 (26/01/2020=BETA & STABLE=?) :
+#### v1.3.1 (26-29/01/2020-BETA & STABLE-?) :
 - correction: compatibilité debian 10 (avconv <> ffmpeg)
 - _class olindoteTools: 1.12_
 
