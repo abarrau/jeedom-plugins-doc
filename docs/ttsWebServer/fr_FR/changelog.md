@@ -6,7 +6,7 @@
 - correction: compatibilité debian 10 (avconv <> ffmpeg)
 - _class olindoteTools: 1.12_
 
-#### v1.2.2 (26/08/2019-BETA & STABLE-03/09) :
+#### v1.2.2 (26/08/2019-BETA & STABLE-03/09/2019) :
 - correction: compatibilité PHP 7.3 (object > jeeObject)
 - evolution: ajout du bouton "rafraichir" sur la page "info" de l'équipement
 
