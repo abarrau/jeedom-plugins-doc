@@ -76,7 +76,7 @@ Cliquez sur “Ajouter” pour ajouter un module. Renseignez ensuite les _param�
 | Lien vers "panel" depuis widget mobile | Checkbox | Permet d'afficher un bouton sur le widget en vue "mobile", pour renvoyer ver "la réplique de l'application Daikin" (panel). |
 | Ne pas remonter les erreurs dans la console des messages Jeedom | Checkbox | permet de désaciriver la remonté d'informaton dans la console des messages Jeedom. Les "erreurs/warning" seront visibles uniquement dans les logs ou santé du plugin. <br> _**Remarque:**_ Ce cas est interressant si vous rencontrez régulièrement des "pertes réseaux" du module. |
 
-#### -- Onglet "Paramètre"
+#### -- Onglet "Paramètres"
 
 ![Paramètres](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_parametre.png)	
 
@@ -91,40 +91,38 @@ Cliquez sur “Ajouter” pour ajouter un module. Renseignez ensuite les _param�
 
 **Remarque:** La catégorie n'est pas configurable au niveau de l'équipement, ce dernier est positionné dans la catégorie "Chauffage" directement.
 
-#### -- Description des paramètres des commandes
+#### -- Onglet "Commandes"
+
+**Paramétrage des informations**
 
 _**A savoir:**_ Le module Daikin remonte plusieurs informations et commandes, le plugin les prend toutes en compte. <br/>Toutefois en fonction du modèle de clim, toutes les informations et commandes ne sont pas exploitables. <br/>Une option (info/commande disponible) est donc mise à disposition de l'utilisateur et laissée à sa main, lui permettant d'indiquer de lui même celles qui peuvent être utilisées ou non. <br/>Par défaut, lors de la création, certaines valeurs sont arbitrairement mise "OUI", rien ne vous empèche de les mettre à "NON" si vous ne disposez pas de cette information/action (ou inversement).
-
-#### -- Les "informations"
-
-Les informations disponibles seront exploitables depuis vos scénarios (si activées).
-
-_Le tableau ci-dessous ne décrit pas les informations disponibles, mais les options disponibles._
 
 ![Configuration](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_configuration05.png)
 
 | Info disponible | Rend disponible l'information ou non. |
-|--|--|
 | Historiser | Permet d'historiser l'information. <br/>_**Remarques:**_<br/>- Température : lorsque la clim est éteinte, la température extérieure n'est plus remontée (pour certain module), la valeur d'absence d'information est alors positionnée à "-0.09". <br/> Cela permet d'identifier au niveau des courbes, l'absence d'information (la lisibilité est meilleure en mode "escalier"). <br/>- Durée utilisation : vous pouvez également définir la fréquence de stockage de cette information. <br/> Choix possibles : 10, 15, 30 minutes ou 1 heure. |
 | Actions | Le bouton "test" permet de tester le retour d'information. <br/> Pour les "paramètres" (roue crantée) de la commande : il n'est pas conseillé d'aller modifier des valeurs; par contre il est conservé pour obtenir des informations utiles. <br/> _(Toute modification est sous votre responsabilité)_ |
 
 _**Remarque:**_ Ces commandes peuvent être ordonnée dans le cas d'une utilisation avec un widget standard (hors plugin, option "autre widget" à 0UI).
 
-### # Les "commandes"
+**Paramétrage des commandes**
 
 Toute commande activée (ou non désactivable) est exploitable dans vos scénarios. La colonne “Options” vous permet quant à elle d’adapter le Widget selon vos besoins (exemple plus bas).
 
 ![Config7](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_configuration07.png)
 
+**Paramétrage des mémoires programmées**
 
-## # Présentation du Widget
+Vous pouvez créer des commandes "mémoires", avec les paramétrages par défaut qui vous convient. 
 
-_en rédaction_
+Pour cela, cliquer sur le bouton "Ajouter une mémoire" et renseigner les valeurs souhaitez pour : le mode, la température, le débit d'air, la direction. <br/>
+_**Remarque:**_ Le nom court doit être de 2 caractères de préférence. 
+
+![ConfigMemory](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_configurationmemory.png)
 
 ## # Présentation de "l'application" (panel) mobile
 
-_en rédaction_
-
+Cette application est à l'image de l'application officiel Daikin. Le comportement des commandes est identique. 
 
 ## # Annexes
 
