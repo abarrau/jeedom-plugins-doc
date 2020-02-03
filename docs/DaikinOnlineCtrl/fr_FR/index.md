@@ -16,7 +16,7 @@ Après téléchargement du plugin, vous devez l'activer pour profiter de ces fon
 
 ![Configuration](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_screenshot2.jpg)	
 	
-Le module wifi Daikin ne permet actuellement pas d’exploiter les modes *powerfull* et *oeil intelligent*. <br/>
+Le module wifi Daikin ne permet actuellement pas d’exploiter les modes **powerfull** et **oeil intelligent**. <br/>
 Le plugin Daikin Online Ctrl simule donc ces 2 modes tout en vous permettant d’affiner leurs réglages.
 
 **Santé des modules :**
@@ -84,52 +84,29 @@ Cliquez sur “Ajouter” pour ajouter un module. Renseignez ensuite les _param�
 |--|--|--|
 | Adresse IP du module wifi | Zone de texte | Saisir l'adresse IP de votre module sous la forme "A.B.C.D". |
 | Ne pas sauvegarder les dernières valeurs | Checkbox _(décoché par défaut)_ | Si décoché, lors d'un changement de mode, les paramètres (température, vitesse, ..) du mode sortant sont sauvegardés; vous permettant lors d'un retour dans ce mode de revenir à vos dernières valeurs. <br/> Si cette option est cochée, les valeurs par défaut seront ré-appliquées (cf. Annexe "valeurs par défaut"). |
-
-
-
-
-
-| Période de synchro des commandes | Liste de choix | Définir la durée entre 2 synchro avec le module wifi. 
-Cette option est principalement utile si vous utilisez également la télécommnde de votre clim, elle permet de se mettre "à niveau" par rapport à la configuration actuelle de la clim. +
-Si vous n'utiliser pas la télécommande, il est quand même recommandé de mettre une synchro pour vérifier l'état de votre clim et s'assurer que clim et équipement sont en phase. +
-Choix possibles : Aucune, 1, 5, 15 minutes ou 1 heure.
-| Offset de température (mesure interieure) | Liste de choix | cette option applique un offset à la valeur (info) de la température intérieure remontée par le module. + 
-La température intérieure prend en compte cet offset au niveau de la commande info et du widget; sur ce dernier, une flèche vers le bas est affichée à coté de la température lors que l'option est utilisée. +
-Choix possibles : Aucun, et de 0.5° à 4.0° par pas de 0.5°.
-| Période de synchro température | Liste de choix | Définir la durée entre 2 synchro avec le module wifi pour récupérer les valeurs des sondes de température. +
-Choix possibles : Aucune, 1, 2, 3, 5 ou 10 minutes.
-| Autoriser "Marche" automatique sur action | Checkbox + 
-_(décoché par défaut)_ | Cette option permet d'envoyer lors de mise en fonction de la clim sur lors d'une action (exemple: changement de température). + 
-Cette option a un intérêt principalement au niveau des scénarios, elle évite d'avoir à lancer 2 actions successives lorsque la clim est éteinte (ex: ON + température), vous pourrez uniquement demnder la commande température et la clim se mettra en marche également.
-_**Remarque:**_ La commande n'a pas d'action si la clim est déjà en marche. |
+| Période de synchro des commandes | Liste de choix | Définir la durée entre 2 synchro avec le module wifi. <br/>Cette option est principalement utile si vous utilisez également la télécommnde de votre clim, elle permet de se mettre "à niveau" par rapport à la configuration actuelle de la clim. <br/> Si vous n'utiliser pas la télécommande, il est quand même recommandé de mettre une synchro pour vérifier l'état de votre clim et s'assurer que clim et équipement sont en phase. <br/>Choix possibles : Aucune, 1, 5, 15 minutes ou 1 heure. |
+| Offset de température (mesure interieure) | Liste de choix | cette option applique un offset à la valeur (info) de la température intérieure remontée par le module. <br/> La température intérieure prend en compte cet offset au niveau de la commande info et du widget; sur ce dernier, une flèche vers le bas est affichée à coté de la température lors que l'option est utilisée. <br/> Choix possibles : Aucun, et de 0.5° à 4.0° par pas de 0.5°. |
+| Période de synchro température | Liste de choix | Définir la durée entre 2 synchro avec le module wifi pour récupérer les valeurs des sondes de température. <br/> Choix possibles : Aucune, 1, 2, 3, 5 ou 10 minutes. |
+| Autoriser "Marche" automatique sur action | Checkbox <br/> _(décoché par défaut)_ | Cette option permet d'envoyer lors de mise en fonction de la clim sur lors d'une action (exemple: changement de température). <br/> Cette option a un intérêt principalement au niveau des scénarios, elle évite d'avoir à lancer 2 actions successives lorsque la clim est éteinte (ex: ON + température), vous pourrez uniquement demnder la commande température et la clim se mettra en marche également. <br/>_**Remarque:**_ La commande n'a pas d'action si la clim est déjà en marche. |
 
 **Remarque:** La catégorie n'est pas configurable au niveau de l'équipement, ce dernier est positionné dans la catégorie "Chauffage" directement.
 
 #### -- Description des paramètres des commandes
 
-*A savoir:* Le module Daikin remonte plusieurs informations et commandes, le plugin les prend toutes en compte. +
-Toutefois en fonction du modèle de clim, toutes les informations et commandes ne sont pas exploitables. +
-Une option (info/commande disponible) est donc mise à disposition de l'utilisateur et laissée à sa main, lui permettant d'indiquer de lui même celles qui peuvent être utilisées ou non. +
-Par défaut, lors de la création, certaines valeurs sont arbitrairement mise "OUI", rien ne vous empèche de les mettre à "NON" si vous ne disposez pas de cette information/action (ou inversement). +
+_**A savoir:**_ Le module Daikin remonte plusieurs informations et commandes, le plugin les prend toutes en compte. <br/>Toutefois en fonction du modèle de clim, toutes les informations et commandes ne sont pas exploitables. <br/>Une option (info/commande disponible) est donc mise à disposition de l'utilisateur et laissée à sa main, lui permettant d'indiquer de lui même celles qui peuvent être utilisées ou non. <br/>Par défaut, lors de la création, certaines valeurs sont arbitrairement mise "OUI", rien ne vous empèche de les mettre à "NON" si vous ne disposez pas de cette information/action (ou inversement).
 
 #### -- Les "informations"
 
-Les informations disponibles seront exploitables depuis vos scénarios (si activées). +
+Les informations disponibles seront exploitables depuis vos scénarios (si activées).
 
-_Le tableau ci-dessous ne décrit pas les informations disponibles, mais les options disponibles._ +
+_Le tableau ci-dessous ne décrit pas les informations disponibles, mais les options disponibles._
 
-image::../images/DaikinOnlineCtrl_configuration05.png[]
+![Configuration](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_configuration05.png)
 
 | Info disponible | Rend disponible l'information ou non. |
-| Historiser | Permet d'historiser l'information. +
-*Remarques:* +
-- Température : lorsque la clim est éteinte, la température extérieure n'est plus remontée (pour certain module), la valeur d'absence d'information est alors positionnée à "-0.09". +
-Cela permet d'identifier au niveau des courbes, l'absence d'information (la lisibilité est meilleure en mode "escalier"). +
-- Durée utilisation : vous pouvez également définir la fréquence de stockage de cette information. +
-Choix possibles : 10, 15, 30 minutes ou 1 heure.
-| Actions | Le bouton "test" permet de tester le retour d'information. +
-Pour les "paramètres" (roue crantée) de la commande : il n'est pas conseillé d'aller modifier des valeurs; par contre il est conservé pour obtenir des informations utiles. +
-_(Toute modification est sous votre responsabilité)_ |
+|--|--|
+| Historiser | Permet d'historiser l'information. <br/>_**Remarques:**_<br/>- Température : lorsque la clim est éteinte, la température extérieure n'est plus remontée (pour certain module), la valeur d'absence d'information est alors positionnée à "-0.09". <br/> Cela permet d'identifier au niveau des courbes, l'absence d'information (la lisibilité est meilleure en mode "escalier"). <br/>- Durée utilisation : vous pouvez également définir la fréquence de stockage de cette information. <br/> Choix possibles : 10, 15, 30 minutes ou 1 heure. |
+| Actions | Le bouton "test" permet de tester le retour d'information. <br/> Pour les "paramètres" (roue crantée) de la commande : il n'est pas conseillé d'aller modifier des valeurs; par contre il est conservé pour obtenir des informations utiles. <br/> _(Toute modification est sous votre responsabilité)_ |
 
 _**Remarque:**_ Ces commandes peuvent être ordonnée dans le cas d'une utilisation avec un widget standard (hors plugin, option "autre widget" à 0UI).
 
