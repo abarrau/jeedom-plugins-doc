@@ -1,7 +1,13 @@
 # Changelog
 
+#### v1.3.0 (08/02/2020=BETA - STABLE=?) :
+- adaptation: compatibilité jeedom 4.x et php 7 et Debian10 (issue #49,#48)
+- _class olindoteTools: 1.12_
+- _remise en forme de la doc au template olindote_
+
+
 #### v1.2.3 (12/04/2019=BETA - STABLE=16/04) :
-- correction: affichage du plugin sur panel l'appli web mobile (issue#5)
+- correction: affichage du plugin sur panel l'appli web mobile (issue #41)
 
 #### v1.2.2 (11/04/2019) :
 - correction: paramètre d'affichage (makkil, issue#9)
