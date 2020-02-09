@@ -10,7 +10,7 @@
 - correction: affichage du plugin sur panel l'appli web mobile (issue #41)
 
 #### v1.2.2 (11/04/2019) :
-- correction: paramètre d'affichage (makkil, issue#9)
+- correction: paramètre d'affichage (makkil, issue #46)
 - évolution: ajout des commandes info de conso d'énergie chaud/froid (T0urista, issue#6)
 - adaptation: paramétrage d'affichage des éléments commande "info" (température, humidité, durée, énergie)
 - adaptation: mise à jour class olindoteTools (1.08)
