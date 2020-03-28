@@ -124,6 +124,12 @@ _**Remarque:**_ Le nom court doit être de 2 caractères de préférence.
 
 ![ConfigMemory](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_configurationmemory.png)
 
+Pour le paramètre température, une option "sélectionner une commande" est disponible. Elle permet d'utiliser une commande externe pour définir le choix de la température. <br/>
+_**Remarque:**_ La valeur de cette commande externe doit être en accord avec les min/max autorisés avec le mode sélectionné. Cette valeur est obligatoirement un entier.
+
+![ConfigMemory](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_selectcmdtemp.png)
+
+
 ## # Présentation de "l'application" (panel) mobile
 
 Cette application est à l'image de l'application officiel Daikin. Le comportement des commandes est identique. 

@@ -1,11 +1,14 @@
 # Changelog
 
-#### v1.3.1 (08-09/02/2020=BETA - STABLE=?) :
+#### v1.3.2 (28/03/2020=BETA) :
+- evolution: pour les mémoires, sélection d'une commande via variable (issue #55)
+- correction: remonté des consommations, passage à heure fixe (issue #50)
+
+#### v1.3.1 (08-09/02/2020=BETA) :
 - adaptation: compatibilité jeedom 4.x et php 7 et Debian10 (issue #49,#48)
 - correction: /BUG en v1.3.0/ problème du json error 200 sur la page equipement
 - _class olindoteTools: 1.12_
 - _remise en forme de la doc au template olindote_
-
 
 #### v1.2.3 (12/04/2019=BETA - STABLE=16/04) :
 - correction: affichage du plugin sur panel l'appli web mobile (issue #41)
