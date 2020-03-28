@@ -74,7 +74,7 @@ Cliquez sur “Ajouter” pour ajouter un module. Renseignez ensuite les _param�
 | Activer	| Checkbox <br/> _(décoché par défaut)_ | Si coché, active l'équipement. <br/> _**Remarque :**_ Si l'option est décochée, l'équipement est désactivé et aucune requête ne sera échangé avec le module ; l'équipement est _"en attente"_. |
 | Visible	| Checkbox <br/> _(décoché par défaut)_ | Si l'option est cochée, affiche l'équipement. <br/> _**Remarque :**_ Si l'option est décochée, l'équipement fonctionne normalement; les requêtes continues d'être envoyées, mais il ne s'affiche pas sur votre dashboard. |
 
-**Compléments Plugin (ergonomie)**
+##### **Compléments Plugin (ergonomie)**
 
 | Autre Widget	| Checkbox <br/> _(décoché par défaut)_ | Cette option vous permet de désactiver le widget standard du plugin et donc d'utiliser le widget jeedom ou de créer son propre widget. <br/> _(Il est conseillé de laisser cette option décochée, pour disposer de l'ensemble des fonctionnalités du plugin ; surtout avec la complexité des commandes disponible au niveau de ce plugin)._ |
 | Lien vers "panel" depuis widget mobile | Checkbox | Permet d'afficher un bouton sur le widget en vue "mobile", pour renvoyer ver "la réplique de l'application Daikin" (panel). |
@@ -97,7 +97,7 @@ Cliquez sur “Ajouter” pour ajouter un module. Renseignez ensuite les _param�
 
 #### -- Onglet "Commandes"
 
-**Paramétrage des informations**
+##### **Paramétrage des informations**
 
 _**A savoir:**_ Le module Daikin remonte plusieurs informations et commandes, le plugin les prend toutes en compte. <br/>Toutefois en fonction du modèle de clim, toutes les informations et commandes ne sont pas exploitables. <br/>Une option (info/commande disponible) est donc mise à disposition de l'utilisateur et laissée à sa main, lui permettant d'indiquer de lui même celles qui peuvent être utilisées ou non. <br/>Par défaut, lors de la création, certaines valeurs sont arbitrairement mise "OUI", rien ne vous empèche de les mettre à "NON" si vous ne disposez pas de cette information/action (ou inversement).
 
@@ -109,13 +109,13 @@ _**A savoir:**_ Le module Daikin remonte plusieurs informations et commandes, le
 
 _**Remarque:**_ Ces commandes peuvent être ordonnée dans le cas d'une utilisation avec un widget standard (hors plugin, option "autre widget" à 0UI).
 
-**Paramétrage des commandes**
+##### **Paramétrage des commandes**
 
 Toute commande activée (ou non désactivable) est exploitable dans vos scénarios. La colonne “Options” vous permet quant à elle d’adapter le Widget selon vos besoins (exemple plus bas).
 
 ![Config7](https://abarrau.github.io/jeedom-plugins-doc/DaikinOnlineCtrl/images/DaikinOnlineCtrl_configuration07.png)
 
-**Paramétrage des mémoires programmées**
+##### **Paramétrage des mémoires programmées**
 
 Vous pouvez créer des commandes "mémoires", avec les paramétrages par défaut qui vous convient. 
 
