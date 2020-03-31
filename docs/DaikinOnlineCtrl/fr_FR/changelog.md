@@ -1,9 +1,11 @@
 # Changelog
 
-#### v1.3.2 (28/03/2020=BETA) :
+#### v1.3.3 (28-31/03/2020=BETA) :
 - evolution: pour les mémoires, sélection d'une commande via variable (issue #55)
 - correction: remonté des consommations, passage à heure fixe (issue #50)
 - adaptation: affichage des catégories sur la page équipement
+- correction: gestion de l'oeil (température positive en mode rafraichissement)
+
 
 #### v1.3.1 (08-09/02/2020=BETA) :
 - adaptation: compatibilité jeedom 4.x et php 7 et Debian10 (issue #49,#48)
