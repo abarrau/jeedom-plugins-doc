@@ -2,8 +2,13 @@
 
 Ce plugin permet de piloter les climatiseurs Daikin par l'intermédiaire du module Wifi "Online Controller".
 
-<span style='color:red;'>**Point d'attention (Suivi de ce plugin au 08/02/20) :**</span>
-* DaikinOnlineCtrl n'offrira plus d'évolution fonctionnelle majeure (sauf si proposé par d'autre utilisateur) ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
+<span style='color:red;'>**Point d'attention du 05/02/21 :**</span>
+* Daikin commence à changer sa méthode d'échange avec ces clims. L'application "Daikin Online Controle" est remplacée au fur et à mesure. <br/>
+Pour rappel, ce plugin s'appuie sur la méthode de DOC, si votre clim n'est pas reconnu dans DOC, alors elle ne sera pas visible du plugin. <br/>
+En l'état, je n'ai pas d'information sur cette nouvelle méthode et sa possible implémentation... 
+
+<span style='color:red;'>**Point d'attention du 08/02/20 :**</span>
+* le plugin DaikinOnlineCtrl n'offrira plus d'évolution fonctionnelle majeure (sauf si proposé par d'autre utilisateur) ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
 * la version courante (1.3.0) est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte; exemple perte d'icone ...)
 
 # Configuration
