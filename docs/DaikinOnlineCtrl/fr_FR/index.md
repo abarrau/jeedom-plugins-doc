@@ -2,13 +2,8 @@
 
 Ce plugin permet de piloter les climatiseurs Daikin par l'intermédiaire du module Wifi "Online Controller".
 
-<span style='color:red;'>**Point d'attention du 05/02/21 :**</span>
-* Daikin commence à changer sa méthode d'échange avec ces clims. L'application "Daikin Online Controle" est remplacée au fur et à mesure. <br/>
-Pour rappel, ce plugin s'appuie sur la méthode de DOC, si votre clim n'est pas reconnu dans DOC, alors elle ne sera pas visible du plugin. <br/>
-En l'état, je n'ai pas d'information sur cette nouvelle méthode et sa possible implémentation... 
-
-<span style='color:red;'>**Point d'attention du 08/02/20 :**</span>
-* le plugin DaikinOnlineCtrl n'offrira plus d'évolution fonctionnelle majeure (sauf si proposé par d'autre utilisateur) ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
+<span style='color:red;'>**Point d'attention (Suivi de ce plugin au 08/02/20) :**</span>
+* DaikinOnlineCtrl n'offrira plus d'évolution fonctionnelle majeure (sauf si proposé par d'autre utilisateur) ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
 * la version courante (1.3.0) est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte; exemple perte d'icone ...)
 
 # Configuration
@@ -97,6 +92,7 @@ Cliquez sur “Ajouter” pour ajouter un module. Renseignez ensuite les _param�
 | Offset de température (mesure interieure) | Liste de choix | cette option applique un offset à la valeur (info) de la température intérieure remontée par le module. <br/> La température intérieure prend en compte cet offset au niveau de la commande info et du widget; sur ce dernier, une flèche vers le bas est affichée à coté de la température lors que l'option est utilisée. <br/> Choix possibles : Aucun, et de 0.5° à 4.0° par pas de 0.5°. |
 | Période de synchro température | Liste de choix | Définir la durée entre 2 synchro avec le module wifi pour récupérer les valeurs des sondes de température. <br/> Choix possibles : Aucune, 1, 2, 3, 5 ou 10 minutes. |
 | Autoriser "Marche" automatique sur action | Checkbox <br/> _(décoché par défaut)_ | Cette option permet d'envoyer lors de mise en fonction de la clim sur lors d'une action (exemple: changement de température). <br/> Cette option a un intérêt principalement au niveau des scénarios, elle évite d'avoir à lancer 2 actions successives lorsque la clim est éteinte (ex: ON + température), vous pourrez uniquement demnder la commande température et la clim se mettra en marche également. <br/>_**Remarque:**_ La commande n'a pas d'action si la clim est déjà en marche. |
+| Consigne Température | Liste de choix | Cette option permet de préciser le pas/step de la mise à jour de la température (+/-) depuis le widget. <br/> _**ATTENTION**_: cette fonctionnalité dépend des caractéristiques de votre clim. Par défaut, la valeur est 1°. |
 
 **Remarque:** La catégorie n'est pas configurable au niveau de l'équipement, ce dernier est positionné dans la catégorie "Chauffage" directement.
 

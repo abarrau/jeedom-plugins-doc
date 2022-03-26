@@ -1,10 +1,18 @@
 # Changelog
 
+#### v1.4.0 (26/03/2022=BETA) :
+- correction (issue #83): bug erreur "internal 500" et mise à jour de la led depuis la page de config
+- evolution (issue #67): permettre l'utilisation des commandes depuis le widget, lorsque clim éteinte
+- correction (issue #67): mise à jour des icones pour être compatible v4
+- adaptation: version minimum jeedom = 4.0
+- _class olindoteTools: 1.14_
+
 #### v1.3.3 (28-31/03/2020=BETA - STABLE=4/04) :
 - evolution: pour les mémoires, sélection d'une commande via variable (issue #55)
 - correction: remonté des consommations, passage à heure fixe (issue #50)
 - adaptation: affichage des catégories sur la page équipement
 - correction: gestion de l'oeil (température positive en mode rafraichissement)
+
 
 #### v1.3.1 (08-09/02/2020=BETA) :
 - adaptation: compatibilité jeedom 4.x et php 7 et Debian10 (issue #49,#48)
