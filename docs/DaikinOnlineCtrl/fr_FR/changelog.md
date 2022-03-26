@@ -5,6 +5,7 @@
 - evolution (issue #67): permettre l'utilisation des commandes depuis le widget, lorsque clim éteinte
 - evolution (issue #68): permettre l'affichage de consigne décimale
 - correction (issue #66): mise à jour des icones pour être compatible v4
+- suppression des fichiers de mise à jour (1.2.0 à 1.3.2)
 - adaptation: version minimum jeedom = 4.0
 - _class olindoteTools: 1.14_
 
