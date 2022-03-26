@@ -3,7 +3,8 @@
 #### v1.4.0 (26/03/2022=BETA) :
 - correction (issue #83): bug erreur "internal 500" et mise à jour de la led depuis la page de config
 - evolution (issue #67): permettre l'utilisation des commandes depuis le widget, lorsque clim éteinte
-- correction (issue #67): mise à jour des icones pour être compatible v4
+- evolution (issue #68): permettre l'affichage de consigne décimale
+- correction (issue #66): mise à jour des icones pour être compatible v4
 - adaptation: version minimum jeedom = 4.0
 - _class olindoteTools: 1.14_
 
