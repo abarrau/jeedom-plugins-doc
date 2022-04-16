@@ -1,5 +1,10 @@
 # Changelog
 
+#### v1.4.1 (16/04/2022=BETA) :
+- correction (discution issue #66): problème de clic sur le 1er onglet du widget
+- adaptation : mise à jour de tous les generic_type des commandes >> ATTENTION: si vous aviez fait des mises à jour, elles seront écrasées
+- _class olindoteTools: 1.15_
+
 #### v1.4.0 (26/03/2022=BETA) :
 - correction (issue #83): bug erreur "internal 500" et mise à jour de la led depuis la page de config
 - evolution (issue #67): permettre l'utilisation des commandes depuis le widget, lorsque clim éteinte
