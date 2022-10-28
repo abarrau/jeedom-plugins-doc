@@ -12,6 +12,11 @@ L’utilisateur dispose de 3 modes de fonctionnement :
 * iCalendar n'offrira plus d'évolution fonctionnelle majeure ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
 * la version courante (1.5.2) est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
 
+<span style='color:red;'>**Configuration obligatoire (au 27/10/2022) :**</span>
+* Pour les scénarios déclenchés par une commande iCalendar, il est essentiel que le scénario soit passé en "synchrone" (en mode asynchrone, le scénario ne se lance pas). 
+* Une demande de correction sur la class scénario est prévue coté Jeedom, en attendre du passage en stable, le pré-requis ci-dessus est obligatoire.  
+
+
 # Configuration
 Ce plugin permet de retourner les évènements de votre agenda iCalendar, il suffit pour cela de créer un équipement et de lui ajouter autant de "commandes" que vous avez d'agendas à traiter. Même s’il y beaucoups de paramètres, la configuration du plugin est simple : les paramètres par défaut peuvent être conservés, ce qui facilite la création. <br/>
 Vous pouvez l’utiliser pour l'affichage d'agendas tout simplement ou pour récupérer des agendas vous permettant de réaliser des actions dans votre installation Jeedom.
