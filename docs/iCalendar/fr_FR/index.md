@@ -14,7 +14,7 @@ L’utilisateur dispose de 3 modes de fonctionnement :
 
 <span style='color:red;'>**Configuration obligatoire (au 27/10/2022) :**</span>
 * Pour les scénarios déclenchés par une commande iCalendar, il est essentiel que le scénario soit passé en "synchrone" (en mode asynchrone, le scénario ne se lance pas). 
-* Une demande de correction sur la class scénario est prévue coté Jeedom, en attendre du passage en stable, le pré-requis ci-dessus est obligatoire.  
+* La correction sur la class scénario est pris en compte coté Jeedom (https://github.com/jeedom/core/pull/2113), en attendant le passage en stable, le pré-requis ci-dessus est obligatoire.  
 
 
 # Configuration
