@@ -4,7 +4,7 @@ Ce plugin permet de piloter les climatiseurs Daikin par l'intermédiaire du modu
 
 <span style='color:red;'>**Point d'attention (Suivi de ce plugin au 08/02/20) :**</span>
 * DaikinOnlineCtrl n'offrira plus d'évolution fonctionnelle majeure (sauf si proposé par d'autre utilisateur) ; toutefois, il sera maintenu pour le garder compatible avec les évolutions du core de Jeedom.
-* la version courante (1.3.0) est optimisée pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte; exemple perte d'icone ...)
+* Depuis la version 1.3.1, une optimisation est prévue pour être compatible v4, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte; exemple perte d'icone ...)
 
 # Configuration
 
@@ -164,6 +164,8 @@ Voici le lien sur le site Daikin pour ce module wifi : http://www.daikin.be/fr/p
 
 Et une description des fonctionnalités de l'application : http://www.daikineurope.com/minisite/onlinecontroller/always_in_control/
 
+Remarque (nov.2022) : ces liens ne sont plus fonctionnels. 
+
 
 #### --- _Annexe 4 : Compatibilité des splits et des commandes_
 
@@ -187,6 +189,15 @@ Les paramètres optionnels disponibles applicable sur le widget du plugin sont :
 
 **Remarque :** avec tous les changements d'ergonomie apportée avec la V4, ces class peuvent ne plus fonctionner correctement. Il est donc préférable d'utiliser les fonctions proposées par Jeedom. 
 
+
+#### --- _Annexe 6 : Compatibilité avec Alexia_
+
+On souhaite tous, tout controler à la voix. Ce plugin a pour objectif de permettre la synchro avec les clim Daikin. Une intercompatibilité avec des plugins tiers n'est pas prévus. 
+Le plugin "virtuel" est là pour ça et vous permettra de réaliser les actions nécessaires pour faire fonctionner votre clim. 
+
+L'utilisateur "skillix" a décrit comment créer un virtuel pour permettre ces échanges entre les plugins Daikin et Alexia : [proposition de configuration du virtuel](https://github.com/abarrau/jeedom-plugins-doc/issues/88#issuecomment-1310632502)
+
+Il n'y aura pas d'évolution prévue directement dans ce plugin.  
 
 
 ## ?? Pourquoi ce plugin ??
