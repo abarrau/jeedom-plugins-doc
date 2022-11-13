@@ -1,11 +1,11 @@
 # Changelog
 
-#### v1.6.1 (11/11/2022=BETA - STABLE=?) :
-- correction: passage en static de fonction appellée directement (#81)
-- correction: bug d'affichage sur le panel sur les vues journées (#77)
-- correction: espace dans les dates sur le widget (#60)
+#### v1.6.1-2 (11-13/11/2022=BETA - STABLE=?) :
+- correction (#81): passage en static de fonction appellée directement 
+- correction (#77): bug d'affichage sur le panel sur les vues journées 
+- correction (#60): espace dans les dates sur le widget 
 - adaptation: conversion en français l'affichage panel
-- _class olindoteTools: 1.16_
+- _class olindoteTools: 1.17_
 
 #### v1.5.2 (15-17-18/01/2020=BETA - STABLE=18/01/2020) :
 - adaptation: compatibilité jeedom 4.x et php 7 (correction #32,#33)

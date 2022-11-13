@@ -1,11 +1,13 @@
 # Changelog
 
-#### v1.4.2 (11/11/2022=BETA - STABLE=?) :
+#### v1.4.2-3 (11-13/11/2022=BETA - STABLE=?) :
+- correction (#95): sur les dates Collecte / Valeur
+- correction (#94): sur l'offset jusqu'à 4°
 - correction (#93): problème de déclenchement en synchro "1h" > ajout d'une valiable pour définir la minute de traitement
 - correction (#92): problème sur la class olindoteTools > v1.16
 - adaptation : ergono compatible avec le 4.3.x (affichage des valeurs des données infos)
 - doc: ajout d'une description pour compatibilité Alexia
-- _class olindoteTools: 1.16_
+- _class olindoteTools: 1.17_
 
 #### v1.4.1 (16/04/2022=BETA - STABLE=14/07) :
 - correction (discution issue #66): problème de clic sur le 1er onglet du widget
