@@ -14,7 +14,7 @@ Les informations de changelog sont disponibles via la documentation.
 * Ouverture de cas (menu "Issues") : https://github.com/abarrau/jeedom-plugins-doc/issues
 * A lire en priorité : 
   * Lors de l'ouverture d'un dysfonctionnement, indiquer dans le titre le plugin concerné (exemple : [icalendar] xxxx) 
-  * Toute analyse ne sera réalisé que si les informations sont clairement détaillées, avec présence de log : 
+  * Toute analyse ne sera réalisée que si les informations sont clairement détaillées, avec présence de log : 
     * du plugin concerné (plusieurs fichiers possibles), le **http.error**
     * si le problème se présente sur des cas de cron : **cron_execution**
     * pour DaikinOnlineCtrl et drawMap : **listener_execution**
@@ -22,4 +22,4 @@ Les informations de changelog sont disponibles via la documentation.
     * une **description complète du cas**
   * si ces informations ne sont pas communiquées, le dysfonctionnement sera clos. 
 
-Par ailleurs, je m'excuse d'avance, si l'avancé des corrections ne va pas à la vitesse que vous souhaitez.
+Par ailleurs, je m'excuse d'avance, si l'avancée des corrections ne va pas à la vitesse que vous souhaitez.
