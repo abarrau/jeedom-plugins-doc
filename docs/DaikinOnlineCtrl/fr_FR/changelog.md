@@ -1,6 +1,6 @@
 # Changelog
 
-#### v1.4.2-3 (11-13/11/2022=BETA - STABLE=?) :
+#### v1.4.2-3 (11-13/11/2022=BETA - STABLE=19/11/2022) :
 - correction (#95): sur les dates Collecte / Valeur
 - correction (#94): sur l'offset jusqu'à 4°
 - correction (#93): problème de déclenchement en synchro "1h" > ajout d'une valiable pour définir la minute de traitement
