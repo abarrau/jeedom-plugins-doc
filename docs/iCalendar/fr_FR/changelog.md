@@ -1,6 +1,10 @@
 # Changelog
 
-#### v1.6.1-2 (11-13/11/2022=BETA - STABLE=?) :
+#### v1.6.2 (19/12/2022=BETA - STABLE=?) :
+- correction (#99): correction récupération ics depuis outlook (400/bad request)
+- _class olindoteTools: 1.18_
+
+#### v1.6.0-1 (11-13/11/2022=BETA - STABLE=19/11/2022) :
 - correction (#81): passage en static de fonction appellée directement 
 - correction (#77): bug d'affichage sur le panel sur les vues journées 
 - correction (#60): espace dans les dates sur le widget 
