@@ -1,6 +1,6 @@
 # Changelog
 
-#### v1.6.2 (19/12/2022=BETA - STABLE=?) :
+#### v1.6.2 (26/12/2022=BETA - STABLE=?) :
 - correction (#99): correction récupération ics depuis outlook (400/bad request)
 - _class olindoteTools: 1.18_
 
