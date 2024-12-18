@@ -26,7 +26,15 @@ Les commandes du Serveur TTS peuvent être utilisées via le Widget (standard je
 * _dans la suite du document, "TTS Web Server" est abrégé en "TWS"._
 * _sur les différentes interfaces (configuration, équipement, ...) pour chaque paramètre, une icone avec un "?" permet d'obtenir des informations sur le paramètre et permet déjà d'apporter un niveau de compréhension._
 
-<span style='color:red;'>**Point d'attention (Suivi de ce plugin au 26/01/20) :**</span>
+<span style='color:red;'>**INFORMATION IMPORTANTE au 18/12/24 :**</span>
+* Les différentes évolutions du core de jeedom impactent fortement le développement des plugins.
+* Après avoir analysé le travail à faire pour me mettre à niveau, une grosse partie du code iCalendar et DaikinOnlineCtrl se trouve au niveau de l'appli coté utilisateur (donc Javascript/JQuery).
+* J'ai cherché du temps que je n'ai pas trouvé sur l'année 2024 (entre le pro et le perso), pour mettre à niveau mes 3 plugins, et je ne vois pas de perspective pour 2025.
+* J'ai donc décidé de ne plus faire de montée de version du core Jeedom sur mon propre environnement.
+* C'est donc avec regrêt que mes 3 plugins ne seront plus mis à jour et donc plus compatibles avec Jeedom 4.4.x (dernière version testée 4.4.1).
+* Je suis désolé de cette situation et sachez que j'en suis également pénalisé ; merci pour votre confiance sur ces dernières années. Aurélien - 18/12/24
+  
+__Point d'attention (Suivi de ce plugin au 26/01/20) :__
 * la version courante (1.3.0) est optimisée pour être compatible v4 et Debian 10, mais pas spécialement pour la v3 (tout problème d'ergonimie sous v3, ne sera plus pris en compte).
 
 ## # Représentation des 2 widgets possibles
