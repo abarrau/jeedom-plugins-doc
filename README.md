@@ -1,13 +1,13 @@
 ## Doc des plugins pour Jeedom abarrau/olindote
 
 ### -- INFORMATION IMPORTANTE au 18/12/24 : 
-Les différentes évolutions du core de jeedom impactent fortement le développement des plugins.
-Après avoir analysé le travail à faire pour me mettre à niveau, une grosse partie du code iCalendar et DaikinOnlineCtrl se trouve au niveau de l'appli coté utilisateur (donc Javascript/JQuery). 
-J'ai cherché du temps que je n'ai pas trouvé sur l'année 2024 (entre le pro et le perso), pour mettre à niveau mes 3 plugins, et je ne vois pas de perspective pour 2025.
-J'ai donc décidé de ne plus faire de montée de version du core Jeedom sur mon propre environnement. 
-C'est donc avec regrêt que mes 3 plugins ne seront plus mis à jour et donc plus compatibles avec Jeedom 4.4.x (dernière version testée 4.4.1).
-Je suis désolé de cette situation et saché que j'en suis également pénalisé.
-Aurélien - 18/12/24
+Les différentes évolutions du core de jeedom impactent fortement le développement des plugins.<br/>
+Après avoir analysé le travail à faire pour me mettre à niveau, une grosse partie du code iCalendar et DaikinOnlineCtrl se trouve au niveau de l'appli coté utilisateur (donc Javascript/JQuery). <br/>
+J'ai cherché du temps que je n'ai pas trouvé sur l'année 2024 (entre le pro et le perso), pour mettre à niveau mes 3 plugins, et je ne vois pas de perspective pour 2025.<br/>
+J'ai donc décidé de ne plus faire de montée de version du core Jeedom sur mon propre environnement. <br/>
+C'est donc avec regrêt que mes 3 plugins ne seront plus mis à jour et donc plus compatibles avec Jeedom 4.4.x (dernière version testée 4.4.1).<br/>
+Je suis désolé de cette situation et saché que j'en suis également pénalisé.<br/>
+Aurélien - 18/12/24<br/>
 
 ### -- Documentation (FR uniquement) : 
 * olindoteTools (class) : https://abarrau.github.io/jeedom-plugins-doc/class-olindoteTools/
